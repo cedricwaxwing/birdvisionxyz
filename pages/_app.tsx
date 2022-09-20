@@ -11,7 +11,6 @@ import { theme } from "../src/styles/theme";
 
 export default function MyApp(props: AppProps) {
   const router = useRouter();
-  const { route } = router;
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -21,7 +20,9 @@ export default function MyApp(props: AppProps) {
     }
 
     const handleRouteChange = (url: URL) => {
-      console.log({ url });
+      const body = document.querySelector("body");
+
+      body?.scrollTo(0, 0);
     };
 
     //When the component is mounted, subscribe to router changes

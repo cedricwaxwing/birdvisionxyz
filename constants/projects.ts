@@ -1,38 +1,42 @@
-export const projects = [
-  {
-    name: "Polywrap",
+export interface SlugProps {
+  slug: "polywrap" | "wand-nft" | "dao-drops" | "zodiac-protocol" | "ranch-house-dao" | "tabula";
+}
+
+export const projects = {
+  "polywrap": {
     slug: "polywrap",
+    name: "Polywrap",
     client: "Polywrap",
     tags: ["Product Design", "Branding", "Frontend"],
   },
-  {
-    name: "Wand NFT",
+  "wand-nft": {
     slug: "wand-nft",
+    name: "Wand NFT",
     client: "Gnosis Guild",
     tags: ["Product Design", "Frontend"],
   },
-  {
-    name: "DAO Drops",
+  "dao-drops": {
     slug: "dao-drops",
+    name: "DAO Drops",
     client: "Ethereum Foundation",
     tags: ["Product Design", "Branding"],
   },
-  {
-    name: "Zodiac Protocol",
+  "zodiac-protocol": {
     slug: "zodiac-protocol",
+    name: "Zodiac Protocol",
     client: "Gnosis Guild",
     tags: ["Product Design", "Frontend"],
   },
-  {
-    name: "Ranch House Dao",
+  "ranch-house-dao": {
     slug: "ranch-house-dao",
+    name: "Ranch House Dao",
     client: "Co-Founder",
     tags: ["Visual Design", "Branding", "Project Management"],
   },
-  {
-    name: "Tabula",
+  "tabula": {
     slug: "tabula",
+    name: "Tabula",
     client: "Gnosis Guild",
     tags: ["Product Design", "Branding", "Frontend"],
   },
-];
+};

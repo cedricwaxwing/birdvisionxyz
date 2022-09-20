@@ -5,15 +5,25 @@ import { theme, typography } from "../src/styles/theme";
 
 export const Header = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [screenX, setScreenX] = useState(0);
 
   useEffect(() => {
     const body = document.querySelector("body");
+
+    setScreenX(body.clientWidth);
+    const handleResize = () => {
+      setScreenX(body.clientWidth);
+    };
     const handleScroll = () => {
       setScrollY(body.scrollTop);
     };
 
     body.addEventListener("scroll", handleScroll, { passive: true });
-    return () => body.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => {
+      body.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
@@ -32,7 +42,11 @@ export const Header = () => {
         sx={{
           transition: "max-width 0.5s ease-in-out",
           maxWidth:
-            scrollY > 1 ? "100% !important" : theme.breakpoints.values.lg,
+            screenX < theme.breakpoints.values.lg + 200
+              ? "100% !important"
+              : scrollY > 1
+              ? "100% !important"
+              : theme.breakpoints.values.lg,
         }}
       >
         <Stack

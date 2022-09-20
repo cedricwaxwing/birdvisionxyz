@@ -1,10 +1,28 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { colors } from "../src/styles/theme";
+import { easings } from "../src/styles/theme";
+import Waxwing from "../public/assets/imgs/cedricwaxwing/waxwing_logo.png";
+import Image from "next/image";
 
 const Logo = ({ strokeWidth = 3, sx }) => (
-  <Box className="logo" sx={{ display: "flex", ...sx }}>
-    <svg
+  <Box
+    className="logo"
+    sx={{
+      display: "flex",
+      width: 80,
+      ...sx,
+    }}
+  >
+    <Box
+      sx={{
+        display: "flex",
+        transition: `all 0.25s ${easings.cubic}`,
+        "&:hover": { transform: "scale(1.2)" },
+      }}
+    >
+      <Image src={Waxwing} alt="Bird Vision Logo" />
+    </Box>
+    {/* <svg
       width="58"
       height="57"
       fill="none"
@@ -41,7 +59,7 @@ const Logo = ({ strokeWidth = 3, sx }) => (
         stroke={colors.black}
         strokeWidth={`${strokeWidth}`}
       />
-    </svg>
+    </svg> */}
   </Box>
 );
 

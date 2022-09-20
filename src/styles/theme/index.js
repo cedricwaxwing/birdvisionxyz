@@ -8,6 +8,9 @@ export const colors = {
   yellow: "#EFF320",
   orange: "#F38620",
   violet: "#7600D3",
+
+  // Projects
+  "dao-drops": "#3C1DFE"
 }
 
 const fontFamilyFallbacks = [
@@ -28,7 +31,11 @@ export const typography = {
   },
 }
 
-export const theme = createTheme({
+export const easings = {
+  cubic: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+}
+
+const defaultTheme = createTheme({
   palette: {
     secondary: {
       main: colors.violet
@@ -58,7 +65,7 @@ export const theme = createTheme({
     },
     h3: {
       fontFamily: "monument_extended",
-      fontSize: "4rem",
+      fontSize: "3rem",
       fontWeight: 600,
     },
     h4: {
@@ -113,6 +120,22 @@ export const theme = createTheme({
         }
       `
     },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          color: colors.white,
+          fontFamily: typography.fontFamilies.displaySans,
+          fontSize: "0.75rem",
+          fontWeight: 400,
+          letterSpacing: 2,
+          textTransform: "uppercase",
+          transition: "all 0.25s ease-in-out",
+          "&:hover": {
+            transform: "scale(1.05)",
+          }
+        }
+      }
+    },
     MuiLink: {
       styleOverrides: {
         root: {
@@ -123,6 +146,18 @@ export const theme = createTheme({
           }
         }
       }
-    }
+    },
   }
 });
+
+
+export const theme = createTheme(defaultTheme, {
+  ...defaultTheme,
+  typography: {
+    h1: {
+      [defaultTheme.breakpoints.down('lg')]: {
+        fontSize: "4rem",
+      }
+    }
+  }
+})

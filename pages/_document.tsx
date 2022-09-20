@@ -1,6 +1,6 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { theme } from "../src/styles/theme";
+import { colors } from "../src/styles/theme";
 import { ServerStyleSheets } from "@mui/styles";
 
 export default class MyDocument extends Document {
@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="theme-color" content={colors.yellow} />
         </Head>
         <body>
           <Main />
