@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { colors } from "../../birdvisionxyz/src/theme";
+import { colors } from "../src/styles/theme";
 
 const Logo = ({ strokeWidth = 3, sx }) => (
   <Box className="logo" sx={{ display: "flex", ...sx }}>
