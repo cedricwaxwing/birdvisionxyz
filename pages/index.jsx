@@ -44,15 +44,19 @@ const Home = () => {
         >
           <Container>
             <Grid container sx={{ minHeight: "60vh" }}>
-              <Grid item xs={12} sm={9} md={8} mt="10vh">
-                <Typography variant="body1" fontSize="1.5rem">
+              <Grid item xs={12} sm={9} md={8} mt={["7vh", "10vh"]}>
+                <Typography variant="body1" fontSize={["1.25rem", "1.5rem"]}>
                   We create effective and innovative design for apps and
                   protocols that span a wide range of crypto spaces, such as
                   DeFi, DAOs, and NFTs. Product design, visual design, and
                   frontend development are the fundamental tools we use to bring
                   your vision to life.
                 </Typography>
-                <Typography variant="body1" fontSize="1.5rem" mt={6}>
+                <Typography
+                  variant="body1"
+                  fontSize={["1.25rem", "1.5rem"]}
+                  mt={6}
+                >
                   With over 15 years of experience in design, the last 2 years
                   of experience strictly focused on web3, we provide the
                   expertise you need.
@@ -63,9 +67,9 @@ const Home = () => {
               variant="h2"
               sx={{
                 color: colors.white,
-                fontSize: ["5rem", "8rem", "12rem"],
-                mt: 20,
-                mb: 16,
+                fontSize: ["4.25rem", "8rem", "12rem"],
+                mt: [12, 20],
+                mb: [10, 16],
                 textAlign: "center",
               }}
             >

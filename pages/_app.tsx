@@ -8,6 +8,7 @@ import { Header } from "../common/Header";
 import { CursorEffect } from "../components/CursorEffect";
 import { Noise } from "../components/Noise";
 import { theme } from "../src/styles/theme";
+import { isMobile } from "../utils/isMobile";
 
 export default function MyApp(props: AppProps) {
   const router = useRouter();
@@ -60,7 +61,7 @@ export default function MyApp(props: AppProps) {
         <Stack sx={{ minHeight: "100vh" }}>
           <Header />
           <Component {...pageProps} />
-          <CursorEffect />
+          {!isMobile && <CursorEffect />}
           <Box
             sx={{
               position: "fixed",

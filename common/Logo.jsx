@@ -9,13 +9,12 @@ const Logo = ({ strokeWidth = 3, sx }) => (
     className="logo"
     sx={{
       display: "flex",
-      width: 80,
+      width: [50, 80],
       ...sx,
     }}
   >
     <Box
       sx={{
-        backdropFilter: "blur(4px)",
         borderRadius: 999,
         display: "flex",
         transition: `all 0.25s ${easings.cubic}`,

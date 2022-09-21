@@ -12,6 +12,7 @@ import { Numeral } from "../common/Numeral";
 import { projects } from "../constants/projects";
 import { colors, easings, typography } from "../src/styles/theme";
 import Link from "next/link";
+import { isMobile } from "../utils/isMobile";
 
 export const ProjectPreview = ({ project, index }) => {
   const { client, name, slug, tags, thumb } = projects[project];
@@ -85,7 +86,6 @@ export const ProjectPreview = ({ project, index }) => {
   };
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   let letterNum = -1;
 
   return (
@@ -111,8 +111,10 @@ export const ProjectPreview = ({ project, index }) => {
       <Link href={`/${slug}`}>
         <Grid
           container
-          spacing={isMobile ? 3 : 6}
-          direction={index % 2 ? "row-reverse" : "row"}
+          spacing={isMobile ? 1 : 6}
+          direction={
+            !isMobile ? (index % 2 ? "row-reverse" : "row") : "column-reverse"
+          }
         >
           <Grid item xs={12} sm={6}>
             <Box
@@ -142,8 +144,10 @@ export const ProjectPreview = ({ project, index }) => {
                 {tags.map((tag) => (
                   <Typography
                     variant="body2"
-                    fontFamily={typography.fontFamilies.ultraextended}
-                    letterSpacing={3}
+                    fontFamily={typography.fontFamilies.extended}
+                    fontSize={["0.65rem", "0.75rem"]}
+                    fontWeight={500}
+                    letterSpacing={1}
                     lineHeight={1}
                     key={tag}
                     textTransform="uppercase"
@@ -158,7 +162,8 @@ export const ProjectPreview = ({ project, index }) => {
               sx={{
                 position: ["relative", null, "absolute"],
                 bottom: [null, null, theme.spacing(6)],
-                mt: [2, 2, null],
+                mb: [2, 1, null],
+                mt: [1, 2, null],
                 zIndex: 1,
               }}
             >
@@ -166,7 +171,7 @@ export const ProjectPreview = ({ project, index }) => {
                 <Typography
                   variant="h1"
                   sx={{
-                    fontSize: ["3rem", "5rem"],
+                    fontSize: ["2.25rem", "3rem", "5rem"],
                     textTransform: "uppercase",
                   }}
                 >

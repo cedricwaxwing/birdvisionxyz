@@ -1,19 +1,8 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import { colors, typography } from "../../src/styles/theme";
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { colors } from "../../src/styles/theme";
 
 export const HeroSection = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
-
   return (
     <Box
       sx={{
