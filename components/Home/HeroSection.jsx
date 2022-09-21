@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import { colors } from "../../src/styles/theme";
+import { colors, typography } from "../../src/styles/theme";
 
 export const HeroSection = () => {
   return (
@@ -54,8 +54,12 @@ export const HeroSection = () => {
                   borderLeft: `8px solid ${colors.orange}`,
                 }}
               >
-                <Typography variant="subtitle1">
-                  Bringing the <strong>decentralized web</strong> to life.
+                <Typography
+                  variant="subtitle1"
+                  fontFamily={typography.fontFamilies.serif}
+                  fontSize={[26, 32]}
+                >
+                  Bringing the <em>decentralized web</em> to life.
                 </Typography>
               </Box>
             </Stack>

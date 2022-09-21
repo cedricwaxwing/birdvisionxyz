@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../src/styles/globals.css";
-import App, { AppContext, AppProps } from "next/app";
+import App, { AppContext } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Box, CssBaseline, Stack, ThemeProvider } from "@mui/material";
@@ -8,9 +8,8 @@ import { Header } from "../common/Header";
 import { CursorEffect } from "../components/CursorEffect";
 import { Noise } from "../components/Noise";
 import { theme } from "../src/styles/theme";
-import { isMobile } from "../utils/isMobile";
 
-export default function MyApp(props: AppProps) {
+export default function MyApp(props) {
   const router = useRouter();
 
   React.useEffect(() => {
@@ -20,7 +19,7 @@ export default function MyApp(props: AppProps) {
       jssStyles.parentElement?.removeChild(jssStyles);
     }
 
-    const handleRouteChange = (url: URL) => {
+    const handleRouteChange = (url) => {
       const body = document.querySelector("body");
 
       body?.scrollTo(0, 0);
@@ -61,7 +60,7 @@ export default function MyApp(props: AppProps) {
         <Stack sx={{ minHeight: "100vh" }}>
           <Header />
           <Component {...pageProps} />
-          {!isMobile && <CursorEffect />}
+          <CursorEffect />
           <Box
             sx={{
               position: "fixed",
@@ -78,7 +77,7 @@ export default function MyApp(props: AppProps) {
   );
 }
 
-MyApp.getInitialProps = async (context: AppContext) => {
+MyApp.getInitialProps = async (context) => {
   const [appProps] = await Promise.all([App.getInitialProps(context)]);
 
   return {

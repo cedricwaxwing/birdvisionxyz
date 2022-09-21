@@ -9,7 +9,6 @@ const Logo = ({ strokeWidth = 3, sx }) => (
     className="logo"
     sx={{
       display: "flex",
-      width: [50, 80],
       ...sx,
     }}
   >

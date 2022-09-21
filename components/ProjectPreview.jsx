@@ -12,9 +12,10 @@ import { Numeral } from "../common/Numeral";
 import { projects } from "../constants/projects";
 import { colors, easings, typography } from "../src/styles/theme";
 import Link from "next/link";
-import { isMobile } from "../utils/isMobile";
+import { isMobile as isMobileFunction } from "../utils/isMobile";
 
 export const ProjectPreview = ({ project, index }) => {
+  const isMobile = isMobileFunction();
   const { client, name, slug, tags, thumb } = projects[project];
   const [isHovering, setHovering] = useState(false);
   const [elementContext, setElementContext] = useState({

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useWindowSize } from "../utils/useWindowSize";
 import { Box, styled } from "@mui/material";
 import { colors } from "../src/styles/theme";
+import { isMobile as isMobileFunction } from "../utils/isMobile";
 
 const G = styled("g")({
   transformOrigin: "center",
@@ -20,6 +21,7 @@ const options = {
 };
 
 export const CursorEffect = () => {
+  const isMobile = isMobileFunction();
   const {
     radiusDiff,
     radiusStart = 200,
@@ -99,11 +101,11 @@ export const CursorEffect = () => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (!prefersReducedMotion && !hatesAnimation) {
+    if (!isMobile && !prefersReducedMotion && !hatesAnimation) {
       window.addEventListener("mousemove", handleMove, { passive: true });
       return () => window.removeEventListener("mousemove", handleMove);
     }
-  }, [hatesAnimation]);
+  }, [hatesAnimation, isMobile]);
 
   // useEffect(() => {
   //   const body = document.querySelector("body");
@@ -132,7 +134,7 @@ export const CursorEffect = () => {
 
     body.addEventListener("click", handleClick);
     return () => body.removeEventListener("click", handleClick);
-  }, []);
+  }, [isMobile]);
 
   return (
     <Box

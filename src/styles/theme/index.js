@@ -23,6 +23,7 @@ export const typography = {
     ultraextended: ['normalidad-ultraextended', 'sans-serif'].join(','),
     extended: ['normalidad-extended', 'sans-serif'].join(','),
     sans: ['normalidad-compact', 'sans-serif'].join(','),
+    serif: ['utopia-std-subhead', 'serif'].join(','),
     monospace: ['Roboto Mono', 'monospace'].join(','),
   },
 }

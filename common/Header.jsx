@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Container, Link, Stack, Typography } from "@mui/material";
 import Logo from "./Logo";
+import { Hamburger } from "../components/Hamburger";
 import { theme, typography } from "../src/styles/theme";
 import { isMobile } from "../utils/isMobile";
 
@@ -59,10 +60,15 @@ export const Header = () => {
           }}
         >
           <Link underline="none" href="/" display="block">
-            <Logo sx={{ transform: `rotate(${scrollY * 0.1}deg)` }} />
+            <Logo
+              sx={{
+                transform: `rotate(${scrollY * 0.1}deg)`,
+                width: scrollY > 300 ? { xs: 40, md: 60 } : { xs: 50, md: 80 },
+              }}
+            />
           </Link>
-          {isMobile ? (
-            <Box>click ma</Box>
+          {true ? (
+            <Hamburger width={32} height={32} />
           ) : (
             <Stack direction="row" spacing={4} sx={{ alignItems: "center" }}>
               <Link
