@@ -19,7 +19,7 @@ const options = {
   transitionOffset: 6,
 };
 
-export const CursorEffect = () => {
+export const CursorEffectFlattened = () => {
   const {
     radiusDiff,
     radiusStart = 200,
@@ -82,28 +82,12 @@ export const CursorEffect = () => {
   }, []);
 
   useEffect(() => {
-    let lastUpdateCall;
-    const handleMove = (e) => {
-      if (lastUpdateCall) cancelAnimationFrame(lastUpdateCall);
-      lastUpdateCall = requestAnimationFrame(() => {
-        setPos({
-          x: e.clientX,
-          y: e.clientY,
-        });
-        lastUpdateCall = null;
-      });
-    };
-
+    setPos({
+      x: logoPos.x,
+      y: logoPos.y,
+    });
     setReady(true);
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (!prefersReducedMotion && !hatesAnimation) {
-      window.addEventListener("mousemove", handleMove, { passive: true });
-      return () => window.removeEventListener("mousemove", handleMove);
-    }
-  }, [hatesAnimation]);
+  }, [logoPos]);
 
   // useEffect(() => {
   //   const body = document.querySelector("body");
@@ -115,24 +99,24 @@ export const CursorEffect = () => {
   //   return () => body.removeEventListener("scroll", handleScroll);
   // }, []);
 
-  useEffect(() => {
-    const body = document.querySelector("body");
-    const handleClick = () => {
-      let freq = 0.05;
-      const interval = setInterval(() => {
-        if (freq <= 0.0019) {
-          setFilterFreq(BASE_FREQ);
-          clearInterval(interval);
-        } else {
-          setFilterFreq(freq);
-          freq -= BASE_FREQ;
-        }
-      }, 40);
-    };
+  // useEffect(() => {
+  //   const body = document.querySelector("body");
+  //   const handleClick = () => {
+  //     let freq = 0.05;
+  //     const interval = setInterval(() => {
+  //       if (freq <= 0.0019) {
+  //         setFilterFreq(BASE_FREQ);
+  //         clearInterval(interval);
+  //       } else {
+  //         setFilterFreq(freq);
+  //         freq -= BASE_FREQ;
+  //       }
+  //     }, 40);
+  //   };
 
-    body.addEventListener("click", handleClick);
-    return () => body.removeEventListener("click", handleClick);
-  }, []);
+  //   body.addEventListener("click", handleClick);
+  //   return () => body.removeEventListener("click", handleClick);
+  // }, []);
 
   return (
     <Box

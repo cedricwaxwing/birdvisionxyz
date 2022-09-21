@@ -128,9 +128,6 @@ export const ProjectPreview = ({ project, index }) => {
                 style={{
                   aspectRatio: "1/1",
                   borderRadius: 4,
-                  objectFit: "cover",
-                  position: "relative",
-                  width: "100%",
                   zIndex: 1,
                 }}
               />
