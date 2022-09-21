@@ -10,24 +10,20 @@ export const colors = {
   violet: "#7600D3",
 
   // Projects
-  "dao-drops": "#3C1DFE"
+  "gnosis-guild": "#161C38",
+  "dao-drops": "#3C1DFE",
+  "sisu": "#11C589",
+  "polywrap": "#395176",
+  "zigzag": "#07071C",
+  "ranch-house-dao": "#6E5B5F",
 }
-
-const fontFamilyFallbacks = [
-"Roboto",
-'"Helvetica Neue"',
-"Arial",
-"sans-serif",
-'"Apple Color Emoji"',
-'"Segoe UI Emoji"',
-'"Segoe UI Symbol"',
-]
 
 export const typography = {
   fontFamilies: {
-    displaySans: ['monument_extended', ...fontFamilyFallbacks].join(','),
-    sans: ['satoshi', ...fontFamilyFallbacks].join(','),
-    monospace: ['Roboto Mono', 'monospace', ...fontFamilyFallbacks].join(','),
+    ultraextended: ['normalidad-ultraextended', 'sans-serif'].join(','),
+    extended: ['normalidad-extended', 'sans-serif'].join(','),
+    sans: ['normalidad-compact', 'sans-serif'].join(','),
+    monospace: ['Roboto Mono', 'monospace'].join(','),
   },
 }
 
@@ -52,54 +48,71 @@ const defaultTheme = createTheme({
   typography: {
     fontFamily: typography.fontFamilies.sans,
     h1: {
-      fontFamily: "monument_extended",
+      fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "8rem",
-      fontWeight: 600,
+      fontWeight: 900,
       lineHeight: 1,
     },
     h2: {
-      fontFamily: "monument_extended",
+      fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "6rem",
-      fontWeight: 600,
+      fontWeight: 900,
       lineHeight: 1,
     },
     h3: {
-      fontFamily: "monument_extended",
+      fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "3rem",
-      fontWeight: 600,
+      fontWeight: 900,
     },
     h4: {
-      fontFamily: "monument_extended",
+      fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "2rem",
-      fontWeight: 600,
+      fontWeight: 900,
     },
     h5: {
-      fontFamily: "monument_extended",
+      fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "1.5rem",
-      fontWeight: 600,
+      fontWeight: 900,
     },
     h6: {
-      fontFamily: "monument_extended",
+      fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "1.25rem",
-      fontWeight: 600,
+      fontWeight: 900,
     },
     subtitle1: {
+      fontFamily: typography.fontFamilies.extended,
       fontSize: "1.5em",
-      fontWeight: 700,
+      fontWeight: 500,
     },
     subtitle2: {
+      fontFamily: typography.fontFamilies.extended,
       fontSize: "1.25em",
+      fontWeight: 500,
     },
     body1: {
+      fontFamily: typography.fontFamilies.sans,
       fontSize: "1em",
-      fontWeight: 600,
+      fontWeight: 400,
       lineHeight: 1.75,
     },
     body2: {
+      fontFamily: typography.fontFamilies.sans,
       fontSize: "0.75em",
-      fontWeight: 600,
+      fontWeight: 400,
       lineHeight: 1.75,
     },
+  },
+});
+
+
+export const theme = createTheme(defaultTheme, {
+  ...defaultTheme,
+  typography: {
+    h1: {
+      [defaultTheme.breakpoints.down('lg')]: {
+        fontSize: "4rem",
+      }
+    }
   },
   components: {
     MuiCssBaseline: {
@@ -124,9 +137,10 @@ const defaultTheme = createTheme({
       styleOverrides: {
         root: {
           color: colors.white,
-          fontFamily: typography.fontFamilies.displaySans,
-          fontSize: "0.75rem",
-          fontWeight: 400,
+          fontFamily: typography.fontFamilies.extended,
+          fontSize: 10,
+          fontWeight: 600,
+          height: defaultTheme.spacing(3),
           letterSpacing: 2,
           textTransform: "uppercase",
           transition: "all 0.25s ease-in-out",
@@ -147,17 +161,5 @@ const defaultTheme = createTheme({
         }
       }
     },
-  }
-});
-
-
-export const theme = createTheme(defaultTheme, {
-  ...defaultTheme,
-  typography: {
-    h1: {
-      [defaultTheme.breakpoints.down('lg')]: {
-        fontSize: "4rem",
-      }
-    }
   }
 })

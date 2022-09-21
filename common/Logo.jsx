@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { easings } from "../src/styles/theme";
-import Waxwing from "../public/assets/imgs/cedricwaxwing/waxwing_logo.png";
+import LogoImg from "../public/assets/imgs/logo.png";
 import Image from "next/image";
 
 const Logo = ({ strokeWidth = 3, sx }) => (
@@ -15,12 +15,14 @@ const Logo = ({ strokeWidth = 3, sx }) => (
   >
     <Box
       sx={{
+        backdropFilter: "blur(4px)",
+        borderRadius: 999,
         display: "flex",
         transition: `all 0.25s ${easings.cubic}`,
         "&:hover": { transform: "scale(1.2)" },
       }}
     >
-      <Image src={Waxwing} alt="Bird Vision Logo" />
+      <Image src={LogoImg} alt="Bird Vision Logo" />
     </Box>
     {/* <svg
       width="58"

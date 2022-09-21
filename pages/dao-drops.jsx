@@ -4,7 +4,7 @@ import { Numeral } from "../common/Numeral";
 import { ProjectTemplate } from "../components/ProjectTemplate";
 import { projects } from "../constants/projects";
 import Image from "next/image";
-import DaoDrops1 from "../public/assets/imgs/daodrops/1.jpg";
+import DaoDrops1 from "../public/assets/imgs/dao-drops/1.jpg";
 
 const project = projects["dao-drops"];
 

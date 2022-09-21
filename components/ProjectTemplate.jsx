@@ -28,7 +28,10 @@ export const ProjectTemplate = ({ slug, client, tags, name }) => {
             variant="h6"
             component="h3"
             fontFamily={typography.fontFamilies.sans}
-            fontWeight={900}
+            fontWeight={600}
+            letterSpacing={2}
+            lineHeight={1}
+            textTransform="uppercase"
           >
             {client}
           </Typography>
@@ -36,8 +39,11 @@ export const ProjectTemplate = ({ slug, client, tags, name }) => {
             sx={{
               bgcolor: colors.white,
               display: "inline",
-              fontWeight: 700,
+              fontFamily: typography.fontFamilies.extended,
+              fontSize: 10,
+              fontWeight: 400,
               letterSpacing: 1,
+              mt: 0.5,
               px: 1,
               py: "2px",
               textTransform: "uppercase",
@@ -70,8 +76,13 @@ export const ProjectTemplate = ({ slug, client, tags, name }) => {
             key={word}
             variant="h1"
             sx={{
-              color: `${index > 0 ? colors.white : colors[slug]}ed`,
-              WebkitTextStroke: `2px ${colors.black}`,
+              color: `${
+                index == name.split(" ").length - 1
+                  ? colors.white
+                  : colors[slug]
+              }ed`,
+              fontSize: ["3rem", "5rem", "6rem"],
+              WebkitTextStroke: `2px ${colors.black}66`,
               lineHeight: 0.8,
               textTransform: "uppercase",
             }}

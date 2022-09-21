@@ -36,7 +36,7 @@ export const HeroSection = () => {
               mt: 32,
             }}
           >
-            <Stack spacing={8}>
+            <Stack spacing={6}>
               <Stack>
                 <Typography
                   variant="h1"
@@ -65,17 +65,8 @@ export const HeroSection = () => {
                   borderLeft: `8px solid ${colors.orange}`,
                 }}
               >
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    fontFamily: typography.fontFamilies.displaySans,
-                    // fontStyle: "italic",
-                    fontWeight: 400,
-                    lineHeight: 1.75,
-                  }}
-                >
-                  Building and designing incredible products for the
-                  decentralized web.
+                <Typography variant="subtitle1">
+                  Bringing the <strong>decentralized web</strong> to life.
                 </Typography>
               </Box>
             </Stack>

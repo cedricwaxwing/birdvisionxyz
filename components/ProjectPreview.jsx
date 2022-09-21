@@ -10,12 +10,11 @@ import {
 import Image from "next/image";
 import { Numeral } from "../common/Numeral";
 import { projects } from "../constants/projects";
-import DaoDropsImg from "../public/assets/imgs/daodrops/preview.png";
 import { colors, easings, typography } from "../src/styles/theme";
 import Link from "next/link";
 
 export const ProjectPreview = ({ project, index }) => {
-  const { client, name, slug, tags } = projects[project];
+  const { client, name, slug, tags, thumb } = projects[project];
   const [isHovering, setHovering] = useState(false);
   const [elementContext, setElementContext] = useState({
     el: {
@@ -116,13 +115,16 @@ export const ProjectPreview = ({ project, index }) => {
           direction={index % 2 ? "row-reverse" : "row"}
         >
           <Grid item xs={12} sm={6}>
-            <Box sx={{ display: "flex", width: "100%" }}>
+            <Box
+              className="project-image"
+              sx={{ display: "flex", width: "100%" }}
+            >
               <Image
-                src={DaoDropsImg}
-                alt="DAO Drops"
-                className="project-image"
+                src={thumb}
+                alt={name}
                 style={{
                   aspectRatio: "1/1",
+                  borderRadius: 4,
                   objectFit: "cover",
                   position: "relative",
                   width: "100%",
@@ -140,7 +142,7 @@ export const ProjectPreview = ({ project, index }) => {
                 {tags.map((tag) => (
                   <Typography
                     variant="body2"
-                    fontFamily={typography.fontFamilies.displaySans}
+                    fontFamily={typography.fontFamilies.ultraextended}
                     letterSpacing={3}
                     lineHeight={1}
                     key={tag}
@@ -183,7 +185,7 @@ export const ProjectPreview = ({ project, index }) => {
                               ? `${colors.black}cc`
                               : `${colors.violet}22`,
                             display: "inline-block",
-                            fontFamily: typography.fontFamilies.displaySans,
+                            fontFamily: typography.fontFamilies.ultraextended,
                             fontSize: isMobile ? "2rem" : "4rem",
                             lineHeight: 0.8,
                             textTransform: "uppercase",

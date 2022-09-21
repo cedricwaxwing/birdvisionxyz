@@ -42,6 +42,7 @@ export default function MyApp(props: AppProps) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" key="icon" />
+        <link rel="stylesheet" href="https://use.typekit.net/eej4glk.css" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"

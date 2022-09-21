@@ -30,7 +30,7 @@ export const Header = () => {
     <Box
       component="header"
       sx={{
-        pt: scrollY > 1 ? 3 : 6,
+        pt: scrollY > 300 ? 3 : 4,
         position: "fixed",
         top: 0,
         transition: "padding 0.5s ease-in-out",
@@ -44,7 +44,7 @@ export const Header = () => {
           maxWidth:
             screenX < theme.breakpoints.values.lg + 200
               ? "100% !important"
-              : scrollY > 1
+              : scrollY > 300
               ? "100% !important"
               : theme.breakpoints.values.lg,
         }}
@@ -67,21 +67,29 @@ export const Header = () => {
             >
               <Typography
                 fontSize={12}
-                fontFamily={typography.fontFamilies.displaySans}
+                fontFamily={typography.fontFamilies.extended}
+                fontWeight={600}
                 textTransform="uppercase"
                 letterSpacing={3}
               >
                 Projects
               </Typography>
             </Link>
-            <Typography
-              fontSize={12}
-              fontFamily={typography.fontFamilies.displaySans}
-              textTransform="uppercase"
-              letterSpacing={3}
+            <Link
+              href="/#/portfolio/demo"
+              color="currentColor"
+              underline="none"
             >
-              Contact
-            </Typography>
+              <Typography
+                fontSize={12}
+                fontFamily={typography.fontFamilies.extended}
+                fontWeight={600}
+                textTransform="uppercase"
+                letterSpacing={3}
+              >
+                Contact
+              </Typography>
+            </Link>
           </Stack>
         </Stack>
       </Container>
