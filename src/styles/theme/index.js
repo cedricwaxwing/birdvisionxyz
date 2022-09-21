@@ -83,11 +83,13 @@ const defaultTheme = createTheme({
       fontFamily: typography.fontFamilies.extended,
       fontSize: "1.5em",
       fontWeight: 500,
+      lineHeight: 1.25,
     },
     subtitle2: {
       fontFamily: typography.fontFamilies.extended,
       fontSize: "1.25em",
       fontWeight: 500,
+      lineHeight: 1.25,
     },
     body1: {
       fontFamily: typography.fontFamilies.sans,
