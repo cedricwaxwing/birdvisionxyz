@@ -155,54 +155,71 @@ export const ProjectPreview = ({ project, index }) => {
             </Stack>
             <Box
               ref={letters}
-              sx={{ position: "absolute", bottom: theme.spacing(6), zIndex: 1 }}
+              sx={{
+                position: ["relative", null, "absolute"],
+                bottom: [null, null, theme.spacing(6)],
+                mt: [2, 2, null],
+                zIndex: 1,
+              }}
             >
-              {name.split(" ").map((word, i) => {
-                return (
-                  <Box key={i} sx={{ display: "flex" }}>
-                    {[...word].map((letter, j) => {
-                      letterNum++;
-                      const x =
-                        Math.random() * elementContext.el.width -
-                        (elementContext.title.x +
-                          elementContext.letters[letterNum]?.x) -
-                        elementContext.letterSize?.width / 2;
-                      const y =
-                        Math.random() * elementContext.el.height -
-                        (elementContext.title.y +
-                          elementContext.letters[letterNum]?.y) -
-                        elementContext.letterSize?.height / 2;
+              {isMobile ? (
+                <Typography
+                  variant="h1"
+                  sx={{
+                    fontSize: ["3rem", "5rem"],
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {name}
+                </Typography>
+              ) : (
+                name.split(" ").map((word, i) => {
+                  return (
+                    <Box key={i} sx={{ display: "flex" }}>
+                      {[...word].map((letter, j) => {
+                        letterNum++;
+                        const x =
+                          Math.random() * elementContext.el.width -
+                          (elementContext.title.x +
+                            elementContext.letters[letterNum]?.x) -
+                          elementContext.letterSize?.width / 2;
+                        const y =
+                          Math.random() * elementContext.el.height -
+                          (elementContext.title.y +
+                            elementContext.letters[letterNum]?.y) -
+                          elementContext.letterSize?.height / 2;
 
-                      const offset = `translate(${x}px, ${y}px)`;
-                      const scale = isMobile
-                        ? `scale(${Math.random() + 0.6})`
-                        : `scale(${Math.random() * 0.6 + 0.4})`;
-                      return (
-                        <Box
-                          key={letterNum}
-                          sx={{
-                            color: isHovering
-                              ? `${colors.black}cc`
-                              : `${colors.violet}22`,
-                            display: "inline-block",
-                            fontFamily: typography.fontFamilies.ultraextended,
-                            fontSize: isMobile ? "2rem" : "4rem",
-                            lineHeight: 0.8,
-                            textTransform: "uppercase",
-                            transform: !isHovering ? offset : null,
-                            transition: `opacity 0.5s ease-in-out, transform 0.5s ${easings.cubic}`,
-                            willChange: "transform",
-                          }}
-                        >
-                          <Box sx={{ transform: !isHovering ? scale : null }}>
-                            {letter}
+                        const offset = `translate(${x}px, ${y}px)`;
+                        const scale = isMobile
+                          ? `scale(${Math.random() + 0.6})`
+                          : `scale(${Math.random() * 0.6 + 0.4})`;
+                        return (
+                          <Box
+                            key={letterNum}
+                            sx={{
+                              color: isHovering
+                                ? `${colors.black}cc`
+                                : `${colors.violet}22`,
+                              display: "inline-block",
+                              fontFamily: typography.fontFamilies.ultraextended,
+                              fontSize: isMobile ? "2rem" : "4rem",
+                              lineHeight: 0.8,
+                              textTransform: "uppercase",
+                              transform: !isHovering ? offset : null,
+                              transition: `opacity 0.5s ease-in-out, transform 0.5s ${easings.cubic}`,
+                              willChange: "transform",
+                            }}
+                          >
+                            <Box sx={{ transform: !isHovering ? scale : null }}>
+                              {letter}
+                            </Box>
                           </Box>
-                        </Box>
-                      );
-                    })}
-                  </Box>
-                );
-              })}
+                        );
+                      })}
+                    </Box>
+                  );
+                })
+              )}
             </Box>
           </Grid>
         </Grid>
