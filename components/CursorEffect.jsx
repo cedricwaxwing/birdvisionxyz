@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useWindowSize } from "../utils/useWindowSize";
-import { Box, styled } from "@mui/material";
+import { isMobile as isMobileFunction } from "../utils/isMobile";
+import { Box, styled, useMediaQuery, useTheme } from "@mui/material";
 import { colors } from "../src/styles/theme";
 
 const G = styled("g")({
@@ -30,6 +31,8 @@ export const CursorEffect = () => {
     transitionOffset,
   } = options;
   const size = useWindowSize();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   const [ready, setReady] = useState(false);
   const [hatesAnimation] = useState(false);
   // const [scrollY, setScrollY] = useState(0);
@@ -61,14 +64,6 @@ export const CursorEffect = () => {
     return radius;
   };
 
-  // const cursorEffectToLogo = () => {
-  //   const x = logoPos.x + logoPos.width / 2;
-  //   const y = logoPos.y + logoPos.height / 2;
-  //   if (x && y) {
-  //     setPos({ x: x, y: y });
-  //   }
-  // };
-
   useEffect(() => {
     const logo = document.querySelector(".logo");
 
@@ -82,26 +77,30 @@ export const CursorEffect = () => {
   }, []);
 
   useEffect(() => {
-    let lastUpdateCall;
-    const handleMove = (e) => {
-      if (lastUpdateCall) cancelAnimationFrame(lastUpdateCall);
-      lastUpdateCall = requestAnimationFrame(() => {
-        setPos({
-          x: e.clientX,
-          y: e.clientY,
+    if (isMobile) {
+      setReady(true);
+    } else {
+      let lastUpdateCall;
+      const handleMove = (e) => {
+        if (lastUpdateCall) cancelAnimationFrame(lastUpdateCall);
+        lastUpdateCall = requestAnimationFrame(() => {
+          setPos({
+            x: e.clientX,
+            y: e.clientY,
+          });
+          lastUpdateCall = null;
         });
-        lastUpdateCall = null;
-      });
-    };
+      };
 
-    setReady(true);
+      setReady(true);
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (!prefersReducedMotion && !hatesAnimation) {
-      window.addEventListener("mousemove", handleMove, { passive: true });
-      return () => window.removeEventListener("mousemove", handleMove);
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      if (!prefersReducedMotion && !hatesAnimation) {
+        window.addEventListener("mousemove", handleMove, { passive: true });
+        return () => window.removeEventListener("mousemove", handleMove);
+      }
     }
   }, [hatesAnimation]);
 
@@ -116,22 +115,25 @@ export const CursorEffect = () => {
   // }, []);
 
   useEffect(() => {
-    const body = document.querySelector("body");
-    const handleClick = () => {
-      let freq = 0.05;
-      const interval = setInterval(() => {
-        if (freq <= 0.0019) {
-          setFilterFreq(BASE_FREQ);
-          clearInterval(interval);
-        } else {
-          setFilterFreq(freq);
-          freq -= BASE_FREQ;
-        }
-      }, 40);
-    };
+    console.log("ismobile?", isMobile);
+    if (!isMobile) {
+      const body = document.querySelector("body");
+      const handleClick = () => {
+        let freq = 0.05;
+        const interval = setInterval(() => {
+          if (freq <= 0.0019) {
+            setFilterFreq(BASE_FREQ);
+            clearInterval(interval);
+          } else {
+            setFilterFreq(freq);
+            freq -= BASE_FREQ;
+          }
+        }, 40);
+      };
 
-    body.addEventListener("click", handleClick);
-    return () => body.removeEventListener("click", handleClick);
+      body.addEventListener("click", handleClick);
+      return () => body.removeEventListener("click", handleClick);
+    }
   }, []);
 
   return (
@@ -199,15 +201,12 @@ export const CursorEffect = () => {
                   <circle
                     key={i}
                     r={setRadiusParticles(i)}
-                    cx={pos.x}
-                    cy={pos.y}
+                    cx={isMobile ? logoPos.x : pos.x}
+                    cy={isMobile ? logoPos.y : pos.y}
                     fill="none"
                     stroke={`url(#${strokeGradient.idStrokeGradient})`}
                     strokeWidth={strokeWidthParticles}
-                    strokeOpacity={
-                      // strokeOpacityParticles - Math.sqrt(i + 1) / 40
-                      strokeOpacityParticles
-                    }
+                    strokeOpacity={strokeOpacityParticles}
                     id={`${i}"`}
                     style={{
                       transitionProperty: "cx, cy",

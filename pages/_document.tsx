@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="stylesheet" href="https://use.typekit.net/eej4glk.css" />
           <meta name="theme-color" content={colors.yellow} />
         </Head>
         <body>

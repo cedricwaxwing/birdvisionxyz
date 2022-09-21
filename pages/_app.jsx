@@ -6,15 +6,11 @@ import { useRouter } from "next/router";
 import { Box, CssBaseline, Stack, ThemeProvider } from "@mui/material";
 import { Header } from "../common/Header";
 import { CursorEffect } from "../components/CursorEffect";
-import { CursorEffectFlattened } from "../components/CursorEffectFlattened";
 import { Noise } from "../components/Noise";
 import { theme } from "../src/styles/theme";
-import { isMobile as isMobileFunction } from "../utils/isMobile";
-import Image from "next/image";
 
 export default function MyApp(props) {
   const router = useRouter();
-  const isMobile = isMobileFunction();
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -46,7 +42,6 @@ export default function MyApp(props) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" key="icon" />
-        <link rel="stylesheet" href="https://use.typekit.net/eej4glk.css" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
@@ -64,7 +59,7 @@ export default function MyApp(props) {
         <Stack sx={{ minHeight: "100vh" }}>
           <Header />
           <Component {...pageProps} />
-          {isMobile ? <CursorEffectFlattened /> : <CursorEffect />}
+          <CursorEffect />
           <Box
             sx={{
               position: "fixed",
