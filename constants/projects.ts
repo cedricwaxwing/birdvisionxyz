@@ -13,6 +13,8 @@ export const projects = {
   "gnosis-guild": {
     slug: "gnosis-guild",
     name: "Gnosis Guild",
+    type: "Minting App",
+    description: `Gnosis Guild description`,
     client: "Gnosis Guild",
     tags: ["Visual Design", "Product Design", "Frontend"],
     thumb: GnosisGuildThumb,
@@ -20,6 +22,8 @@ export const projects = {
   "dao-drops": {
     slug: "dao-drops",
     name: "DAO Drops",
+    type: "Minting App",
+    description: `Gnosis Guild description`,
     client: "Ethereum Foundation",
     tags: ["Product Design", "Branding"],
     thumb: DaoDropsThumb,
@@ -27,6 +31,8 @@ export const projects = {
   "sisu": {
     slug: "sisu",
     name: "SISU",
+    type: "Minting App",
+    description: `Gnosis Guild description`,
     client: "SISU",
     tags: ["Product Design", "Branding"],
     thumb: SisuThumb,
@@ -34,6 +40,8 @@ export const projects = {
   "polywrap": {
     slug: "polywrap",
     name: "Polywrap",
+    type: "Minting App",
+    description: `Gnosis Guild description`,
     client: "Polywrap",
     tags: ["Product Design", "Branding", "Frontend"],
     thumb: PolywrapThumb,
@@ -41,6 +49,8 @@ export const projects = {
   "zigzag": {
     slug: "zigzag",
     name: "Zigzag Exchange",
+    type: "Minting App",
+    description: `Gnosis Guild description`,
     client: "Zigzag Labs",
     tags: ["Product Design", "Branding"],
     thumb: ZigzagThumb,
@@ -48,6 +58,8 @@ export const projects = {
   "ranch-house-dao": {
     slug: "ranch-house-dao",
     name: "Ranch House Dao",
+    type: "Minting App",
+    description: `Gnosis Guild description`,
     client: "Co-Founder",
     tags: ["Visual Design", "Branding", "Project Management"],
     thumb: RanchHouseThumb,

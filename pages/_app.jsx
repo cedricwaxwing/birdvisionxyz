@@ -7,7 +7,7 @@ import { Box, CssBaseline, Stack, ThemeProvider } from "@mui/material";
 import { Header } from "../common/Header";
 import { CursorEffect } from "../components/CursorEffect";
 import { Noise } from "../components/Noise";
-import { theme } from "../src/styles/theme";
+import { colors, theme } from "../src/styles/theme";
 
 export default function MyApp(props) {
   const router = useRouter();
@@ -41,18 +41,32 @@ export default function MyApp(props) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" key="icon" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
           key="viewport"
         />
-        <meta
-          name="description"
-          content="Bird Vision is a collective of designers, strategists, developers, and content creators who seek to build the decentralized web."
-          key="description"
-        />
-        <title>BIRD VISION - Building the decentralized web</title>
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content={colors.yellow} />
+        <meta name="theme-color" content={colors.yellow} />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

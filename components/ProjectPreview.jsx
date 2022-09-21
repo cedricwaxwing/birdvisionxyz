@@ -12,10 +12,10 @@ import { Numeral } from "../common/Numeral";
 import { projects } from "../constants/projects";
 import { colors, easings, typography } from "../src/styles/theme";
 import Link from "next/link";
-import { isMobile as isMobileFunction } from "../utils/isMobile";
 
 export const ProjectPreview = ({ project, index }) => {
-  const isMobile = isMobileFunction();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const { client, name, slug, tags, thumb } = projects[project];
   const [isHovering, setHovering] = useState(false);
   const [elementContext, setElementContext] = useState({
@@ -80,13 +80,16 @@ export const ProjectPreview = ({ project, index }) => {
 
   const handleMouseOver = () => {
     setHovering(true);
+    document.querySelector("body").classList.add(slug);
   };
 
   const handleMouseOut = () => {
     setHovering(false);
+    document
+      .querySelector("body")
+      .classList.remove(...document.querySelector("body").classList);
   };
 
-  const theme = useTheme();
   let letterNum = -1;
 
   return (
@@ -102,10 +105,12 @@ export const ProjectPreview = ({ project, index }) => {
         "& .project-image": {
           transition: `box-shadow 0.25s ${easings.cubic}, transform 0.1s`,
         },
-        "&:hover .project-image": {
-          boxShadow: theme.shadows[2],
-          transition: `transform 0.5s ${easings.cubic}`,
-          transform: "scale(1.05)",
+        [theme.breakpoints.up("md")]: {
+          "&:hover .project-image": {
+            boxShadow: theme.shadows[2],
+            transition: `transform 0.5s ${easings.cubic}`,
+            transform: "scale(1.05)",
+          },
         },
       }}
     >
@@ -136,7 +141,10 @@ export const ProjectPreview = ({ project, index }) => {
           <Grid item xs={12} sm={6}>
             <Stack ref={info} spacing={isMobile ? 2 : 4} mt={isMobile ? 3 : 6}>
               <Box sx={{ display: "inline" }}>
-                <Numeral number={index} />
+                <Numeral
+                  number={index}
+                  sx={{ borderColor: colors[slug], color: colors[slug] }}
+                />
               </Box>
               <Stack spacing={isMobile ? 1 : 2}>
                 {tags.map((tag) => (
@@ -201,11 +209,11 @@ export const ProjectPreview = ({ project, index }) => {
                             key={letterNum}
                             sx={{
                               color: isHovering
-                                ? `${colors.black}cc`
-                                : `${colors.violet}22`,
+                                ? `${colors[slug]}cc`
+                                : `${colors[slug]}22`,
                               display: "inline-block",
                               fontFamily: typography.fontFamilies.ultraextended,
-                              fontSize: isMobile ? "2rem" : "4rem",
+                              fontSize: isMobile ? "2rem" : "3rem",
                               lineHeight: 0.8,
                               textTransform: "uppercase",
                               transform: !isHovering ? offset : null,
@@ -213,7 +221,11 @@ export const ProjectPreview = ({ project, index }) => {
                               willChange: "transform",
                             }}
                           >
-                            <Box sx={{ transform: !isHovering ? scale : null }}>
+                            <Box
+                              sx={{
+                                transform: !isHovering ? scale : null,
+                              }}
+                            >
                               {letter}
                             </Box>
                           </Box>

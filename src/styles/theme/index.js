@@ -125,14 +125,15 @@ export const theme = createTheme(defaultTheme, {
           height: 100vh;
         }
         body {
-          // background-color: ${colors.white};
-          // background: radial-gradient(200vw 720vw at top left, #e0bb46, ${colors.yellow} 50%, #fff);
           background: radial-gradient(farthest-side at top left, #eee, #bbb);
           color: ${colors.black};
           font-family: ${typography.fontFamilies.sans};
           font-weight: 600;
           height: 100%;
           overflow: auto;
+        }
+        body * {
+          cursor: none !important;
         }
       `
     },

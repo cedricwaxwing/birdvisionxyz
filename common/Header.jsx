@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Link,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import Logo from "./Logo";
 import { Hamburger } from "../components/Hamburger";
-import { theme, typography } from "../src/styles/theme";
-import { isMobile } from "../utils/isMobile";
+import { typography } from "../src/styles/theme";
 
 export const Header = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -27,6 +33,8 @@ export const Header = () => {
       window.removeEventListener("resize", handleScroll);
     };
   }, []);
+
+  const theme = useTheme();
 
   return (
     <Box
