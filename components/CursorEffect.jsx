@@ -102,7 +102,7 @@ export const CursorEffect = () => {
         return () => window.removeEventListener("mousemove", handleMove);
       }
     }
-  }, [hatesAnimation]);
+  }, [hatesAnimation, isMobile]);
 
   // useEffect(() => {
   //   const body = document.querySelector("body");
@@ -134,7 +134,7 @@ export const CursorEffect = () => {
       body.addEventListener("click", handleClick);
       return () => body.removeEventListener("click", handleClick);
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <Box
