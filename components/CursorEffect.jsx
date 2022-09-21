@@ -132,8 +132,10 @@ export const CursorEffect = () => {
       }, 40);
     };
 
-    body.addEventListener("click", handleClick);
-    return () => body.removeEventListener("click", handleClick);
+    if (!isMobile) {
+      body.addEventListener("click", handleClick);
+      return () => body.removeEventListener("click", handleClick);
+    }
   }, [isMobile]);
 
   return (
