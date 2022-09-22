@@ -83,16 +83,20 @@ export default function MyApp(props) {
           <Header />
           <Component {...pageProps} />
           {!isMobile && <CursorEffect />}
-          <Box
-            sx={{
-              position: "fixed",
-              pointerEvents: "none",
-              inset: 0,
-              zIndex: 100,
-            }}
-          >
-            <Noise />
-          </Box>
+          {!isMobile && (
+            <>
+              <Box
+                sx={{
+                  position: "fixed",
+                  pointerEvents: "none",
+                  inset: 0,
+                  zIndex: 100,
+                }}
+              >
+                <Noise />
+              </Box>
+            </>
+          )}
         </Stack>
       </ThemeProvider>
     </>
