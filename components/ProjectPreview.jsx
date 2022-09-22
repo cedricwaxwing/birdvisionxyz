@@ -16,7 +16,7 @@ import Link from "next/link";
 export const ProjectPreview = ({ project, index }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const { client, name, slug, tags, thumb } = projects[project];
+  const { cursor, name, slug, tags, thumb } = projects[project];
   const [isHovering, setHovering] = useState(false);
   const [elementContext, setElementContext] = useState({
     el: {
@@ -99,7 +99,7 @@ export const ProjectPreview = ({ project, index }) => {
       onMouseOut={handleMouseOut}
       ref={el}
       sx={{
-        cursor: "pointer",
+        cursor: `url(${cursor}), auto !important`,
         position: "relative",
         zIndex: 1,
         "& .project-image": {

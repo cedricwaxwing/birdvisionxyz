@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Box, Container, Stack, Typography, useTheme } from "@mui/material";
 import { Numeral } from "../common/Numeral";
-import { ProjectTemplate } from "../components/ProjectTemplate";
+import { ProjectTemplate } from "../common/ProjectTemplate";
 import { projects } from "../constants/projects";
 import Image from "next/image";
 import DaoDrops1 from "../public/assets/imgs/dao-drops/1.jpg";

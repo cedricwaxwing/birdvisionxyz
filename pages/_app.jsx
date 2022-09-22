@@ -3,7 +3,14 @@ import "../src/styles/globals.css";
 import App, { AppContext } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { Box, CssBaseline, Stack, ThemeProvider } from "@mui/material";
+import {
+  Box,
+  CssBaseline,
+  Stack,
+  ThemeProvider,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Header } from "../common/Header";
 import { CursorEffect } from "../components/CursorEffect";
 import { Noise } from "../components/Noise";
@@ -37,6 +44,8 @@ export default function MyApp(props) {
   }, [router.events]);
 
   const { Component, pageProps } = props;
+  const _theme = useTheme();
+  const isMobile = useMediaQuery(_theme.breakpoints.down("md"));
 
   return (
     <>
@@ -73,7 +82,7 @@ export default function MyApp(props) {
         <Stack sx={{ minHeight: "100vh" }}>
           <Header />
           <Component {...pageProps} />
-          <CursorEffect />
+          {!isMobile && <CursorEffect />}
           <Box
             sx={{
               position: "fixed",

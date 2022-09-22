@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 import {
   Box,
   Container,
+  Dialog,
   Link,
   Stack,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import Logo from "./Logo";
 import { Hamburger } from "../components/Hamburger";
-import { typography } from "../src/styles/theme";
+import { colors, typography } from "../src/styles/theme";
 
 export const Header = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -35,6 +37,7 @@ export const Header = () => {
   }, []);
 
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box
@@ -45,7 +48,7 @@ export const Header = () => {
         top: 0,
         transition: "padding 0.5s ease-in-out",
         width: "100%",
-        zIndex: 10,
+        zIndex: 10000,
       }}
     >
       <Container
@@ -75,15 +78,26 @@ export const Header = () => {
               }}
             />
           </Link>
-          {true ? (
-            <Hamburger width={32} height={32} />
+          {isMobile ? (
+            <>
+              <Hamburger width={32} height={32} />
+              <Dialog open={false} fullScreen zIndex={1}>
+                <Stack
+                  sx={{
+                    bgcolor: colors.black,
+                    color: colors.yellow,
+                    position: "absolute",
+                    inset: 0,
+                  }}
+                >
+                  <Box>Projects</Box>
+                  <Box>Contact</Box>
+                </Stack>
+              </Dialog>
+            </>
           ) : (
             <Stack direction="row" spacing={4} sx={{ alignItems: "center" }}>
-              <Link
-                href="/#/portfolio/demo"
-                color="currentColor"
-                underline="none"
-              >
+              <Link href="/#projects" color="currentColor" underline="none">
                 <Typography
                   fontSize={12}
                   fontFamily={typography.fontFamilies.extended}
@@ -94,11 +108,7 @@ export const Header = () => {
                   Projects
                 </Typography>
               </Link>
-              <Link
-                href="/#/portfolio/demo"
-                color="currentColor"
-                underline="none"
-              >
+              <Link href="/#contact" color="currentColor" underline="none">
                 <Typography
                   fontSize={12}
                   fontFamily={typography.fontFamilies.extended}

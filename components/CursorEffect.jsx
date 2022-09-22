@@ -8,26 +8,6 @@ const G = styled("g")({
   transformOrigin: "center",
 });
 
-const generateHoverClasses = () => {
-  let hoverObject = {
-    fill: colors.black,
-    transition: `fill 0.25s ${easings.cubic}`,
-    "& circle": {
-      mixBlendMode: "multiply",
-    },
-  };
-  Object.keys(projects).map((project) => {
-    hoverObject[`.${project} &`] = {
-      fill: colors[project],
-    };
-  });
-  return hoverObject;
-};
-
-console.log(generateHoverClasses());
-
-const Cursor = styled("svg")(generateHoverClasses());
-
 const options = {
   radiusDiff: 8,
   strokeGradient: {
@@ -38,7 +18,7 @@ const options = {
   strokeWidthParticles: 1,
   transitionDuration: 48,
   transitionOffset: 6,
-  keyframes: 16,
+  keyframes: 4,
 };
 
 const turbulence = keyframes`
@@ -46,18 +26,18 @@ const turbulence = keyframes`
     filter: url(#turbulence1);
   }
   25% {
-    filter: url(#turbulence6);
+    filter: url(#turbulence2);
   }
   50% {
-    filter: url(#turbulence16);
+    filter: url(#turbulence4);
   }
   75% {
-    filter: url(#turbulence10);
+    filter: url(#turbulence3);
   }
 `;
 
 const SvgRoot = styled("svg")({
-  animation: `${turbulence} 0.35s ease-in-out infinite alternate`,
+  animation: `${turbulence} 0.35s ease-in-out infinite`,
 });
 
 export const CursorEffect = () => {
@@ -145,70 +125,8 @@ export const CursorEffect = () => {
     }
   }, [hatesAnimation, isMobile]);
 
-  // useEffect(() => {
-  //   const body = document.querySelector("body");
-  //   const handleScroll = () => {
-  //     setScrollY(body.scrollTop);
-  //   };
-
-  //   body.addEventListener("scroll", handleScroll, { passive: true });
-  //   return () => body.removeEventListener("scroll", handleScroll);
-  // }, []);
-
-  // useEffect(() => {
-  //   setCursorColor("blue");
-  // }, );
-
-  useEffect(() => {
-    if (!isMobile) {
-      const body = document.querySelector("body");
-      const handleClick = () => {
-        let freqTarget = 0.05;
-        const interval = setInterval(() => {
-          if (freqTarget <= 0.0019) {
-            setFilterFreq(BASE_FREQ);
-            clearInterval(interval);
-          } else {
-            setFilterFreq(freqTarget);
-            freqTarget -= BASE_FREQ;
-          }
-        }, 40);
-      };
-
-      body.addEventListener("click", handleClick);
-      return () => body.removeEventListener("click", handleClick);
-    }
-  }, [isMobile]);
-
   return (
     <>
-      <Box>
-        <Box
-          sx={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 10,
-            pointerEvents: "none",
-          }}
-        >
-          {!isMobile && (
-            <Cursor
-              width={size.width}
-              height={size.height}
-              viewBox={`0 0 ${size.width} ${size.height}`}
-              preserveAspectRatio="none"
-            >
-              <circle
-                r={setRadiusParticles(0) - radiusDiff * 24}
-                cx={isMobile ? logoPos.x : pos.x}
-                cy={isMobile ? logoPos.y : pos.y}
-                opacity={0.8}
-                // style={{ filter: "blur(6px)" }}
-              />
-            </Cursor>
-          )}
-        </Box>
-      </Box>
       <Box
         sx={{
           position: "fixed",

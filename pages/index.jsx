@@ -49,6 +49,7 @@ const Home = () => {
                     fontSize={["1.75rem", "2.5rem"]}
                     fontWeight={400}
                     lineHeight="1.25"
+                    textTransform="unset"
                   >
                     <em>Cedric Waxwing</em> is a product and branding designer
                     with over{" "}
@@ -57,12 +58,12 @@ const Home = () => {
                       experience
                     </em>{" "}
                     – the last {new Date().getFullYear() - 2020} of which have
-                    been strictly focused on web3.
+                    been strictly focused on <em>web3</em>.
                   </Typography>
                 </Stack>
               </Grid>
             </Grid>
-            <Box sx={{ mt: [20, 32], mb: [6, 8] }}>
+            <Box id="projects" sx={{ mt: [20, 32], mb: [6, 8] }}>
               <Typography
                 variant="h2"
                 sx={{

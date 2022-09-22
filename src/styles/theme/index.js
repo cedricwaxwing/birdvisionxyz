@@ -1,4 +1,6 @@
 import { createTheme } from "@mui/material/styles"
+import CursorDefault from "../../../public/assets/imgs/cursor_default.svg"
+import CursorHover from "../../../public/assets/imgs/cursor_hover.svg"
 
 export const colors = {
   white: "#ffffff",
@@ -10,12 +12,12 @@ export const colors = {
   violet: "#7600D3",
 
   // Projects
-  "gnosis-guild": "#161C38",
+  "gnosis-guild": "#903B18",
   "dao-drops": "#3C1DFE",
   "sisu": "#11C589",
   "polywrap": "#395176",
-  "zigzag": "#07071C",
-  "ranch-house-dao": "#6E5B5F",
+  "zigzag": "#29A2E3",
+  "ranch-house-dao": "#201a1e",
 }
 
 export const typography = {
@@ -52,33 +54,39 @@ const defaultTheme = createTheme({
       fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "8rem",
       fontWeight: 900,
+      textTransform: "uppercase",
       lineHeight: 1,
     },
     h2: {
       fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "6rem",
       fontWeight: 900,
+      textTransform: "uppercase",
       lineHeight: 1,
     },
     h3: {
       fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "3rem",
       fontWeight: 900,
+      textTransform: "uppercase",
     },
     h4: {
       fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "2rem",
       fontWeight: 900,
+      textTransform: "uppercase",
     },
     h5: {
       fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "1.5rem",
       fontWeight: 900,
+      textTransform: "uppercase",
     },
     h6: {
       fontFamily: typography.fontFamilies.ultraextended,
       fontSize: "1.25rem",
       fontWeight: 900,
+      textTransform: "uppercase",
     },
     subtitle1: {
       fontFamily: typography.fontFamilies.extended,
@@ -90,7 +98,7 @@ const defaultTheme = createTheme({
       fontFamily: typography.fontFamilies.extended,
       fontSize: "1.25em",
       fontWeight: 500,
-      lineHeight: 1.25,
+      lineHeight: 1.5,
     },
     body1: {
       fontFamily: typography.fontFamilies.sans,
@@ -123,6 +131,7 @@ export const theme = createTheme(defaultTheme, {
         html {
           overflow: hidden;
           height: 100vh;
+          cursor: url(${CursorDefault.src}), auto !important;
         }
         body {
           background: radial-gradient(farthest-side at top left, #eee, #bbb);
@@ -131,9 +140,6 @@ export const theme = createTheme(defaultTheme, {
           font-weight: 600;
           height: 100%;
           overflow: auto;
-        }
-        body * {
-          cursor: none !important;
         }
       `
     },
@@ -158,6 +164,7 @@ export const theme = createTheme(defaultTheme, {
       styleOverrides: {
         root: {
           color: colors.black,
+          cursor: `url(${CursorHover.src}), pointer !important`,
           transition: "color 0.25s ease-in-out",
           "&:hover": {
             color: colors.violet,
