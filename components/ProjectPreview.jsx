@@ -126,6 +126,7 @@ export const ProjectPreview = ({ project, index }) => {
               <Image
                 src={thumb}
                 alt={name}
+                placeholder="blur"
                 style={{
                   aspectRatio: "1/1",
                   borderRadius: 4,

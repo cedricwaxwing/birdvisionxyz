@@ -8,7 +8,11 @@ const project = projects["ranch-house-dao"];
 const RanchHouseDao = () => {
   return (
     <ProjectLayout project={project}>
-      <Image src={RanchHouseDaoThumb} alt={project.caption} />
+      <Image
+        src={RanchHouseDaoThumb}
+        placeholder="blur"
+        alt={project.caption}
+      />
     </ProjectLayout>
   );
 };

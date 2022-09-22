@@ -8,7 +8,12 @@ const project = projects["sisu"];
 const Sisu = () => {
   return (
     <ProjectLayout project={project}>
-      <Image src={SisuThumb} alt={project.caption} />
+      <Image
+        src={SisuThumb}
+        placeholder="blur"
+        priority
+        alt={project.caption}
+      />
     </ProjectLayout>
   );
 };

@@ -56,7 +56,12 @@ project.body = <Body />;
 const GnosisGuild = () => {
   return (
     <ProjectLayout project={project}>
-      <Image src={GnosisGuild1} alt={project.caption} />
+      <Image
+        src={GnosisGuild1}
+        placeholder="blur"
+        priority
+        alt={project.caption}
+      />
     </ProjectLayout>
   );
 };

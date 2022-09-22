@@ -8,7 +8,12 @@ const project = projects["dao-drops"];
 const DaoDrops = () => {
   return (
     <ProjectLayout project={project}>
-      <Image src={DaoDropsThumb} alt={project.caption} />
+      <Image
+        src={DaoDropsThumb}
+        placeholder="blur"
+        priority
+        alt={project.caption}
+      />
     </ProjectLayout>
   );
 };

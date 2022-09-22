@@ -8,7 +8,12 @@ const project = projects["polywrap"];
 const Polywrap = () => {
   return (
     <ProjectLayout project={project}>
-      <Image src={PolywrapThumb} alt={project.caption} />
+      <Image
+        src={PolywrapThumb}
+        placeholder="blur"
+        priority
+        alt={project.caption}
+      />
     </ProjectLayout>
   );
 };

@@ -8,7 +8,12 @@ const project = projects["zigzag"];
 const Zigzag = () => {
   return (
     <ProjectLayout project={project}>
-      <Image src={ZigzagThumb} alt={project.caption} />
+      <Image
+        src={ZigzagThumb}
+        placeholder="blur"
+        priority
+        alt={project.caption}
+      />
     </ProjectLayout>
   );
 };

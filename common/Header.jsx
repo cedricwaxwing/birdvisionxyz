@@ -68,7 +68,7 @@ export const Header = () => {
             justifyContent: "space-between",
           }}
         >
-          <Link underline="none" href="/" display="block">
+          <Link underline="none" href="/#" display="block">
             <Logo
               sx={{
                 transform: `rotate(${scrollY * 0.1}deg)`,
