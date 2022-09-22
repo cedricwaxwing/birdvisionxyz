@@ -129,8 +129,7 @@ export const theme = createTheme(defaultTheme, {
     MuiCssBaseline: {
       styleOverrides: `
         html {
-          overflow: hidden;
-          height: 100vh;
+          background-color: #bbb;
           cursor: url(${CursorDefault.src}), auto !important;
         }
         body {
@@ -138,8 +137,6 @@ export const theme = createTheme(defaultTheme, {
           color: ${colors.black};
           font-family: ${typography.fontFamilies.sans};
           font-weight: 600;
-          height: 100%;
-          overflow: auto;
         }
       `
     },

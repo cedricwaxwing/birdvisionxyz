@@ -80,14 +80,10 @@ export const ProjectPreview = ({ project, index }) => {
 
   const handleMouseOver = () => {
     setHovering(true);
-    document.querySelector("body").classList.add(slug);
   };
 
   const handleMouseOut = () => {
     setHovering(false);
-    document
-      .querySelector("body")
-      .classList.remove(...document.querySelector("body").classList);
   };
 
   let letterNum = -1;

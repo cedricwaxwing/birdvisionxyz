@@ -27,9 +27,7 @@ export default function MyApp(props) {
     }
 
     const handleRouteChange = (url) => {
-      const body = document.querySelector("body");
-
-      body?.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
     };
 
     //When the component is mounted, subscribe to router changes

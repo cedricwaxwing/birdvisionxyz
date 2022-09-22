@@ -18,20 +18,18 @@ export const Header = () => {
   const [screenX, setScreenX] = useState(0);
 
   useEffect(() => {
-    const body = document.querySelector("body");
-
-    setScreenX(body.clientWidth);
+    setScreenX(window.clientWidth);
     const handleResize = () => {
-      setScreenX(body.clientWidth);
+      setScreenX(window.clientWidth);
     };
     const handleScroll = () => {
-      setScrollY(body.scrollTop);
+      setScrollY(window.scrollY);
     };
 
-    body.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize, { passive: true });
     return () => {
-      body.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
   }, []);
