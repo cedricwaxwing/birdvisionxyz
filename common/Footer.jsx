@@ -15,12 +15,18 @@ import Image from "next/image";
 import ArrowShortUp from "../public/assets/imgs/arrow-short-up.svg";
 
 export const Footer = () => {
-  const scrollArrow = useRef(null);
-  const [scrollY, setScrollY] = useState(0);
+  const footerRef = useRef();
+  const [showArrow, setShowArrow] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      setShowArrow(
+        window.scrollY > footerRef.current.offsetTop - window.innerHeight
+      );
     };
 
     handleScroll();
@@ -31,6 +37,7 @@ export const Footer = () => {
   return (
     <Box
       component="footer"
+      ref={footerRef}
       sx={{
         bgcolor: colors.black,
         color: colors.white,
@@ -148,18 +155,15 @@ export const Footer = () => {
           </Grid>
         </Grid>
       </Container>
-      <Link
-        ref={scrollArrow}
+      <Box
+        onClick={scrollToTop}
         sx={{
           position: "fixed",
           bottom: [24, 32],
           right: [24, 32],
-          opacity: scrollY > 500 ? 1 : 0,
+          opacity: showArrow ? 1 : 0,
           filter: "brightness(1.2)",
           transition: `transform 0.5s ${easings.cubic}, opacity 0.5s ease-in-out`,
-          transform: `translateY(${scrollY > 500 ? "0%" : "150%"}) scale(${
-            scrollY < 6000 ? 1 + scrollY * 0.00005 : 1.3
-          })`,
           width: [24, 32, 48],
           zIndex: 2,
           "&:hover": {
@@ -169,7 +173,7 @@ export const Footer = () => {
         }}
       >
         <Image src={ArrowShortUp} alt="" />
-      </Link>
+      </Box>
     </Box>
   );
 };
