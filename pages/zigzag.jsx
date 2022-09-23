@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProjectLayout from "../common/ProjectLayout";
+import ProjectLayout from "../common/Projects/ProjectLayout";
 import { projects } from "../constants/projects";
 import ZigzagThumb from "../public/assets/imgs/zigzag/thumb.png";
 

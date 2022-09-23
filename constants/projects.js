@@ -11,12 +11,13 @@ import ZigzagCursor from "../public/assets/imgs/zigzag/cursor.svg"
 import RanchHouseThumb from "../public/assets/imgs/ranch-house-dao/thumb.png"
 import RanchHouseCursor from "../public/assets/imgs/ranch-house-dao/cursor.svg"
 
-export interface SlugProps {
-  slug: "polywrap" | "wand-nft" | "dao-drops" | "zodiac-protocol" | "ranch-house-dao" | "tabula";
-}
+// export interface SlugProps {
+//   slug: "polywrap" | "wand-nft" | "dao-drops" | "zodiac-protocol" | "ranch-house-dao" | "tabula";
+// }
 
 export const projects = {
   "gnosis-guild": {
+    active: true,
     slug: "gnosis-guild",
     name: "Gnosis Guild",
     type: "Minting App",
@@ -30,6 +31,7 @@ export const projects = {
     cursor: GnosisGuildCursor.src,
   },
   "dao-drops": {
+    active: true,
     slug: "dao-drops",
     name: "DAO Drops",
     type: "Minting App",
@@ -42,6 +44,7 @@ export const projects = {
     cursor: DaoDropsCursor.src,
   },
   "sisu": {
+    active: true,
     slug: "sisu",
     name: "SISU",
     type: "Minting App",
@@ -54,6 +57,7 @@ export const projects = {
     cursor: SisuCursor.src,
   },
   "polywrap": {
+    active: true,
     slug: "polywrap",
     name: "Polywrap",
     type: "Minting App",
@@ -66,6 +70,7 @@ export const projects = {
     cursor: PolywrapCursor.src,
   },
   "zigzag": {
+    active: true,
     slug: "zigzag",
     name: "Zigzag Exchange",
     type: "Minting App",
@@ -78,6 +83,7 @@ export const projects = {
     cursor: ZigzagCursor.src,
   },
   "ranch-house-dao": {
+    active: false,
     slug: "ranch-house-dao",
     name: "Ranch House Dao",
     type: "Minting App",
@@ -90,3 +96,24 @@ export const projects = {
     cursor: RanchHouseCursor.src,
   },
 };
+
+export const getActiveProjects = () => {
+  let activeProjects = Object.keys(projects).filter(
+    (project) => projects[project].active
+  );
+  activeProjects.sort((a, b) => {
+    if (projects[a].order || projects[b].order) {
+      if (
+        (projects[a].order && !projects[b].order) ||
+        projects[a].order <= projects[b].order
+      ) {
+        return -1;
+      } else {
+        return 1;
+      }
+    } else {
+      return 1;
+    }
+  });
+  return activeProjects;
+}

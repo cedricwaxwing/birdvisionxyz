@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Chip, Container, Grid, Stack, Typography } from "@mui/material";
-import { colors, typography } from "../src/styles/theme";
+import { colors, typography } from "../../src/styles/theme";
 
 const ProjectTemplate = ({
   slug,

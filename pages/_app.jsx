@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../src/styles/globals.css";
-import App, { AppContext } from "next/app";
+import App from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import {
@@ -12,6 +12,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { Header } from "../common/Header";
+import { Footer } from "../common/Footer";
 import { CursorEffect } from "../components/CursorEffect";
 import { Noise } from "../components/Noise";
 import { colors, theme } from "../src/styles/theme";
@@ -27,9 +28,8 @@ export default function MyApp(props) {
       jssStyles.parentElement?.removeChild(jssStyles);
     }
 
-    const handleRouteChange = (url) => {
-      // window.scrollTo(0, 0);
-      setPage(url);
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0);
     };
 
     //When the component is mounted, subscribe to router changes
@@ -82,6 +82,7 @@ export default function MyApp(props) {
         <Stack sx={{ minHeight: "100vh" }}>
           <Header />
           <Component {...pageProps} />
+          <Footer />
           {!isMobile && <CursorEffect />}
           <Box
             sx={{
@@ -91,7 +92,7 @@ export default function MyApp(props) {
               zIndex: 100,
             }}
           >
-            <Noise sx={{ opacity: page === "/" ? 1 : 0.5 }} />
+            <Noise />
           </Box>
         </Stack>
       </ThemeProvider>

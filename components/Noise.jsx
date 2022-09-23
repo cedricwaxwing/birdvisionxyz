@@ -1,14 +1,15 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { styled, useMediaQuery } from "@mui/material";
 import NoiseImg from "../public/assets/imgs/noise.png";
 
-const NoiseEl = styled("div")(({ prefersReducedMotion }) => {
+const NoiseEl = styled("div")(({ prefersReducedMotion, subtle }) => {
   return {
-    animation: !prefersReducedMotion ? `noise 0.4s steps(8) infinite` : null,
+    animation: prefersReducedMotion ? null : `noise 0.4s steps(8) infinite`,
     backgroundImage: `url(${NoiseImg.src})`,
     backgroundRepeat: "repeat",
     backgroundAttachment: "fixed",
-    opacity: 0.7,
+    opacity: subtle ? 0.4 : 0.7,
     pointerEvents: "none",
     position: "absolute",
     inset: 0,
@@ -24,8 +25,14 @@ const NoiseEl = styled("div")(({ prefersReducedMotion }) => {
 });
 
 export const Noise = () => {
+  const router = useRouter();
   const prefersReducedMotion = useMediaQuery(
     "(prefers-reduced-motion: reduced)"
   );
-  return <NoiseEl prefersReducedMotion={prefersReducedMotion} />;
+  return (
+    <NoiseEl
+      prefersReducedMotion={prefersReducedMotion}
+      subtle={router.pathname.length > 1}
+    />
+  );
 };

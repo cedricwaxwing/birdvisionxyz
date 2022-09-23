@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Box, Container, Grid, Link, Stack, Typography } from "@mui/material";
 import { HeroSection } from "../components/Home/HeroSection";
-import { projects } from "../constants/projects";
+import { projects, getActiveProjects } from "../constants/projects";
 import { socials } from "../constants/socials";
 import { ProjectPreview } from "../components/ProjectPreview";
 import { colors, easings, typography } from "../src/styles/theme";
@@ -177,7 +177,7 @@ const Home = () => {
               </Typography>
             </Box>
             <Stack spacing={12}>
-              {Object.keys(projects).map((project, index) => {
+              {getActiveProjects().map((project, index) => {
                 return (
                   // <div></div>
                   <ProjectPreview
