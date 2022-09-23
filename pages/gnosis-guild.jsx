@@ -18,10 +18,10 @@ const Body = () => {
         mt: 4,
       }}
     >
-      Gnosis Guild's composable governance system is designed to be flexible and
-      adaptable to the needs of any community or organization. Over the past
-      year of working in the Gnosis Guild, we've created a wide variety of apps
-      and tooling for the community.
+      Gnosis Guild&apos;s composable governance system is designed to be
+      flexible and adaptable to the needs of any community or organization. Over
+      the past year of working in the Gnosis Guild, we&apos;ve created a wide
+      variety of apps and tooling for the community.
     </Typography>
   );
 };

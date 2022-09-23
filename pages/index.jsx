@@ -147,8 +147,8 @@ const Home = () => {
                       <em>(currently flying solo at Bird Vision)</em> has a */}
                       Currently flying solo at Bird Vision, Waxwing has a wealth
                       of experience in both web3 product design, and branding.
-                      He's excited to use his skills to create a more equitable
-                      and decentralized future.
+                      He&apos;s excited to use his skills to create a more
+                      equitable and decentralized future.
                     </Typography>
                   </Stack>
                 </Stack>
