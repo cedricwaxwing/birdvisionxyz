@@ -75,6 +75,7 @@ const ProjectLayout = ({ project, children }) => {
             <Link
               href={`/${projects[nextProject].slug}`}
               underline="none"
+              className="nextproject-link"
               sx={{
                 "@keyframes point": {
                   "0%, 100%": {
@@ -84,12 +85,13 @@ const ProjectLayout = ({ project, children }) => {
                     transform: "translateX(-10%)",
                   },
                 },
+                cursor: `url(${projects[nextProject].cursor}), pointer !important`,
                 "&:hover": {
                   color: colors.black,
                   transition: `all 0.5s ${easings.cubic}`,
                 },
                 "&:hover .hover": {
-                  color: colors.violet,
+                  color: colors[projects[nextProject].slug],
                 },
                 "&:hover .arrow": {
                   animation: `point 1s 0.5s ${easings.cubic} infinite`,

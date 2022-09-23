@@ -163,6 +163,9 @@ export const theme = createTheme(defaultTheme, {
           color: colors.black,
           cursor: `url(${CursorHover.src}), pointer !important`,
           transition: "color 0.25s ease-in-out",
+          textUnderlineOffset: 3,
+          textDecorationColor: colors.violet,
+          textDecorationThickness: 2,
           "&:hover": {
             color: colors.violet,
           }

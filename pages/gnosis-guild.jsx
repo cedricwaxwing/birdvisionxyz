@@ -101,8 +101,16 @@ const GnosisGuild = () => {
                 Tabula is an Instant web3 publications for writers, DAOs, and
                 any Ethereum-based account. It was spurred by Aurangzeb and Sam
                 at Gnosis in a hackathon and the MVP is live in production now
-                after a 6 week sprint cycle. You can read more about Tabula
-                here.
+                after a 6 week sprint cycle. You can read more about Tabula{` `}
+                <Link
+                  href="https://twitter.com/GnosisGuild/status/1550182460025147392"
+                  target="_blank"
+                  rel="noredirect"
+                  sx={{ fontWeight: 800 }}
+                >
+                  here
+                </Link>
+                .
               </SubProjectBody>
             </Grid>
             <Grid
