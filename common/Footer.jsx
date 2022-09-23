@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Container,
@@ -12,8 +12,22 @@ import {
 import { socials } from "../constants/socials";
 import { colors, easings, typography } from "../src/styles/theme";
 import Image from "next/image";
+import ArrowShortUp from "../public/assets/imgs/arrow-short-up.svg";
 
 export const Footer = () => {
+  const scrollArrow = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Box
       component="footer"
@@ -134,6 +148,28 @@ export const Footer = () => {
           </Grid>
         </Grid>
       </Container>
+      <Link
+        ref={scrollArrow}
+        sx={{
+          position: "fixed",
+          bottom: [24, 32],
+          right: [24, 32],
+          opacity: scrollY > 500 ? 1 : 0,
+          filter: "brightness(1.2)",
+          transition: `transform 0.5s ${easings.cubic}, opacity 0.5s ease-in-out`,
+          transform: `translateY(${scrollY > 500 ? "0%" : "150%"}) scale(${
+            scrollY < 6000 ? 1 + scrollY * 0.00005 : 1.3
+          })`,
+          width: [24, 32, 48],
+          zIndex: 2,
+          "&:hover": {
+            filter: "brightness(1.3)",
+            transform: "scale(1.1)",
+          },
+        }}
+      >
+        <Image src={ArrowShortUp} alt="" />
+      </Link>
     </Box>
   );
 };
