@@ -25,7 +25,7 @@ export const typography = {
     ultraextended: ['normalidad-ultraextended', 'sans-serif'].join(','),
     extended: ['normalidad-extended', 'sans-serif'].join(','),
     sans: ['normalidad-compact', 'sans-serif'].join(','),
-    serif: ['utopia-std-subhead', 'serif'].join(','),
+    serif: ['cardea-lining', 'serif'].join(','),
     monospace: ['Roboto Mono', 'monospace'].join(','),
   },
 }
@@ -101,13 +101,13 @@ const defaultTheme = createTheme({
       lineHeight: 1.5,
     },
     body1: {
-      fontFamily: typography.fontFamilies.sans,
+      fontFamily: typography.fontFamilies.serif,
       fontSize: "1em",
       fontWeight: 400,
       lineHeight: 1.75,
     },
     body2: {
-      fontFamily: typography.fontFamilies.sans,
+      fontFamily: typography.fontFamilies.serif,
       fontSize: "0.75em",
       fontWeight: 400,
       lineHeight: 1.75,

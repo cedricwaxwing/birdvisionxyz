@@ -15,9 +15,6 @@ export interface SlugProps {
   slug: "polywrap" | "wand-nft" | "dao-drops" | "zodiac-protocol" | "ranch-house-dao" | "tabula";
 }
 
-GnosisGuildCursor.height=32
-GnosisGuildCursor.width=32
-
 export const projects = {
   "gnosis-guild": {
     slug: "gnosis-guild",

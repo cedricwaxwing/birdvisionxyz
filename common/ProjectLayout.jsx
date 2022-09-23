@@ -1,6 +1,7 @@
 import Head from "next/head";
 import ProjectTemplate from "./ProjectTemplate";
 import { Box, Container, Grid } from "@mui/material";
+import Image from "next/image";
 import { colors } from "../src/styles/theme";
 
 const ProjectLayout = ({ project, children }) => {
@@ -45,9 +46,15 @@ const ProjectLayout = ({ project, children }) => {
                 <ProjectTemplate {...project} />
               </Grid>
               <Grid item xs={12} sm={7}>
-                {children}
+                <Image
+                  src={project.thumb}
+                  placeholder="blur"
+                  priority
+                  alt={project.caption}
+                />
               </Grid>
             </Grid>
+            {children}
           </Container>
         </Box>
       </Box>

@@ -18,6 +18,7 @@ import { colors, theme } from "../src/styles/theme";
 
 export default function MyApp(props) {
   const router = useRouter();
+  const [page, setPage] = React.useState();
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -28,6 +29,7 @@ export default function MyApp(props) {
 
     const handleRouteChange = (url) => {
       // window.scrollTo(0, 0);
+      setPage(url);
     };
 
     //When the component is mounted, subscribe to router changes
@@ -81,20 +83,16 @@ export default function MyApp(props) {
           <Header />
           <Component {...pageProps} />
           {!isMobile && <CursorEffect />}
-          {!isMobile && (
-            <>
-              <Box
-                sx={{
-                  position: "fixed",
-                  pointerEvents: "none",
-                  inset: 0,
-                  zIndex: 100,
-                }}
-              >
-                <Noise />
-              </Box>
-            </>
-          )}
+          <Box
+            sx={{
+              position: "fixed",
+              pointerEvents: "none",
+              inset: 0,
+              zIndex: 100,
+            }}
+          >
+            <Noise sx={{ opacity: page === "/" ? 1 : 0.5 }} />
+          </Box>
         </Stack>
       </ThemeProvider>
     </>

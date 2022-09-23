@@ -125,6 +125,27 @@ export const CursorEffect = () => {
     }
   }, [hatesAnimation, isMobile]);
 
+  useEffect(() => {
+    if (!isMobile) {
+      const body = document.querySelector("body");
+      const handleClick = () => {
+        let freqTarget = 0.05;
+        const interval = setInterval(() => {
+          if (freqTarget <= 0.0019) {
+            setFilterFreq(BASE_FREQ);
+            clearInterval(interval);
+          } else {
+            setFilterFreq(freqTarget);
+            freqTarget -= BASE_FREQ;
+          }
+        }, 40);
+      };
+
+      body.addEventListener("click", handleClick);
+      return () => body.removeEventListener("click", handleClick);
+    }
+  }, [isMobile]);
+
   return (
     <>
       <Box

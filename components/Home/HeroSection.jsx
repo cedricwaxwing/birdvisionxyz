@@ -59,7 +59,7 @@ export const HeroSection = () => {
                   fontFamily={typography.fontFamilies.serif}
                   fontSize={[26, 32]}
                 >
-                  Bringing the <em>decentralized web</em> to life.
+                  Bringing the <strong>decentralized web</strong> to life.
                 </Typography>
               </Box>
             </Stack>
