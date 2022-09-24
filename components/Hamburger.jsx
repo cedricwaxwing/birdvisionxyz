@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import { colors, easings } from "../src/styles/theme";
 
 export const Hamburger = (props) => {
-  const [active, setActive] = useState(false);
+  const { active } = props;
+  console.log(active);
+  // const [active, setActive] = useState(false);
 
-  const handleClick = () => {
-    setActive(!active);
-  };
+  // const handleClick = () => {
+  //   setActive(!active);
+  // };
 
   return (
     <svg
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={handleClick}
       style={{
         zIndex: 100,
       }}
@@ -25,10 +26,10 @@ export const Hamburger = (props) => {
         width="64"
         height="8"
         transform={active ? "rotate(-405 24.5442 69.799)" : null}
-        fill={active ? colors.white : colors.black}
-        style={{
-          transition: `all 0.75s ${easings.cubic}`,
-        }}
+        fill={colors.black}
+        // style={{
+        //   transition: `all 0.75s ${easings.cubic}`,
+        // }}
       />
       <rect
         x={active ? 30.2009 : 18}
@@ -36,10 +37,10 @@ export const Hamburger = (props) => {
         width="64"
         height="8"
         transform={active ? "rotate(405 30.2009 24.5442)" : null}
-        fill={active ? colors.white : colors.black}
-        style={{
-          transition: `all 0.75s ${easings.cubic}`,
-        }}
+        fill={colors.black}
+        // style={{
+        //   transition: `all 0.75s ${easings.cubic}`,
+        // }}
       />
     </svg>
   );

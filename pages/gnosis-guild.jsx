@@ -4,6 +4,7 @@ import { SubProjectBody } from "../common/Projects/SubProjectBody";
 import { projects } from "../constants/projects";
 import { Box, Grid, Link, Typography } from "@mui/material";
 import WandNFTApp from "../public/assets/imgs/gnosis-guild/WandNFTApp.jpg";
+import WandNFT1 from "../public/assets/imgs/gnosis-guild/wand-nft-1.png";
 import ZodiacHome from "../public/assets/imgs/gnosis-guild/ZodiacHome.jpg";
 import TabulaHome from "../public/assets/imgs/gnosis-guild/TabulaHome.jpg";
 import { theme, typography } from "../src/styles/theme";
@@ -57,7 +58,12 @@ const GnosisGuild = () => {
                   levels up as you gain more experience from your peers. The
                   minting app allows the user to completely customize their
                   wand, and in true Gnosis Guild fashion, we included a
-                  generative soundtrack based on the parameters.
+                  generative soundtrack based on the parameters. Read more about
+                  it{` `}
+                  <Link sx={{ fontWeight: 900 }} href="#">
+                    here
+                  </Link>
+                  .
                 </SubProjectBody>
               </Grid>
               <Grid
@@ -72,6 +78,20 @@ const GnosisGuild = () => {
             <Box sx={{ mt: 4 }}>
               <Image src={WandNFTApp} alt="Wand NFT Minting App" />
             </Box>
+            <Grid container spacing={4} sx={{ mt: 0 }}>
+              <Grid item xs={12} md={3}>
+                <Image src={WandNFT1} alt="Wand NFT preview" />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Image src={WandNFT1} alt="Wand NFT preview" />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Image src={WandNFT1} alt="Wand NFT preview" />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Image src={WandNFT1} alt="Wand NFT preview" />
+              </Grid>
+            </Grid>
           </Box>
         )}
         <Box component="section" id="zodiac-protocol" mt={20}>

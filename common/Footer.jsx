@@ -88,7 +88,7 @@ export const Footer = () => {
                 </Stack>
               </Grid>
               <Grid item xs={12} sm={3}>
-                <Stack spacing={2}>
+                <Stack spacing={2} id="contact">
                   <Typography variant="h5" fontSize={["1rem", "1.25rem"]}>
                     Contact
                   </Typography>

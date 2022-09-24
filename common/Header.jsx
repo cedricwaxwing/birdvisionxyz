@@ -16,6 +16,7 @@ import { colors, typography } from "../src/styles/theme";
 export const Header = () => {
   const [scrollY, setScrollY] = useState(0);
   const [screenX, setScreenX] = useState(0);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     setScreenX(window.clientWidth);
@@ -76,49 +77,50 @@ export const Header = () => {
               }}
             />
           </Link>
-          {isMobile ? (
-            <>
-              <Hamburger width={32} height={32} />
-              <Dialog open={false} fullScreen zIndex={1}>
-                <Stack
-                  sx={{
-                    bgcolor: colors.black,
-                    color: colors.yellow,
-                    position: "absolute",
-                    inset: 0,
-                  }}
-                >
-                  <Box>Projects</Box>
-                  <Box>Contact</Box>
-                </Stack>
-              </Dialog>
-            </>
-          ) : (
-            <Stack direction="row" spacing={4} sx={{ alignItems: "center" }}>
-              <Link href="/#projects" color="currentColor" underline="none">
-                <Typography
-                  fontSize={12}
-                  fontFamily={typography.fontFamilies.extended}
-                  fontWeight={600}
-                  textTransform="uppercase"
-                  letterSpacing={3}
-                >
-                  Projects
-                </Typography>
-              </Link>
-              <Link href="/#contact" color="currentColor" underline="none">
-                <Typography
-                  fontSize={12}
-                  fontFamily={typography.fontFamilies.extended}
-                  fontWeight={600}
-                  textTransform="uppercase"
-                  letterSpacing={3}
-                >
-                  Contact
-                </Typography>
-              </Link>
-            </Stack>
-          )}
+          <Stack
+            direction="row"
+            spacing={[2, 4]}
+            sx={{ p: 3 }}
+            onMouseOver={() => setActive(true)}
+            onMouseLeave={() => setActive(false)}
+          >
+            {active && (
+              <Stack
+                direction="row"
+                spacing={[2, 4]}
+                sx={{ alignItems: "center" }}
+              >
+                <Link href="/#projects" color="currentColor" underline="none">
+                  <Typography
+                    fontSize={12}
+                    fontFamily={typography.fontFamilies.extended}
+                    fontWeight={600}
+                    textTransform="uppercase"
+                    letterSpacing={[0.5, 3]}
+                  >
+                    Projects
+                  </Typography>
+                </Link>
+                <Link href="/#contact" color="currentColor" underline="none">
+                  <Typography
+                    fontSize={12}
+                    fontFamily={typography.fontFamilies.extended}
+                    fontWeight={600}
+                    textTransform="uppercase"
+                    letterSpacing={[0.5, 3]}
+                  >
+                    Contact
+                  </Typography>
+                </Link>
+              </Stack>
+            )}
+            <Hamburger
+              width={32}
+              height={32}
+              onClick={() => setActive(!active)}
+              active={active}
+            />
+          </Stack>
         </Stack>
       </Container>
     </Box>
