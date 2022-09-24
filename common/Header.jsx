@@ -80,7 +80,6 @@ export const Header = () => {
           <Stack
             direction="row"
             spacing={[2, 4]}
-            sx={{ p: 3 }}
             onMouseOver={() => setActive(true)}
             onMouseLeave={() => setActive(false)}
           >
