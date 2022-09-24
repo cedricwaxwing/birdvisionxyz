@@ -1,72 +1,54 @@
-import React, { useState } from "react";
+import React from "react";
+import { Box, styled } from "@mui/material";
 import { colors, easings } from "../src/styles/theme";
 
-export const Hamburger = (props) => {
-  const { active } = props;
-  console.log(active);
-  // const [active, setActive] = useState(false);
+const Hamburger = ({ active, height, width, ...props }) => {
+  const Rect1 = styled("rect")(({ active }) => {
+    return {
+      fill: colors.black,
+      animation: active ? `animate1 0.5s ${easings.cubic} forwards` : null,
+      "@keyframes animate1": {
+        from: {
+          transform: "rotate(0) translate(0)",
+        },
+        to: {
+          transform: "rotate(-45deg) translate(-52%, 42%)",
+        },
+      },
+    };
+  });
 
-  // const handleClick = () => {
-  //   setActive(!active);
-  // };
+  const Rect2 = styled("rect")(({ active }) => {
+    return {
+      fill: colors.black,
+      animation: active ? `animate2 0.5s ${easings.cubic} forwards` : null,
+      "@keyframes animate2": {
+        from: {
+          transform: "rotate(0) translate(0)",
+        },
+        to: {
+          transform: "rotate(45deg) translate(22%, -66%)",
+        },
+      },
+    };
+  });
 
   return (
     <svg
+      width={width}
+      height={height}
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
       style={{
         zIndex: 100,
       }}
-      {...props}
     >
-      <rect
-        x={active ? 24.5442 : 18}
-        y={active ? 69.799 : 24}
-        width="64"
-        height="8"
-        transform={active ? "rotate(-405 24.5442 69.799)" : null}
-        fill={colors.black}
-        // style={{
-        //   transition: `all 0.75s ${easings.cubic}`,
-        // }}
-      />
-      <rect
-        x={active ? 30.2009 : 18}
-        y={active ? 24.5442 : 64}
-        width="64"
-        height="8"
-        transform={active ? "rotate(405 30.2009 24.5442)" : null}
-        fill={colors.black}
-        // style={{
-        //   transition: `all 0.75s ${easings.cubic}`,
-        // }}
-      />
+      <Rect1 x={18} y={24} width="64" height="8" active={active} />
+      <Rect2 x={18} y={64} width="64" height="8" active={active} />
     </svg>
   );
 };
 
-<svg
-  width="100"
-  height="100"
-  viewBox="0 0 100 100"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <rect
-    x="24.5442"
-    y="69.799"
-    width="64"
-    height="8"
-    transform="rotate(-45 24.5442 69.799)"
-    fill="#403C43"
-  />
-  <rect
-    x="30.2009"
-    y="24.5442"
-    width="64"
-    height="8"
-    transform="rotate(45 30.2009 24.5442)"
-    fill="#403C43"
-  />
-</svg>;
+export default React.memo(Hamburger);

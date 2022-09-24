@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   Box,
   Container,
@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Logo from "./Logo";
-import { Hamburger } from "../components/Hamburger";
+import Hamburger from "../components/Hamburger";
 import { colors, typography } from "../src/styles/theme";
 
 export const Header = () => {
@@ -24,6 +24,7 @@ export const Header = () => {
       setScreenX(window.clientWidth);
     };
     const handleScroll = () => {
+      setActive(false);
       setScrollY(window.scrollY);
     };
 
@@ -33,7 +34,12 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, []);
+  }, [scrollY]);
+
+  const handleHamburgerClick = () => {
+    console.log("setting Active");
+    setActive(!active);
+  };
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -77,25 +83,16 @@ export const Header = () => {
               }}
             />
           </Link>
-          <Stack
-            direction="row"
-            spacing={[2, 4]}
-            onMouseOver={() => setActive(true)}
-            onMouseLeave={() => setActive(false)}
-          >
+          <Stack direction="row" spacing={[2, 4]}>
             {active && (
-              <Stack
-                direction="row"
-                spacing={[2, 4]}
-                sx={{ alignItems: "center" }}
-              >
+              <Stack direction="row" spacing={4} sx={{ alignItems: "center" }}>
                 <Link href="/#projects" color="currentColor" underline="none">
                   <Typography
                     fontSize={12}
                     fontFamily={typography.fontFamilies.extended}
                     fontWeight={600}
                     textTransform="uppercase"
-                    letterSpacing={[0.5, 3]}
+                    letterSpacing={3}
                   >
                     Projects
                   </Typography>
@@ -106,7 +103,7 @@ export const Header = () => {
                     fontFamily={typography.fontFamilies.extended}
                     fontWeight={600}
                     textTransform="uppercase"
-                    letterSpacing={[0.5, 3]}
+                    letterSpacing={3}
                   >
                     Contact
                   </Typography>
@@ -116,7 +113,7 @@ export const Header = () => {
             <Hamburger
               width={32}
               height={32}
-              onClick={() => setActive(!active)}
+              onClick={handleHamburgerClick}
               active={active}
             />
           </Stack>
