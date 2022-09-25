@@ -16,7 +16,7 @@ import Link from "next/link";
 export const ProjectPreview = ({ project, index }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const { cursor, name, slug, tags, thumb } = projects[project];
+  const { caption, cursor, name, slug, tags, thumb } = projects[project];
   const [isHovering, setHovering] = useState(false);
   const [elementContext, setElementContext] = useState({
     el: {

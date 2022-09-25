@@ -69,7 +69,7 @@ const defaultTheme = createTheme({
     },
     h3: {
       fontFamily: typography.fontFamilies.ultraextended,
-      fontSize: "3rem",
+      fontSize: "2.75rem",
       fontWeight: 900,
       textTransform: "uppercase",
     },
@@ -140,6 +140,9 @@ export const theme = createTheme(defaultTheme, {
           color: ${colors.black};
           font-family: ${typography.fontFamilies.sans};
           font-weight: 600;
+        }
+        strong {
+          letter-spacing: 0;
         }
       `
     },

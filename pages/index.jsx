@@ -42,12 +42,58 @@ const Home = () => {
           }}
         >
           <Container>
-            <Grid container justifyContent="center">
-              {/* <Grid item md={5} mt={[12, 24]}>
-                <Image src={ArrowLongRight} alt="" />
-              </Grid> */}
-              <Grid item xs={12} sm={9} md={7} mt={[12, 16]}>
-                <Stack direction="row" spacing={1}>
+            <Box sx={{ pt: 16 }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontFamily: typography.fontFamilies.serif,
+                  fontSize: ["1.75rem", "3rem"],
+                  fontWeight: 400,
+                  lineHeight: "1.35",
+                  maxWidth: 900,
+                  textTransform: "unset",
+                }}
+              >
+                We see things differently at Bird Vision. We use our specialized
+                skillsets in web3 design and development to craft beatiful,
+                intuitive user experiences that make it easy for people to
+                interact with complex, cutting-edge technology.
+              </Typography>
+            </Box>
+            <Grid container spacing={[8, 8, 20]} mb={12} mt={[8, 16]}>
+              <Grid item xs={12} md={3}>
+                <Typography
+                  variant="h3"
+                  sx={{
+                    color: colors.white,
+                    lineHeight: 1,
+                    mt: -1,
+                    WebkitTextStroke: `2px ${colors.black}33`,
+                  }}
+                >
+                  The
+                </Typography>
+                <Typography
+                  variant="h3"
+                  sx={{
+                    color: `${colors.black}cc`,
+                    lineHeight: 1,
+                    WebkitTextStroke: `2px ${colors.black}33`,
+                  }}
+                >
+                  Flock
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={9} lg={7}>
+                <Stack
+                  direction="row"
+                  spacing={1}
+                  sx={{
+                    borderBottom: `2px solid ${colors.black}`,
+                    borderTop: `2px solid ${colors.black}`,
+                    py: 8,
+                  }}
+                >
                   <Stack spacing={3}>
                     <Stack direction="row" spacing={2} alignItems="center">
                       <Box
@@ -135,16 +181,6 @@ const Home = () => {
                         textTransform: "unset",
                       }}
                     >
-                      {/* <em>Cedric Waxwing</em> is a product and branding designer
-                      with over{" "}
-                      <em>
-                        {new Date().getFullYear() - 2010} years of design
-                        experience
-                      </em>{" "}
-                      – the last {new Date().getFullYear() - 2020} of which have
-                      been strictly <em>focused on web3</em>. */}
-                      {/* <strong>Cedric Waxwing</strong>{" "}
-                      <em>(currently flying solo at Bird Vision)</em> has a */}
                       Currently flying solo at Bird Vision, Waxwing has a wealth
                       of experience in both web3 product design, and branding.
                       He&apos;s excited to use his skills to create a more
@@ -154,12 +190,12 @@ const Home = () => {
                 </Stack>
               </Grid>
             </Grid>
-            <Box id="projects" sx={{ mt: [20, 32], mb: [6, 8] }}>
+            <Box id="projects" sx={{ mb: [4, 8], pt: 16 }}>
               <Typography
                 variant="h2"
                 sx={{
                   color: colors.white,
-                  fontSize: ["2rem", "6rem"],
+                  fontSize: ["2.75rem", "3.5rem", "6rem"],
                   WebkitTextStroke: `2px ${colors.black}33`,
                 }}
               >
@@ -168,8 +204,8 @@ const Home = () => {
               <Typography
                 variant="h2"
                 sx={{
-                  color: colors.white,
-                  fontSize: ["2rem", "6rem"],
+                  color: `${colors.black}cc`,
+                  fontSize: ["2.75rem", "3.5rem", "6rem"],
                   WebkitTextStroke: `2px ${colors.black}33`,
                 }}
               >
