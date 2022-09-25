@@ -16,6 +16,21 @@ import RanchHouseCursor from "../public/assets/imgs/ranch-house-dao/cursor.svg"
 // }
 
 export const projects = {
+  "sisu": {
+    active: true,
+    slug: "sisu",
+    name: "SISU",
+    type: "Website and Portfolio Dashboard App",
+    date: "2022",
+    myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
+    caption: `Product Design Hypersprint`,
+    description: `SISU is a portfolio dashboard that unifies cross-chain assets from many
+    different wallets and exchanges. The product design for their landing
+    page and app was completed within a 7-day hypersprint.`,
+    tags: ["Product Design", "Branding"],
+    thumb: SisuThumb,
+    cursor: SisuCursor.src,
+  },
   "gnosis-guild": {
     active: true,
     slug: "gnosis-guild",
@@ -23,7 +38,6 @@ export const projects = {
     type: "Minting App",
     date: "2022",
     myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
-    propsTo: ["Sam Panter"],
     caption: `Various works from Gnosis Guild`,
     description: `The Gnosis Guild is a collective of builders and visionaries contributing to DAO tooling and community resources.`,
     tags: ["Visual Design", "Product Design", "Frontend"],
@@ -37,24 +51,10 @@ export const projects = {
     type: "Minting App",
     date: "2022",
     myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
-    propsTo: ["Sam Panter"],
     caption: `Gnosis Guild caption`,
     tags: ["Product Design", "Branding"],
     thumb: DaoDropsThumb,
     cursor: DaoDropsCursor.src,
-  },
-  "sisu": {
-    active: true,
-    slug: "sisu",
-    name: "SISU",
-    type: "Minting App",
-    date: "2022",
-    myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
-    propsTo: ["Sam Panter"],
-    caption: `Gnosis Guild caption`,
-    tags: ["Product Design", "Branding"],
-    thumb: SisuThumb,
-    cursor: SisuCursor.src,
   },
   "polywrap": {
     active: true,
@@ -63,7 +63,6 @@ export const projects = {
     type: "Minting App",
     date: "2022",
     myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
-    propsTo: ["Sam Panter"],
     caption: `Gnosis Guild caption`,
     tags: ["Product Design", "Branding", "Frontend"],
     thumb: PolywrapThumb,
@@ -76,7 +75,6 @@ export const projects = {
     type: "Minting App",
     date: "2022",
     myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
-    propsTo: ["Sam Panter"],
     caption: `Gnosis Guild caption`,
     tags: ["Product Design", "Branding"],
     thumb: ZigzagThumb,
@@ -89,7 +87,6 @@ export const projects = {
     type: "Minting App",
     date: "2022",
     myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
-    propsTo: ["Sam Panter"],
     caption: `Gnosis Guild caption`,
     tags: ["Visual Design", "Branding", "Project Management"],
     thumb: RanchHouseThumb,

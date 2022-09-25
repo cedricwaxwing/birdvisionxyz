@@ -46,7 +46,10 @@ const defaultTheme = createTheme({
     },
     2: {
       boxShadow: `0px 11px 15px -7px rgb(0 0 0 / 5%), 0px 24px 38px 3px rgb(0 0 0 / 4%), 0px 9px 46px 8px rgb(0 0 0 / 3%)`
-    }
+    },
+    24: {
+      boxShadow: `0px 11px 15px -7px rgb(0 0 0 / 5%), 0px 24px 38px 3px rgb(0 0 0 / 4%), 0px 9px 46px 8px rgb(0 0 0 / 3%)`
+    },
   },
   typography: {
     fontFamily: typography.fontFamilies.sans,
@@ -133,12 +136,19 @@ export const theme = createTheme(defaultTheme, {
           cursor: url(${CursorDefault.src}), auto !important;
         }
         body {
-          background: radial-gradient(farthest-side at top left, #eee, #bbb);
+          background: radial-gradient(farthest-side at top left, #fff, #bbb);
           color: ${colors.black};
           font-family: ${typography.fontFamilies.sans};
           font-weight: 600;
         }
       `
+    },
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          backgroundColor: `rgba(0,0,0,0.7)`
+        }
+      }
     },
     MuiChip: {
       styleOverrides: {

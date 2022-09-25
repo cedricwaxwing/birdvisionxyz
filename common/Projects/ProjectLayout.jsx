@@ -6,21 +6,53 @@ import { colors, easings } from "../../src/styles/theme";
 import { projects, getActiveProjects } from "../../constants/projects";
 import { ArrowLongRight } from "../../common/ArrowLongRight";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const ProjectLayout = ({ project, children }) => {
-  const getNextProject = () => {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [previousProject, setPreviousProject] = useState(0);
+  const [nextProject, setNextProject] = useState(0);
+
+  const router = useRouter();
+
+  useEffect(() => {
     const activeProjects = getActiveProjects();
-    let nextProj;
     activeProjects.find((activeProject, i) => {
       const curProj = activeProject === project.slug;
       if (curProj) {
-        const iterator = i === activeProjects.length - 1 ? 0 : i + 1;
-        nextProj = activeProjects[iterator];
+        setCurrentProjectIndex(i);
       }
     });
-    return nextProj;
-  };
-  const nextProject = getNextProject();
+
+    const previousIterator =
+      currentProjectIndex === 0
+        ? activeProjects.length - 1
+        : currentProjectIndex - 1;
+    setPreviousProject(projects[activeProjects[previousIterator]]);
+
+    const nextIterator =
+      currentProjectIndex === activeProjects.length - 1
+        ? 0
+        : currentProjectIndex + 1;
+    setNextProject(projects[activeProjects[nextIterator]]);
+
+    const handleKeyDown = (e) => {
+      if (e.keyCode === 37 && previousProject) {
+        router.push(`/${previousProject.slug}`);
+      } else if (e.keyCode === 39 && nextProject) {
+        router.push(`/${nextProject.slug}`);
+      }
+    };
+
+    window.addEventListener(
+      "keydown",
+      (e) => {
+        handleKeyDown(e);
+      },
+      false
+    );
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentProjectIndex, previousProject, nextProject]);
 
   return (
     <>
@@ -42,7 +74,7 @@ const ProjectLayout = ({ project, children }) => {
             background: `
               radial-gradient(
                 farthest-corner at 0% -40vw,
-                ${colors[project.slug]}66 10%,
+                ${colors[project.slug]}44 10%,
                 #fff 40%,
                #fff 60%,
                ${colors[project.slug]}11 100%
@@ -73,7 +105,7 @@ const ProjectLayout = ({ project, children }) => {
             </Grid>
             {children}
             <Link
-              href={`/${projects[nextProject].slug}`}
+              href={`/${nextProject.slug}`}
               underline="none"
               className="nextproject-link"
               sx={{
@@ -85,13 +117,13 @@ const ProjectLayout = ({ project, children }) => {
                     transform: "translateX(-10%)",
                   },
                 },
-                cursor: `url(${projects[nextProject].cursor}), pointer !important`,
+                cursor: `url(${nextProject.cursor}), pointer !important`,
                 "&:hover": {
                   color: colors.black,
                   transition: `all 0.5s ${easings.cubic}`,
                 },
                 "&:hover .hover": {
-                  color: colors[projects[nextProject].slug],
+                  color: colors[nextProject.slug],
                 },
                 "&:hover .arrow": {
                   animation: `point 1s 0.5s ${easings.cubic} infinite`,
@@ -117,7 +149,7 @@ const ProjectLayout = ({ project, children }) => {
                     component="span"
                     className="hover"
                   >
-                    {projects[nextProject].name}
+                    {nextProject.name}
                   </Typography>
                 </Stack>
                 <Box display="flex">

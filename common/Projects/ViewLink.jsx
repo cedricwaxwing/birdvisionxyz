@@ -1,15 +1,15 @@
 import { Link } from "@mui/material";
-import { typography } from "../../src/styles/theme";
+import { colors, typography } from "../../src/styles/theme";
 
 export const ViewLink = ({ children, ...props }) => {
   return (
     <Link
-      underline="none"
       sx={{
+        // color: colors.violet,
         fontFamily: typography.fontFamilies.extended,
-        fontSize: 14,
-        opacity: 0.5,
-        letterSpacing: 3,
+        fontSize: 12,
+        opacity: 0.7,
+        letterSpacing: 2,
         textTransform: "uppercase",
         transition: "all 0.25s ease-in-out",
         "&:hover": {

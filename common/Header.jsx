@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Logo from "./Logo";
 import Hamburger from "../components/Hamburger";
-import { colors, typography } from "../src/styles/theme";
+import { colors, easings, typography } from "../src/styles/theme";
 
 export const Header = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -37,7 +37,6 @@ export const Header = () => {
   }, [scrollY]);
 
   const handleHamburgerClick = () => {
-    console.log("setting Active");
     setActive(!active);
   };
 
@@ -53,7 +52,7 @@ export const Header = () => {
         top: 0,
         transition: "padding 0.5s ease-in-out",
         width: "100%",
-        zIndex: 10000,
+        zIndex: 100,
       }}
     >
       <Container
@@ -85,7 +84,24 @@ export const Header = () => {
           </Link>
           <Stack direction="row" spacing={[2, 4]}>
             {active && (
-              <Stack direction="row" spacing={4} sx={{ alignItems: "center" }}>
+              <Stack
+                direction="row"
+                spacing={[2, 4]}
+                sx={{
+                  "@keyframes slideIn": {
+                    from: {
+                      opacity: 0,
+                      transform: `translateX(-25%)`,
+                    },
+                    to: {
+                      opacity: 1,
+                      transform: `translateX(0)`,
+                    },
+                  },
+                  animation: `slideIn 0.5s forwards ${easings.cubic}`,
+                  alignItems: "center",
+                }}
+              >
                 <Link href="/#projects" color="currentColor" underline="none">
                   <Typography
                     fontSize={12}

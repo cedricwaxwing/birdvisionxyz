@@ -1,5 +1,5 @@
 import { Context } from "./Context";
-import { SubProjectBody } from "./SubProjectBody";
+import { ProjectBody } from "./ProjectBody";
 import { SubProjectTitle } from "./SubProjectTitle";
 
-export {Context, SubProjectBody, SubProjectTitle};
+export {Context, ProjectBody, SubProjectTitle};

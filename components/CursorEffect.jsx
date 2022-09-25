@@ -3,6 +3,7 @@ import { useWindowSize } from "../utils/useWindowSize";
 import { Box, styled, keyframes, useMediaQuery, useTheme } from "@mui/material";
 import { projects } from "../constants/projects";
 import { colors, easings } from "../src/styles/theme";
+import { useRouter } from "next/router";
 
 const G = styled("g")({
   transformOrigin: "center",
@@ -44,6 +45,8 @@ export const CursorEffect = () => {
   const size = useWindowSize();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const router = useRouter();
+  const subtle = router.pathname.length > 1;
   const {
     radiusDiff,
     radiusStart = isMobile ? 100 : 200,
@@ -152,6 +155,7 @@ export const CursorEffect = () => {
         sx={{
           position: "fixed",
           inset: 0,
+          opacity: subtle ? 0.5 : 1,
           zIndex: 0,
           pointerEvents: "none",
         }}

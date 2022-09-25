@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ProjectLayout from "../common/Projects/ProjectLayout";
-import { SubProjectBody } from "../common/Projects/SubProjectBody";
+import { ProjectBody } from "../common/Projects/ProjectBody";
 import { projects } from "../constants/projects";
 import { Box, Grid, Link, Typography } from "@mui/material";
 import WandNFTApp from "../public/assets/imgs/gnosis-guild/WandNFTApp.jpg";
@@ -50,7 +50,7 @@ const GnosisGuild = () => {
                 <Context>
                   Minting App Visual Design, UX, and Frontend Development
                 </Context>
-                <SubProjectBody>
+                <ProjectBody>
                   The Wand NFT project was a massive undertaking by many folks
                   at Gnosis Guild and it broke new ground on many fronts. These
                   reputation-based NFTs are only available via in-person
@@ -64,7 +64,7 @@ const GnosisGuild = () => {
                     here
                   </Link>
                   .
-                </SubProjectBody>
+                </ProjectBody>
               </Grid>
               <Grid
                 item
@@ -99,10 +99,10 @@ const GnosisGuild = () => {
             <Grid item xs={12} md={7}>
               <SubProjectTitle>Zodiac Protocol</SubProjectTitle>
               <Context>Product Design and Frontend Development</Context>
-              <SubProjectBody>
+              <ProjectBody>
                 Zodiac is a composable philosophy and collection of tools built
                 according to an open standard.
-              </SubProjectBody>
+              </ProjectBody>
             </Grid>
           </Grid>
           <Box sx={{ mt: 4 }}>
@@ -117,7 +117,7 @@ const GnosisGuild = () => {
               <Context>
                 Branding, Product Design, and Frontend Development
               </Context>
-              <SubProjectBody>
+              <ProjectBody>
                 Tabula is an Instant web3 publications for writers, DAOs, and
                 any Ethereum-based account. It was spurred by Aurangzeb and Sam
                 at Gnosis in a hackathon and the MVP is live in production now
@@ -131,7 +131,7 @@ const GnosisGuild = () => {
                   here
                 </Link>
                 .
-              </SubProjectBody>
+              </ProjectBody>
             </Grid>
             <Grid
               item
