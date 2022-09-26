@@ -136,7 +136,11 @@ const GnosisGuild = () => {
             md={5}
             sx={{ display: "flex", justifyContent: "flex-end" }}
           >
-            <ViewLink href="https://miro.com/app/board/o9J_lsTajOE=/">
+            <ViewLink
+              target="_blank"
+              rel="noredirect"
+              href="https://miro.com/app/board/o9J_lsTajOE=/"
+            >
               View Collaboration Board
             </ViewLink>
           </Grid>

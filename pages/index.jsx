@@ -42,12 +42,27 @@ const Home = () => {
           }}
         >
           <Container>
-            <Box sx={{ pt: 16 }}>
+            <Box sx={{ pt: 16, position: "relative" }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  color: colors.white,
+                  fontFamily: typography.fontFamilies.serif,
+                  fontSize: ["20rem", "40rem", "40rem", "60rem"],
+                  position: "absolute",
+                  opacity: 0.5,
+                  bottom: ["-10rem", "-20rem", null, "-25rem"],
+                  right: ["-2rem", "-5rem", null, "-15rem"],
+                  zIndex: -1,
+                }}
+              >
+                ✼
+              </Typography>
               <Typography
                 variant="h2"
                 sx={{
                   fontFamily: typography.fontFamilies.serif,
-                  fontSize: ["1.75rem", "3rem"],
+                  fontSize: ["1.75rem", "2rem", "2.5rem", "3rem"],
                   fontWeight: 400,
                   lineHeight: "1.5",
                   maxWidth: 900,
@@ -116,7 +131,7 @@ const Home = () => {
                           variant="h2"
                           sx={{
                             fontFamily: typography.fontFamilies.extended,
-                            fontSize: ["1.75rem", "2.1rem"],
+                            fontSize: ["1.25rem", "1.75rem", "2.1rem"],
                             fontWeight: 800,
                             lineHeight: "1.25",
                           }}
@@ -175,7 +190,7 @@ const Home = () => {
                       variant="h2"
                       sx={{
                         fontFamily: typography.fontFamilies.serif,
-                        fontSize: ["1.75rem", "1.75rem"],
+                        fontSize: ["1.5rem", "1.75rem"],
                         fontWeight: 400,
                         lineHeight: "1.35",
                         textTransform: "unset",

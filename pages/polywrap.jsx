@@ -13,6 +13,7 @@ import Docs1 from "../public/assets/imgs/polywrap/docs-1.png";
 import Docs2 from "../public/assets/imgs/polywrap/docs-2.png";
 import Docs3 from "../public/assets/imgs/polywrap/docs-3.png";
 import PolyfolioDiscovery1 from "../public/assets/imgs/polywrap/polyfolio-discovery-1.png";
+import PolyfolioDiscovery2 from "../public/assets/imgs/polywrap/polyfolio-discovery-2.png";
 import Polyfolio1 from "../public/assets/imgs/polywrap/polyfolio-1.png";
 import PolyfolioMobile from "../public/assets/imgs/polywrap/polyfolio-3.png";
 import { Context } from "../common/Projects/Context";
@@ -76,8 +77,12 @@ const GnosisGuild = () => {
             md={5}
             sx={{ display: "flex", justifyContent: "flex-end" }}
           >
-            <ViewLink href="https://miro.com/app/board/uXjVOMjSbeY=/">
-              View Collaboration Board
+            <ViewLink
+              target="_blank"
+              rel="noredirect"
+              href="https://miro.com/app/board/uXjVOMjSbeY=/"
+            >
+              View Site
             </ViewLink>
           </Grid>
         </Grid>
@@ -114,7 +119,7 @@ const GnosisGuild = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Image
-              src={PolyfolioDiscovery1}
+              src={PolyfolioDiscovery2}
               alt="Polyfolio Discovery wireframe"
             />
           </Grid>

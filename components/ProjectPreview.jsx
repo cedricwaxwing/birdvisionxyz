@@ -138,7 +138,12 @@ export const ProjectPreview = ({ project, index }) => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Stack ref={info} spacing={isMobile ? 2 : 4} mt={isMobile ? 3 : 6}>
+            <Stack
+              ref={info}
+              spacing={isMobile ? 2 : 4}
+              mt={isMobile ? 3 : 6}
+              mb={isMobile ? 3 : 2}
+            >
               <Box sx={{ display: "inline" }}>
                 <Numeral
                   number={index}
@@ -151,20 +156,39 @@ export const ProjectPreview = ({ project, index }) => {
               >
                 {description}
               </Typography>
-              <Stack spacing={isMobile ? 1 : 2}>
+              <Stack spacing={1}>
                 {tags.map((tag) => (
-                  <Typography
-                    variant="body2"
-                    fontFamily={typography.fontFamilies.extended}
-                    fontSize={["0.65rem", "0.75rem"]}
-                    fontWeight={500}
-                    letterSpacing={1}
-                    lineHeight={1}
+                  <Box
                     key={tag}
-                    textTransform="uppercase"
+                    sx={{ display: "inline-flex", alignItems: "center" }}
                   >
-                    {tag}
-                  </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: `${colors.black}66`,
+                        fontFamily: typography.fontFamilies.sans,
+                        fontSize: ["1rem", "1.5rem"],
+                        fontWeight: 500,
+                        marginRight: 1,
+                        lineHeight: 1,
+                      }}
+                    >
+                      ✼
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        fontFamily: typography.fontFamilies.extended,
+                        fontSize: ["0.65rem", "0.75rem"],
+                        fontWeight: 500,
+                        letterSpacing: 1,
+                        lineHeight: 1,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {tag}
+                    </Typography>
+                  </Box>
                 ))}
               </Stack>
             </Stack>
