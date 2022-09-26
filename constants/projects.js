@@ -52,7 +52,7 @@ export const projects = {
     cursor: PolywrapCursor.src,
   },
   "dao-drops": {
-    active: true,
+    active: false,
     slug: "dao-drops",
     name: "DAO Drops",
     type: "Minting App",

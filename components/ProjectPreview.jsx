@@ -241,7 +241,7 @@ export const ProjectPreview = ({ project, index }) => {
                                 ? `${colors[slug]}cc`
                                 : `${colors[slug]}22`,
                               display: "inline-block",
-                              fontFamily: typography.fontFamilies.ultraextended,
+                              fontFamily: typography.fontFamilies.extended,
                               fontSize: isMobile ? "2rem" : "3rem",
                               lineHeight: 0.8,
                               textTransform: "uppercase",

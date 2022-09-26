@@ -8,7 +8,7 @@ export const Numeral = ({ number, sx }) => {
         borderBottom: `2px solid ${colors.violet}`,
         color: colors.violet,
         display: "inline",
-        fontFamily: typography.fontFamilies.ultraextended,
+        fontFamily: typography.fontFamilies.extended,
         fontWeight: 700,
         lineHeight: 1,
         pb: 1,

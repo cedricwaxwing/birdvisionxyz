@@ -22,8 +22,7 @@ export const colors = {
 
 export const typography = {
   fontFamilies: {
-    ultraextended: ['normalidad-ultraextended', 'sans-serif'].join(','),
-    extended: ['normalidad-extended', 'sans-serif'].join(','),
+    extended: ['normalidad-ultraextended', 'sans-serif'].join(','),
     sans: ['normalidad-compact', 'sans-serif'].join(','),
     serif: ['bressay', 'serif'].join(','),
     monospace: ['Roboto Mono', 'monospace'].join(','),
@@ -57,39 +56,39 @@ const defaultTheme = createTheme({
   typography: {
     fontFamily: typography.fontFamilies.sans,
     h1: {
-      fontFamily: typography.fontFamilies.ultraextended,
+      fontFamily: typography.fontFamilies.extended,
       fontSize: "8rem",
       fontWeight: 900,
       textTransform: "uppercase",
       lineHeight: 1,
     },
     h2: {
-      fontFamily: typography.fontFamilies.ultraextended,
+      fontFamily: typography.fontFamilies.extended,
       fontSize: "6rem",
       fontWeight: 900,
       textTransform: "uppercase",
       lineHeight: 1,
     },
     h3: {
-      fontFamily: typography.fontFamilies.ultraextended,
+      fontFamily: typography.fontFamilies.extended,
       fontSize: "2.75rem",
       fontWeight: 900,
       textTransform: "uppercase",
     },
     h4: {
-      fontFamily: typography.fontFamilies.ultraextended,
+      fontFamily: typography.fontFamilies.extended,
       fontSize: "2rem",
       fontWeight: 900,
       textTransform: "uppercase",
     },
     h5: {
-      fontFamily: typography.fontFamilies.ultraextended,
+      fontFamily: typography.fontFamilies.extended,
       fontSize: "1.5rem",
       fontWeight: 900,
       textTransform: "uppercase",
     },
     h6: {
-      fontFamily: typography.fontFamilies.ultraextended,
+      fontFamily: typography.fontFamilies.extended,
       fontSize: "1.25rem",
       fontWeight: 900,
       textTransform: "uppercase",
