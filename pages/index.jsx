@@ -49,7 +49,7 @@ const Home = () => {
                   fontFamily: typography.fontFamilies.serif,
                   fontSize: ["1.75rem", "3rem"],
                   fontWeight: 400,
-                  lineHeight: "1.35",
+                  lineHeight: "1.5",
                   maxWidth: 900,
                   textTransform: "unset",
                 }}

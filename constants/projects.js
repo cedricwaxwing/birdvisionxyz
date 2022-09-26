@@ -11,25 +11,19 @@ import ZigzagCursor from "../public/assets/imgs/zigzag/cursor.svg"
 import RanchHouseThumb from "../public/assets/imgs/ranch-house-dao/thumb.png"
 import RanchHouseCursor from "../public/assets/imgs/ranch-house-dao/cursor.svg"
 
-// export interface SlugProps {
-//   slug: "polywrap" | "wand-nft" | "dao-drops" | "zodiac-protocol" | "ranch-house-dao" | "tabula";
-// }
-
 export const projects = {
-  "sisu": {
+  "zigzag": {
     active: true,
-    slug: "sisu",
-    name: "SISU",
-    type: "Website and Portfolio Dashboard App",
+    slug: "zigzag",
+    name: "Zigzag",
+    type: "Decentralized Exchange",
     date: "2022",
     myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
     caption: `Product Design Hypersprint`,
-    description: `SISU is a portfolio dashboard that unifies cross-chain assets from many
-    different wallets and exchanges. The product design for their landing
-    page and app was completed within a 7-day hypersprint.`,
-    tags: ["Product Design", "Branding"],
-    thumb: SisuThumb,
-    cursor: SisuCursor.src,
+    description: `Zigzag is an easy-to-use decentralized exchange that leverages the incredible benefits of ZK Rollups.`,
+    tags: ["Product Design", "Branding",],
+    thumb: ZigzagThumb,
+    cursor: ZigzagCursor.src,
   },
   "gnosis-guild": {
     active: true,
@@ -68,17 +62,19 @@ export const projects = {
     thumb: PolywrapThumb,
     cursor: PolywrapCursor.src,
   },
-  "zigzag": {
+  "sisu": {
     active: true,
-    slug: "zigzag",
-    name: "Zigzag Exchange",
-    type: "Minting App",
+    slug: "sisu",
+    name: "SISU",
+    type: "Website and Portfolio Dashboard App",
     date: "2022",
     myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
-    caption: `Gnosis Guild caption`,
+    caption: `Product Design Hypersprint`,
+    description: `SISU is a portfolio dashboard that unifies cross-chain assets from many
+    different wallets and exchanges.`,
     tags: ["Product Design", "Branding"],
-    thumb: ZigzagThumb,
-    cursor: ZigzagCursor.src,
+    thumb: SisuThumb,
+    cursor: SisuCursor.src,
   },
   "ranch-house-dao": {
     active: false,
@@ -87,7 +83,7 @@ export const projects = {
     type: "Minting App",
     date: "2022",
     myRole: ["Logo Design", "Illustration", "Branding Identity", "Visual Design", "Naming", "Tokenomics"],
-    caption: `Gnosis Guild caption`,
+    caption: `NFT Collection Branding and Artwork`,
     tags: ["Visual Design", "Branding", "Project Management"],
     thumb: RanchHouseThumb,
     cursor: RanchHouseCursor.src,

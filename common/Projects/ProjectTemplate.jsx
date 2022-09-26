@@ -62,7 +62,8 @@ const ProjectTemplate = ({
         variant="subtitle1"
         sx={{
           fontFamily: typography.fontFamilies.serif,
-          fontWeight: 400,
+          fontWeight: 500,
+          lineHeight: 1.35,
           mt: 8,
         }}
       >

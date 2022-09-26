@@ -25,7 +25,7 @@ export const typography = {
     ultraextended: ['normalidad-ultraextended', 'sans-serif'].join(','),
     extended: ['normalidad-extended', 'sans-serif'].join(','),
     sans: ['normalidad-compact', 'sans-serif'].join(','),
-    serif: ['cardea-lining', 'serif'].join(','),
+    serif: ['bressay', 'serif'].join(','),
     monospace: ['Roboto Mono', 'monospace'].join(','),
   },
 }
@@ -173,14 +173,17 @@ export const theme = createTheme(defaultTheme, {
     MuiLink: {
       styleOverrides: {
         root: {
-          color: colors.black,
+          color: "currentColor",
           cursor: `url(${CursorHover.src}), pointer !important`,
-          transition: "color 0.25s ease-in-out",
+          fontWeight: 600,
+          transition: `all 1s ${easings.cubic}`,
           textUnderlineOffset: 3,
-          textDecorationColor: colors.violet,
-          textDecorationThickness: 2,
+          textDecorationColor: `${colors.violet}33`,
+          textDecorationThickness: 1.5,
           "&:hover": {
             color: colors.violet,
+            textUnderlineOffset: 4,
+            textDecorationThickness: 3,
           }
         }
       }

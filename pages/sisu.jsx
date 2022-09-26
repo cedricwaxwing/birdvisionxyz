@@ -27,15 +27,33 @@ const Body = () => {
   return (
     <>
       <ProjectBody>
-        First, we met with their team for a 3 day workshop to ensure alignment.
-        You can view the collaborative white board{" "}
-        <Link fontWeight={900} href="https://miro.com/app/board/o9J_lsTajOE=/">
+        First, as part of the of{" "}
+        <Link
+          target="_blank"
+          rel="noredirect"
+          href="https://miro.com/miroverse/hypersprint/"
+        >
+          Deep Work 7-day hypersprint
+        </Link>
+        , we met with their team for a 3 day workshop to ensure alignment. You
+        can view the collaborative white board{" "}
+        <Link
+          target="_blank"
+          rel="noredirect"
+          href="https://miro.com/app/board/o9J_lsTajOE=/"
+        >
           here
         </Link>
-        . We then took the concepts from the workshop and introduced a visual
-        identity, and created high fidelity mock-ups and a prototype that was
-        tested by 4 individuals. After incorporating the feedback from the
-        users, the client was thrilled with the end result.
+        . Afterwards, we created a visual identity, high fidelity mock-ups and a
+        prototype which was tested by 4 individuals. After incorporating the{" "}
+        <Link
+          target="_blank"
+          rel="noredirect"
+          href="https://app.pitch.com/app/presentation/95df399d-4d6b-48cb-b890-e30e2e6f1fd3/6bd7acaa-1a50-4509-a410-d67b8df76f2f"
+        >
+          feedback from the users
+        </Link>
+        , the client was thrilled with the end result.
       </ProjectBody>
     </>
   );

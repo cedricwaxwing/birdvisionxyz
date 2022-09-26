@@ -16,7 +16,8 @@ import Link from "next/link";
 export const ProjectPreview = ({ project, index }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const { caption, cursor, name, slug, tags, thumb } = projects[project];
+  const { caption, description, cursor, name, slug, tags, thumb } =
+    projects[project];
   const [isHovering, setHovering] = useState(false);
   const [elementContext, setElementContext] = useState({
     el: {
@@ -144,6 +145,12 @@ export const ProjectPreview = ({ project, index }) => {
                   sx={{ borderColor: colors[slug], color: colors[slug] }}
                 />
               </Box>
+              <Typography
+                variant="subtitle2"
+                fontFamily={typography.fontFamilies.serif}
+              >
+                {description}
+              </Typography>
               <Stack spacing={isMobile ? 1 : 2}>
                 {tags.map((tag) => (
                   <Typography
