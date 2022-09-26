@@ -9,6 +9,7 @@ const RanchHouseDao = () => {
   return (
     <ProjectLayout project={project}>
       <Image
+        lazyBoundary="500px"
         src={RanchHouseDaoThumb}
         placeholder="blur"
         alt={project.caption}

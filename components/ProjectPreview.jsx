@@ -125,6 +125,7 @@ export const ProjectPreview = ({ project, index }) => {
               sx={{ display: "flex", width: "100%" }}
             >
               <Image
+                lazyBoundary="500px"
                 src={thumb}
                 alt={name}
                 loading="eager"

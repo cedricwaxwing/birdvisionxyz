@@ -86,6 +86,7 @@ const GnosisGuild = () => {
             </Grid>
             <Box sx={{ mt: 4 }}>
               <Image
+                lazyBoundary="500px"
                 placeholder="blur"
                 src={WandNFTApp}
                 alt="Wand NFT Minting App"
@@ -94,6 +95,7 @@ const GnosisGuild = () => {
             <Grid container spacing={4} sx={{ mt: 0 }}>
               <Grid item xs={12} md={3}>
                 <Image
+                  lazyBoundary="500px"
                   placeholder="blur"
                   src={WandNFT1}
                   alt="Wand NFT preview"
@@ -101,6 +103,7 @@ const GnosisGuild = () => {
               </Grid>
               <Grid item xs={12} md={3}>
                 <Image
+                  lazyBoundary="500px"
                   placeholder="blur"
                   src={WandNFT1}
                   alt="Wand NFT preview"
@@ -108,6 +111,7 @@ const GnosisGuild = () => {
               </Grid>
               <Grid item xs={12} md={3}>
                 <Image
+                  lazyBoundary="500px"
                   placeholder="blur"
                   src={WandNFT1}
                   alt="Wand NFT preview"
@@ -115,6 +119,7 @@ const GnosisGuild = () => {
               </Grid>
               <Grid item xs={12} md={3}>
                 <Image
+                  lazyBoundary="500px"
                   placeholder="blur"
                   src={WandNFT1}
                   alt="Wand NFT preview"
@@ -136,16 +141,23 @@ const GnosisGuild = () => {
           </Grid>
           <Box sx={{ mt: 4 }}>
             <Image
+              lazyBoundary="500px"
               placeholder="blur"
               src={ZodiacHome}
               alt="Zodiac Protocol App"
             />
           </Box>
           <Box sx={{ mt: 4 }}>
-            <Image placeholder="blur" src={Zodiac1} alt="Roles Modifier App" />
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={Zodiac1}
+              alt="Roles Modifier App"
+            />
           </Box>
           <Box sx={{ mt: 4 }}>
             <Image
+              lazyBoundary="500px"
               placeholder="blur"
               src={Zodiac2}
               alt="Zodiac Safe App - Reality Module UI"
@@ -208,6 +220,7 @@ const GnosisGuild = () => {
           </Grid>
           <Box sx={{ mt: 4 }}>
             <Image
+              lazyBoundary="500px"
               placeholder="blur"
               src={TabulaHome}
               alt="Tabula landing page"
@@ -215,6 +228,7 @@ const GnosisGuild = () => {
           </Box>
           <Box sx={{ mt: 4 }}>
             <Image
+              lazyBoundary="500px"
               placeholder="blur"
               src={Tabula2}
               alt="Tabula post creation page"

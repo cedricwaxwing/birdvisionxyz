@@ -27,7 +27,7 @@ const Logo = ({ strokeWidth = 24, sx }) => (
           "&:hover": { transform: "scale(1.2)" },
         }}
       >
-        <Image src={LogoImg} alt="Bird Vision Logo" />
+        <Image lazyBoundary="500px" src={LogoImg} alt="Bird Vision Logo" />
       </Box> */}
       <svg
         viewBox="0 0 512 512"

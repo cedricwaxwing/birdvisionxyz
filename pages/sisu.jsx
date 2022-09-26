@@ -86,7 +86,7 @@ const GnosisGuild = () => {
         </Grid>
         <Box sx={{ mt: 4, position: "relative" }}>
           <Box maxWidth={theme.breakpoints.values.md}>
-            <Image placeholder="blur" src={App1} alt="SISU App scrolled" />
+            <Image lazyBoundary="500px" placeholder="blur" src={App1} alt="SISU App scrolled" />
           </Box>
           <Box
             sx={{
@@ -100,11 +100,11 @@ const GnosisGuild = () => {
               zIndex: 1,
             }}
           >
-            <Image placeholder="blur" src={AppModal} alt="SISU welcome modal" />
+            <Image lazyBoundary="500px" placeholder="blur" src={AppModal} alt="SISU welcome modal" />
           </Box>
         </Box>
         <Box mt={4}>
-          <Image placeholder="blur" src={App1b} alt="SISU App dashboard" />
+          <Image lazyBoundary="500px" placeholder="blur" src={App1b} alt="SISU App dashboard" />
         </Box>
         <FigmaEmbed
           id="app-prototype"
@@ -120,7 +120,7 @@ const GnosisGuild = () => {
           </Grid>
         </Grid>
         <Box sx={{ mt: 4 }}>
-          <Image placeholder="blur" src={Landing1} alt="SISU Landing page" />
+          <Image lazyBoundary="500px" placeholder="blur" src={Landing1} alt="SISU Landing page" />
         </Box>
       </Box>
 

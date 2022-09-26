@@ -121,6 +121,7 @@ const Home = () => {
                         }}
                       >
                         <Image
+                          lazyBoundary="500px"
                           placeholder="blur"
                           src={CedricWaxwing}
                           alt="Cedric Waxwing avatar"
@@ -175,6 +176,7 @@ const Home = () => {
                                 }}
                               >
                                 <Image
+                                  lazyBoundary="500px"
                                   src={social.image}
                                   alt={social.name}
                                   width={19}

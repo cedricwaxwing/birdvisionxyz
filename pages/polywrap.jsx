@@ -56,6 +56,7 @@ const GnosisGuild = () => {
           }}
         >
           <Image
+            lazyBoundary="500px"
             placeholder="blur"
             src={Landing3}
             alt="Polywrap Landing Page Mockup preview"
@@ -63,6 +64,7 @@ const GnosisGuild = () => {
         </Box>
         <Box sx={{ mt: 8 }}>
           <Image
+            lazyBoundary="500px"
             placeholder="blur"
             src={Landing1}
             alt="Polywrap Landing Page"
@@ -70,6 +72,7 @@ const GnosisGuild = () => {
         </Box>
         <Box sx={{ mt: 4 }}>
           <Image
+            lazyBoundary="500px"
             placeholder="blur"
             src={Landing2}
             alt="Polywrap wrapper showcase"
@@ -100,7 +103,12 @@ const GnosisGuild = () => {
         </Grid>
         <Box sx={{ mt: 4, position: "relative" }}>
           <Box maxWidth={theme.breakpoints.values.md - 70}>
-            <Image placeholder="blur" src={Polyfolio1} alt="Polyfolio App" />
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={Polyfolio1}
+              alt="Polyfolio App"
+            />
           </Box>
           <Box
             sx={{
@@ -116,6 +124,7 @@ const GnosisGuild = () => {
             }}
           >
             <Image
+              lazyBoundary="500px"
               placeholder="blur"
               src={PolyfolioMobile}
               alt="Polyfolio App - mobile"
@@ -129,12 +138,19 @@ const GnosisGuild = () => {
         <Grid container mt={0} spacing={4}>
           <Grid item xs={12} md={6}>
             <Image
+              lazyBoundary="500px"
+              placeholder="blur"
               src={PolyfolioDiscovery1}
               alt="Polyfolio Discovery wireframe"
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Image src={PolyfolioDiscovery2} alt="Polyfolio branding assets" />
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={PolyfolioDiscovery2}
+              alt="Polyfolio branding assets"
+            />
           </Grid>
         </Grid>
       </Box>
@@ -150,6 +166,7 @@ const GnosisGuild = () => {
         </Grid>
         <Box sx={{ mt: 4 }}>
           <Image
+            lazyBoundary="500px"
             placeholder="blur"
             src={Docs1}
             alt="Polywrap documentation homepage"
@@ -157,13 +174,19 @@ const GnosisGuild = () => {
         </Box>
         <Box sx={{ mt: 4 }}>
           <Image
+            lazyBoundary="500px"
             placeholder="blur"
             src={Docs2}
             alt="Polywrap documentation page"
           />
         </Box>
         <Box sx={{ mt: 4 }}>
-          <Image placeholder="blur" src={Docs3} alt="DefiWrapper homepage" />
+          <Image
+            lazyBoundary="500px"
+            placeholder="blur"
+            src={Docs3}
+            alt="DefiWrapper homepage"
+          />
         </Box>
       </Box>
     </ProjectLayout>

@@ -48,6 +48,7 @@ const DaoDrops = () => {
         </Grid>
         <Box mt={4} mb={1}>
           <Image
+            lazyBoundary="500px"
             placeholder="blur"
             src={UI5}
             alt="Dao Drops landing page mockup"
@@ -55,7 +56,12 @@ const DaoDrops = () => {
         </Box>
         <Box sx={{ mt: 4, position: "relative" }}>
           <Box maxWidth={theme.breakpoints.values.md}>
-            <Image placeholder="blur" src={UI6} alt="Dao Drops Website" />
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={UI6}
+              alt="Dao Drops Website"
+            />
           </Box>
           {!isMobile && (
             <>
@@ -70,6 +76,7 @@ const DaoDrops = () => {
                 }}
               >
                 <Image
+                  lazyBoundary="500px"
                   placeholder="blur"
                   src={UI2}
                   alt="Dao Drops Nomination Submission modal"
@@ -86,6 +93,7 @@ const DaoDrops = () => {
                 }}
               >
                 <Image
+                  lazyBoundary="500px"
                   placeholder="blur"
                   src={UI3}
                   alt="Dao Drops Nomination Submitted modal"

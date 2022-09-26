@@ -36,6 +36,7 @@ export const LightBoxImage = ({ src, alt, sx, ...props }) => {
       }}
     >
       <Image
+        lazyBoundary="500px"
         src={src}
         alt={alt}
         placeholder="blur"
@@ -55,6 +56,7 @@ export const LightBoxImage = ({ src, alt, sx, ...props }) => {
       >
         <Box sx={{ boxShadow: theme.shadows[2], disply: "flex" }}>
           <Image
+            lazyBoundary="500px"
             src={src}
             alt={alt}
             placeholder="blur"

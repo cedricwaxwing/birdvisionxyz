@@ -143,6 +143,7 @@ export const Footer = () => {
                           }}
                         >
                           <Image
+                            lazyBoundary="500px"
                             src={social.image}
                             alt={social.name}
                             width={19}
@@ -175,7 +176,7 @@ export const Footer = () => {
           },
         }}
       >
-        <Image src={ArrowShortUp} alt="" />
+        <Image lazyBoundary="500px" src={ArrowShortUp} alt="" />
       </Box>
     </Box>
   );

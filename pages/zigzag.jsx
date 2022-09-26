@@ -73,6 +73,7 @@ const GnosisGuild = () => {
           sx={{ borderRadius: 8, boxShadow: theme.shadows[3], display: "flex" }}
         >
           <Image
+            lazyBoundary="500px"
             placeholder="blur"
             src={App5}
             alt="Zigzag App mocked up on macbook"
@@ -106,7 +107,12 @@ const GnosisGuild = () => {
           </Grid>
         </Grid>
         <Box sx={{ mt: 4 }}>
-          <Image placeholder="blur" src={Landing1} alt="Zigzag Landing Page" />
+          <Image
+            lazyBoundary="500px"
+            placeholder="blur"
+            src={Landing1}
+            alt="Zigzag Landing Page"
+          />
         </Box>
       </Box>
 
@@ -133,6 +139,7 @@ const GnosisGuild = () => {
         </Grid>
         <Box mt={4}>
           <Image
+            lazyBoundary="500px"
             placeholder="blur"
             src={Discovery2}
             alt="Zigzag Discovery artifacts"
