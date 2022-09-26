@@ -72,21 +72,21 @@ const GnosisGuild = () => {
         </Grid>
         <Grid container spacing={4} mt={1}>
           <Grid item xs={12} md={6}>
-            <LightBoxImage src={App2} alt="SISU App #2" />
+            <LightBoxImage src={App2} alt="SISU App select connection" />
           </Grid>
           <Grid item xs={12} md={6}>
-            <LightBoxImage src={App3} alt="SISU App #3" />
+            <LightBoxImage src={App3} alt="SISU App setup overview" />
           </Grid>
           <Grid item xs={12} md={6}>
-            <LightBoxImage src={App4} alt="SISU App #4" />
+            <LightBoxImage src={App4} alt="SISU App enter api key" />
           </Grid>
           <Grid item xs={12} md={6}>
-            <LightBoxImage src={App5} alt="SISU App #5" />
+            <LightBoxImage src={App5} alt="SISU App create account" />
           </Grid>
         </Grid>
         <Box sx={{ mt: 4, position: "relative" }}>
           <Box maxWidth={theme.breakpoints.values.md}>
-            <Image placeholder="blur" src={App1} alt="SISU App" />
+            <Image placeholder="blur" src={App1} alt="SISU App scrolled" />
           </Box>
           <Box
             sx={{
@@ -100,11 +100,11 @@ const GnosisGuild = () => {
               zIndex: 1,
             }}
           >
-            <Image placeholder="blur" src={AppModal} alt="SISU App" />
+            <Image placeholder="blur" src={AppModal} alt="SISU welcome modal" />
           </Box>
         </Box>
         <Box mt={4}>
-          <Image placeholder="blur" src={App1b} alt="SISU App #1b" />
+          <Image placeholder="blur" src={App1b} alt="SISU App dashboard" />
         </Box>
         <FigmaEmbed
           id="app-prototype"
@@ -120,7 +120,7 @@ const GnosisGuild = () => {
           </Grid>
         </Grid>
         <Box sx={{ mt: 4 }}>
-          <Image placeholder="blur" src={Landing1} alt="SISU App" />
+          <Image placeholder="blur" src={Landing1} alt="SISU Landing page" />
         </Box>
       </Box>
 
@@ -147,17 +147,12 @@ const GnosisGuild = () => {
         </Grid>
         <LightBoxImage
           src={Discovery1}
-          alt="SISU Discovery #2"
+          alt="SISU Discovery Userflow"
           sx={{ mt: 4 }}
         />
         <LightBoxImage
           src={Discovery2}
-          alt="SISU Discovery #2"
-          sx={{ mt: 4 }}
-        />
-        <LightBoxImage
-          src={Discovery3}
-          alt="SISU Discovery #2"
+          alt="SISU Discovery wireframes"
           sx={{ mt: 4 }}
         />
       </Box>
