@@ -92,23 +92,26 @@ export const Footer = () => {
                   <Typography variant="h5" fontSize={["1rem", "1.25rem"]}>
                     Contact
                   </Typography>
-                  <Link
-                    href="mailto:hello@birdvision.xyz"
-                    underline="none"
-                    sx={{
-                      color: "rgba(255,255,255,0.7)",
-                      "&:hover": { color: colors.yellow },
-                    }}
-                  >
-                    <Typography
+                  <Box sx={{ display: "inline" }}>
+                    <Link
+                      href="mailto:hello@birdvision.xyz"
+                      underline="none"
                       sx={{
-                        fontFamily: typography.fontFamilies.sans,
-                        fontWeight: 300,
+                        color: "rgba(255,255,255,0.7)",
+                        "&:hover": { color: colors.yellow },
                       }}
                     >
-                      hello@birdvision.xyz
-                    </Typography>
-                  </Link>
+                      <Typography
+                        sx={{
+                          display: "inline",
+                          fontFamily: typography.fontFamilies.sans,
+                          fontWeight: 300,
+                        }}
+                      >
+                        hello@birdvision.xyz
+                      </Typography>
+                    </Link>
+                  </Box>
                 </Stack>
               </Grid>
               <Grid item xs={12} sm={3}>

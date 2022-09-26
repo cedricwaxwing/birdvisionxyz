@@ -8,6 +8,7 @@ import { projects } from "../constants/projects";
 import { Box, Grid, Link, useTheme } from "@mui/material";
 import Landing1 from "../public/assets/imgs/polywrap/landing-page-1.png";
 import Landing2 from "../public/assets/imgs/polywrap/landing-page-2.png";
+import Landing3 from "../public/assets/imgs/polywrap/landing-page-3.png";
 import Docs1 from "../public/assets/imgs/polywrap/docs-1.png";
 import Docs2 from "../public/assets/imgs/polywrap/docs-2.png";
 import Docs3 from "../public/assets/imgs/polywrap/docs-3.png";
@@ -45,7 +46,17 @@ const GnosisGuild = () => {
             </Context>
           </Grid>
         </Grid>
-        <Box sx={{ mt: 4 }}>
+        <Box
+          sx={{
+            borderRadius: 8,
+            boxShadow: theme.shadows[3],
+            display: "flex",
+            mt: 4,
+          }}
+        >
+          <Image src={Landing3} alt="Polywrap Landing Page Mockup preview" />
+        </Box>
+        <Box sx={{ mt: 8 }}>
           <Image src={Landing1} alt="Polywrap Landing Page" />
         </Box>
         <Box sx={{ mt: 4 }}>

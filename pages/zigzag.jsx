@@ -5,7 +5,7 @@ import { ViewLink } from "../common/Projects/ViewLink";
 import { FigmaEmbed } from "../components/FigmaEmbed";
 import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
-import { Box, Grid, Link } from "@mui/material";
+import { Box, Grid, Link, useTheme } from "@mui/material";
 import Landing1 from "../public/assets/imgs/zigzag/landing-1.png";
 import Discovery1 from "../public/assets/imgs/zigzag/discovery-1.png";
 import Discovery2 from "../public/assets/imgs/zigzag/discovery-2.png";
@@ -57,6 +57,7 @@ const Body = () => {
 
 project.body = <Body />;
 const GnosisGuild = () => {
+  const theme = useTheme();
   return (
     <ProjectLayout project={project}>
       <Box component="section" id="app" mt={20}>
@@ -66,10 +67,14 @@ const GnosisGuild = () => {
             <Context>Product Design, Visual Identity</Context>
           </Grid>
         </Grid>
-        <Box mt={4} mb={1}>
+        <Box
+          mt={4}
+          mb={1}
+          sx={{ borderRadius: 8, boxShadow: theme.shadows[3], display: "flex" }}
+        >
           <Image src={App5} alt="Zigzag App mocked up on macbook" />
         </Box>
-        <Grid container spacing={4}>
+        <Grid container spacing={4} mt={4}>
           <Grid item xs={12} md={6}>
             <LightBoxImage src={App1} alt="Zigzag App not conneted" />
           </Grid>

@@ -9,9 +9,9 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const ProjectLayout = ({ project, children }) => {
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const [previousProject, setPreviousProject] = useState(0);
-  const [nextProject, setNextProject] = useState(0);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState();
+  const [previousProject, setPreviousProject] = useState();
+  const [nextProject, setNextProject] = useState();
 
   const router = useRouter();
 
@@ -37,6 +37,7 @@ const ProjectLayout = ({ project, children }) => {
     setNextProject(projects[activeProjects[nextIterator]]);
 
     const handleKeyDown = (e) => {
+      e.preventDefault();
       if (e.keyCode === 37 && previousProject) {
         router.push(`/${previousProject.slug}`);
       } else if (e.keyCode === 39 && nextProject) {
@@ -106,7 +107,7 @@ const ProjectLayout = ({ project, children }) => {
             </Grid>
             {children}
             <Link
-              href={`/${nextProject.slug}`}
+              href={`/${nextProject?.slug}`}
               underline="none"
               className="nextproject-link"
               sx={{
@@ -118,13 +119,13 @@ const ProjectLayout = ({ project, children }) => {
                     transform: "translateX(-10%)",
                   },
                 },
-                cursor: `url(${nextProject.cursor}), pointer !important`,
+                cursor: `url(${nextProject?.cursor}), pointer !important`,
                 "&:hover": {
                   color: colors.black,
                   transition: `all 0.5s ${easings.cubic}`,
                 },
                 "&:hover .hover": {
-                  color: colors[nextProject.slug],
+                  color: colors[nextProject?.slug],
                 },
                 "&:hover .arrow": {
                   animation: `point 1s 0.5s ${easings.cubic} infinite`,
@@ -150,7 +151,7 @@ const ProjectLayout = ({ project, children }) => {
                     component="span"
                     className="hover"
                   >
-                    {nextProject.name}
+                    {nextProject?.name}
                   </Typography>
                 </Stack>
                 <Box display="flex">

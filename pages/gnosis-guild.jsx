@@ -6,8 +6,11 @@ import { Box, Grid, Link, Typography } from "@mui/material";
 import WandNFTApp from "../public/assets/imgs/gnosis-guild/WandNFTApp.jpg";
 import WandNFT1 from "../public/assets/imgs/gnosis-guild/wand-nft-1.png";
 import ZodiacHome from "../public/assets/imgs/gnosis-guild/ZodiacHome.jpg";
+import Zodiac1 from "../public/assets/imgs/gnosis-guild/roles-1.png";
+import Zodiac2 from "../public/assets/imgs/gnosis-guild/reality-1.png";
 import TabulaHome from "../public/assets/imgs/gnosis-guild/TabulaHome.jpg";
-import { theme, typography } from "../src/styles/theme";
+import Tabula2 from "../public/assets/imgs/gnosis-guild/tabula-2.png";
+import { typography } from "../src/styles/theme";
 import { Context } from "../common/Projects/Context";
 import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 import { ViewLink } from "../common/Projects/ViewLink";
@@ -72,7 +75,13 @@ const GnosisGuild = () => {
                 md={5}
                 sx={{ display: "flex", justifyContent: "flex-end" }}
               >
-                <ViewLink href="">View Site</ViewLink>
+                <ViewLink
+                  target="_blank"
+                  rel="noredirect"
+                  href="https://wand.gnosisguild.org"
+                >
+                  View Site
+                </ViewLink>
               </Grid>
             </Grid>
             <Box sx={{ mt: 4 }}>
@@ -108,6 +117,12 @@ const GnosisGuild = () => {
           <Box sx={{ mt: 4 }}>
             <Image src={ZodiacHome} alt="Zodiac Protocol App" />
           </Box>
+          <Box sx={{ mt: 4 }}>
+            <Image src={Zodiac1} alt="Roles Modifier App" />
+          </Box>
+          <Box sx={{ mt: 4 }}>
+            <Image src={Zodiac2} alt="Zodiac Safe App - Reality Module UI" />
+          </Box>
         </Box>
 
         <Box component="section" id="tabula" mt={20}>
@@ -118,15 +133,30 @@ const GnosisGuild = () => {
                 Branding, Product Design, and Frontend Development
               </Context>
               <ProjectBody>
-                Tabula is an Instant web3 publications for writers, DAOs, and
-                any Ethereum-based account. It was spurred by Auryn and Sam at
-                Gnosis in a hackathon and the MVP is live in production now
-                after a 6 week sprint cycle. You can read more about Tabula{` `}
+                Tabula is a web3 publication platform for writers, DAOs, and any
+                Ethereum-based account. It was spurred by{" "}
+                <Link
+                  target="_blank"
+                  rel="noredirect"
+                  href="https://twitter.com/auryn_macmillan"
+                >
+                  Auryn
+                </Link>{" "}
+                and
+                <Link
+                  target="_blank"
+                  rel="noredirect"
+                  href="https://github.com/samepant"
+                >
+                  Sam
+                </Link>{" "}
+                at Gnosis Guild in a hackathon and the MVP is live in production
+                now after a 6 week sprint cycle. You can read more about Tabula
+                {` `}
                 <Link
                   href="https://twitter.com/GnosisGuild/status/1550182460025147392"
                   target="_blank"
                   rel="noredirect"
-                  sx={{ fontWeight: 800 }}
                 >
                   here
                 </Link>
@@ -139,11 +169,20 @@ const GnosisGuild = () => {
               md={5}
               sx={{ display: "flex", justifyContent: "flex-end" }}
             >
-              <ViewLink href="">View Site</ViewLink>
+              <ViewLink
+                target="_blank"
+                rel="noredirect"
+                href="https://tabula.gg"
+              >
+                View Site
+              </ViewLink>
             </Grid>
           </Grid>
           <Box sx={{ mt: 4 }}>
             <Image src={TabulaHome} alt="Tabula landing page" />
+          </Box>
+          <Box sx={{ mt: 4 }}>
+            <Image src={Tabula2} alt="Tabula post creation page" />
           </Box>
         </Box>
       </Box>
