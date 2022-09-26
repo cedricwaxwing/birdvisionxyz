@@ -85,20 +85,40 @@ const GnosisGuild = () => {
               </Grid>
             </Grid>
             <Box sx={{ mt: 4 }}>
-              <Image src={WandNFTApp} alt="Wand NFT Minting App" />
+              <Image
+                placeholder="blur"
+                src={WandNFTApp}
+                alt="Wand NFT Minting App"
+              />
             </Box>
             <Grid container spacing={4} sx={{ mt: 0 }}>
               <Grid item xs={12} md={3}>
-                <Image src={WandNFT1} alt="Wand NFT preview" />
+                <Image
+                  placeholder="blur"
+                  src={WandNFT1}
+                  alt="Wand NFT preview"
+                />
               </Grid>
               <Grid item xs={12} md={3}>
-                <Image src={WandNFT1} alt="Wand NFT preview" />
+                <Image
+                  placeholder="blur"
+                  src={WandNFT1}
+                  alt="Wand NFT preview"
+                />
               </Grid>
               <Grid item xs={12} md={3}>
-                <Image src={WandNFT1} alt="Wand NFT preview" />
+                <Image
+                  placeholder="blur"
+                  src={WandNFT1}
+                  alt="Wand NFT preview"
+                />
               </Grid>
               <Grid item xs={12} md={3}>
-                <Image src={WandNFT1} alt="Wand NFT preview" />
+                <Image
+                  placeholder="blur"
+                  src={WandNFT1}
+                  alt="Wand NFT preview"
+                />
               </Grid>
             </Grid>
           </Box>
@@ -115,13 +135,21 @@ const GnosisGuild = () => {
             </Grid>
           </Grid>
           <Box sx={{ mt: 4 }}>
-            <Image src={ZodiacHome} alt="Zodiac Protocol App" />
+            <Image
+              placeholder="blur"
+              src={ZodiacHome}
+              alt="Zodiac Protocol App"
+            />
           </Box>
           <Box sx={{ mt: 4 }}>
-            <Image src={Zodiac1} alt="Roles Modifier App" />
+            <Image placeholder="blur" src={Zodiac1} alt="Roles Modifier App" />
           </Box>
           <Box sx={{ mt: 4 }}>
-            <Image src={Zodiac2} alt="Zodiac Safe App - Reality Module UI" />
+            <Image
+              placeholder="blur"
+              src={Zodiac2}
+              alt="Zodiac Safe App - Reality Module UI"
+            />
           </Box>
         </Box>
 
@@ -179,10 +207,18 @@ const GnosisGuild = () => {
             </Grid>
           </Grid>
           <Box sx={{ mt: 4 }}>
-            <Image src={TabulaHome} alt="Tabula landing page" />
+            <Image
+              placeholder="blur"
+              src={TabulaHome}
+              alt="Tabula landing page"
+            />
           </Box>
           <Box sx={{ mt: 4 }}>
-            <Image src={Tabula2} alt="Tabula post creation page" />
+            <Image
+              placeholder="blur"
+              src={Tabula2}
+              alt="Tabula post creation page"
+            />
           </Box>
         </Box>
       </Box>

@@ -55,13 +55,25 @@ const GnosisGuild = () => {
             mt: 4,
           }}
         >
-          <Image src={Landing3} alt="Polywrap Landing Page Mockup preview" />
+          <Image
+            placeholder="blur"
+            src={Landing3}
+            alt="Polywrap Landing Page Mockup preview"
+          />
         </Box>
         <Box sx={{ mt: 8 }}>
-          <Image src={Landing1} alt="Polywrap Landing Page" />
+          <Image
+            placeholder="blur"
+            src={Landing1}
+            alt="Polywrap Landing Page"
+          />
         </Box>
         <Box sx={{ mt: 4 }}>
-          <Image src={Landing2} alt="Polywrap wrapper showcase" />
+          <Image
+            placeholder="blur"
+            src={Landing2}
+            alt="Polywrap wrapper showcase"
+          />
         </Box>
       </Box>
 
@@ -88,7 +100,7 @@ const GnosisGuild = () => {
         </Grid>
         <Box sx={{ mt: 4, position: "relative" }}>
           <Box maxWidth={theme.breakpoints.values.md - 70}>
-            <Image src={Polyfolio1} alt="Polyfolio App" />
+            <Image placeholder="blur" src={Polyfolio1} alt="Polyfolio App" />
           </Box>
           <Box
             sx={{
@@ -103,7 +115,11 @@ const GnosisGuild = () => {
               zIndex: 1,
             }}
           >
-            <Image src={PolyfolioMobile} alt="Polyfolio App - mobile" />
+            <Image
+              placeholder="blur"
+              src={PolyfolioMobile}
+              alt="Polyfolio App - mobile"
+            />
           </Box>
         </Box>
         <FigmaEmbed
@@ -136,13 +152,21 @@ const GnosisGuild = () => {
           </Grid>
         </Grid>
         <Box sx={{ mt: 4 }}>
-          <Image src={Docs1} alt="Polywrap documentation homepage" />
+          <Image
+            placeholder="blur"
+            src={Docs1}
+            alt="Polywrap documentation homepage"
+          />
         </Box>
         <Box sx={{ mt: 4 }}>
-          <Image src={Docs2} alt="Polywrap documentation page" />
+          <Image
+            placeholder="blur"
+            src={Docs2}
+            alt="Polywrap documentation page"
+          />
         </Box>
         <Box sx={{ mt: 4 }}>
-          <Image src={Docs3} alt="DefiWrapper homepage" />
+          <Image placeholder="blur" src={Docs3} alt="DefiWrapper homepage" />
         </Box>
       </Box>
     </ProjectLayout>

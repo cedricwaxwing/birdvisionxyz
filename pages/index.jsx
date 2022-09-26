@@ -133,7 +133,7 @@ const Home = () => {
                             fontFamily: typography.fontFamilies.extended,
                             fontSize: ["1.25rem", "1.75rem", "2.1rem"],
                             fontWeight: 800,
-                            lineHeight: "1.25",
+                            lineHeight: "1",
                           }}
                         >
                           Cedric Waxwing

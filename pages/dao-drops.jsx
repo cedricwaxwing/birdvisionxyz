@@ -47,11 +47,15 @@ const DaoDrops = () => {
           </Grid>
         </Grid>
         <Box mt={4} mb={1}>
-          <Image src={UI5} alt="Zigzag App mocked up on macbook" />
+          <Image
+            placeholder="blur"
+            src={UI5}
+            alt="Dao Drops landing page mockup"
+          />
         </Box>
         <Box sx={{ mt: 4, position: "relative" }}>
           <Box maxWidth={theme.breakpoints.values.md}>
-            <Image src={UI6} alt="Dao Drops Nomination Screen Mockup" />
+            <Image placeholder="blur" src={UI6} alt="Dao Drops Website" />
           </Box>
           {!isMobile && (
             <>
@@ -65,7 +69,11 @@ const DaoDrops = () => {
                   zIndex: 1,
                 }}
               >
-                <Image src={UI2} alt="Dao Drops Nomination Card" />
+                <Image
+                  placeholder="blur"
+                  src={UI2}
+                  alt="Dao Drops Nomination Submission modal"
+                />
               </Box>
               <Box
                 sx={{
@@ -73,11 +81,15 @@ const DaoDrops = () => {
                   top: "10%",
                   display: "flex",
                   right: 0,
-                  width: 320,
+                  width: 450,
                   zIndex: 1,
                 }}
               >
-                <Image src={UI3} alt="Dao Drops Nomination Card" />
+                <Image
+                  placeholder="blur"
+                  src={UI3}
+                  alt="Dao Drops Nomination Submitted modal"
+                />
               </Box>
             </>
           )}
