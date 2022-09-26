@@ -13,7 +13,7 @@ import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 import { ViewLink } from "../common/Projects/ViewLink";
 
 const project = projects["gnosis-guild"];
-const wandIsLive = true;
+const wandIsLive = false;
 
 const Body = () => {
   return (
@@ -119,8 +119,8 @@ const GnosisGuild = () => {
               </Context>
               <ProjectBody>
                 Tabula is an Instant web3 publications for writers, DAOs, and
-                any Ethereum-based account. It was spurred by Aurangzeb and Sam
-                at Gnosis in a hackathon and the MVP is live in production now
+                any Ethereum-based account. It was spurred by Auryn and Sam at
+                Gnosis in a hackathon and the MVP is live in production now
                 after a 6 week sprint cycle. You can read more about Tabula{` `}
                 <Link
                   href="https://twitter.com/GnosisGuild/status/1550182460025147392"

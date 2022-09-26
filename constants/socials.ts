@@ -19,10 +19,10 @@ export const socials = [
   //   link: "https://discord.com/cedricwaxwing",
   //   image: DiscordIcon,
   // },
-  {
-    name: "Instagram",
-    link: "https://instagram.com/cedricwaxwing",
-    image: InstagramIcon,
-  },
+  // {
+  //   name: "Instagram",
+  //   link: "https://instagram.com/cedric_waxwing",
+  //   image: InstagramIcon,
+  // },
 
 ]

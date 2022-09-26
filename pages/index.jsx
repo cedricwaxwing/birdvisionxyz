@@ -55,7 +55,7 @@ const Home = () => {
                 }}
               >
                 We see things differently at Bird Vision. We use our specialized
-                skillsets in web3 design and development to craft beatiful,
+                skillsets in web3 design and development to craft beautiful,
                 intuitive user experiences that make it easy for people to
                 interact with complex, cutting-edge technology.
               </Typography>
@@ -183,8 +183,8 @@ const Home = () => {
                     >
                       Currently flying solo at Bird Vision, Waxwing has a wealth
                       of experience in both web3 product design, and branding.
-                      He&apos;s excited to use his skills to create a more
-                      equitable and decentralized future.
+                      He&apos;s proud and excited to use his skills to create a
+                      more equitable and decentralized future.
                     </Typography>
                   </Stack>
                 </Stack>
