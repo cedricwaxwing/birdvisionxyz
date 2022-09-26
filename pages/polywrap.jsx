@@ -134,10 +134,7 @@ const GnosisGuild = () => {
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Image
-              src={PolyfolioDiscovery2}
-              alt="Polyfolio Discovery wireframe"
-            />
+            <Image src={PolyfolioDiscovery2} alt="Polyfolio branding assets" />
           </Grid>
         </Grid>
       </Box>
