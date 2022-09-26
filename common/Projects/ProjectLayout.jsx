@@ -96,6 +96,7 @@ const ProjectLayout = ({ project, children }) => {
               </Grid>
               <Grid item xs={12} sm={7}>
                 <Image
+                  style={{ borderRadius: 4 }}
                   src={project.thumb}
                   placeholder="blur"
                   priority
