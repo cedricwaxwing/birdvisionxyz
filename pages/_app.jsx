@@ -79,7 +79,7 @@ export default function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Stack sx={{ minHeight: "100vh" }}>
+        <Stack sx={{ minHeight: "100vh", overflow: "hidden" }}>
           <Header />
           <Component {...pageProps} />
           <Footer />
