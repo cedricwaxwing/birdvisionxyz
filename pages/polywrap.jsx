@@ -38,17 +38,6 @@ const GnosisGuild = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
-  const defaultStyles = {
-    position: "absolute",
-    borderRadius: 56,
-    top: "10%",
-    boxShadow: theme.shadows[2],
-    display: "flex",
-    right: 0,
-    width: 350,
-    transform: "rotateZ(2deg) rotateY(-10deg)",
-    zIndex: 1,
-  };
   return (
     <ProjectLayout project={project}>
       <Box component="section" id="landing-page" mt={20}>
@@ -123,7 +112,23 @@ const GnosisGuild = () => {
               alt="Polyfolio App"
             />
           </Box>
-          <Box sx={isMobile ? { mt: 4, width: "100%" } : defaultStyles}>
+          <Box
+            sx={
+              isMobile
+                ? { mt: 4, width: "100%" }
+                : {
+                    position: "absolute",
+                    borderRadius: 56,
+                    top: "10%",
+                    boxShadow: theme.shadows[2],
+                    display: "flex",
+                    right: 0,
+                    width: 350,
+                    transform: "rotateZ(2deg) rotateY(-10deg)",
+                    zIndex: 1,
+                  }
+            }
+          >
             <Image
               lazyBoundary="500px"
               placeholder="blur"

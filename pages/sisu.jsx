@@ -63,16 +63,6 @@ project.body = <Body />;
 const GnosisGuild = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
-  const defaultStyles = {
-    position: "absolute",
-    borderRadius: 8,
-    bottom: "10%",
-    boxShadow: theme.shadows[2],
-    display: "flex",
-    right: 0,
-    width: 350,
-    zIndex: 1,
-  };
   return (
     <ProjectLayout project={project}>
       <Box component="section" id="app" mt={20}>
@@ -105,7 +95,22 @@ const GnosisGuild = () => {
               alt="SISU App scrolled"
             />
           </Box>
-          <Box sx={isMobile ? { mt: 4, width: "100%" } : defaulStyles}>
+          <Box
+            sx={
+              isMobile
+                ? { mt: 4, width: "100%" }
+                : {
+                    position: "absolute",
+                    borderRadius: 8,
+                    bottom: "10%",
+                    boxShadow: theme.shadows[2],
+                    display: "flex",
+                    right: 0,
+                    width: 350,
+                    zIndex: 1,
+                  }
+            }
+          >
             <Image
               lazyBoundary="500px"
               placeholder="blur"
