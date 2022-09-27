@@ -16,6 +16,7 @@ import { Footer } from "../common/Footer";
 import { CursorEffect } from "../components/CursorEffect";
 import { Noise } from "../components/Noise";
 import { colors, theme } from "../src/styles/theme";
+import OgImage from "../public/assets/imgs/og_image.png";
 
 export default function MyApp(props) {
   const router = useRouter();
@@ -76,9 +77,27 @@ export default function MyApp(props) {
           content="width=device-width, initial-scale=1"
           key="viewport"
         />
+        <title>BIRD VISION - Bringing the decentralized web to life.</title>
+        <meta
+          name="description"
+          content={
+            "A web3 design and development collective that crafts beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology."
+          }
+          key="description"
+        />
+        <meta property="og:url" content="https://www.birdvision.xyz" />
+        <meta
+          property="og:title"
+          content="BIRD VISION - Bringing the decentralized web to life."
+        />
+        <meta
+          property="og:description"
+          content="A web3 design and development collective that crafts beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology."
+        />
+        <meta property="og:image" content={OgImage.src} />
         <meta name="msapplication-config" content="/browserconfig.xml" />
-        <meta name="msapplication-TileColor" content={colors.yellow} />
-        <meta name="theme-color" content={colors.yellow} />
+        <meta name="msapplication-TileColor" content={colors.black} />
+        <meta name="theme-color" content={colors.black} />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

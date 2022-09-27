@@ -18,8 +18,15 @@ const Home = () => {
           content="width=device-width, initial-scale=1"
           key="viewport"
         />
-        <meta name="description" content={"fdaf"} key="description" />
         <title>BIRD VISION - Bringing the decentralized web to life.</title>
+        <meta
+          name="description"
+          content={
+            "A web3 design and development collective that crafts beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology."
+          }
+          key="description"
+        />
+        <meta name="robots" content="index, follow" />
       </Head>
       <Box
         component="main"
