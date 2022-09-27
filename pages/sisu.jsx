@@ -5,7 +5,7 @@ import { ViewLink } from "../common/Projects/ViewLink";
 import { FigmaEmbed } from "../components/FigmaEmbed";
 import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
-import { Box, Grid, Link } from "@mui/material";
+import { Box, Grid, Link, useMediaQuery, useTheme } from "@mui/material";
 import Landing1 from "../public/assets/imgs/sisu/landing-page.png";
 import Discovery1 from "../public/assets/imgs/sisu/discovery-1.png";
 import Discovery2 from "../public/assets/imgs/sisu/discovery-2.png";
@@ -61,6 +61,18 @@ const Body = () => {
 
 project.body = <Body />;
 const GnosisGuild = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+  const defaultStyles = {
+    position: "absolute",
+    borderRadius: 8,
+    bottom: "10%",
+    boxShadow: theme.shadows[2],
+    display: "flex",
+    right: 0,
+    width: 350,
+    zIndex: 1,
+  };
   return (
     <ProjectLayout project={project}>
       <Box component="section" id="app" mt={20}>
@@ -86,30 +98,36 @@ const GnosisGuild = () => {
         </Grid>
         <Box sx={{ mt: 4, position: "relative" }}>
           <Box maxWidth={theme.breakpoints.values.md}>
-            <Image lazyBoundary="500px" placeholder="blur" src={App1} alt="SISU App scrolled" />
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={App1}
+              alt="SISU App scrolled"
+            />
           </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              borderRadius: 8,
-              bottom: "10%",
-              boxShadow: theme.shadows[2],
-              display: "flex",
-              right: 0,
-              width: 350,
-              zIndex: 1,
-            }}
-          >
-            <Image lazyBoundary="500px" placeholder="blur" src={AppModal} alt="SISU welcome modal" />
+          <Box sx={isMobile ? { mt: 4, width: "100%" } : defaulStyles}>
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={AppModal}
+              alt="SISU welcome modal"
+            />
           </Box>
         </Box>
         <Box mt={4}>
-          <Image lazyBoundary="500px" placeholder="blur" src={App1b} alt="SISU App dashboard" />
+          <Image
+            lazyBoundary="500px"
+            placeholder="blur"
+            src={App1b}
+            alt="SISU App dashboard"
+          />
         </Box>
-        <FigmaEmbed
-          id="app-prototype"
-          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FLIJBQHa9TUfpRj1xGbXa0x%2FSISU---Deep-Work%3Fpage-id%3D0%253A1%26node-id%3D311%253A16063%26viewport%3D-3698%252C-4880%252C1%26scaling%3Dscale-down%26starting-point-node-id%3D109%253A12961"
-        />
+        {!isMobile && (
+          <FigmaEmbed
+            id="app-prototype"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FLIJBQHa9TUfpRj1xGbXa0x%2FSISU---Deep-Work%3Fpage-id%3D0%253A1%26node-id%3D311%253A16063%26viewport%3D-3698%252C-4880%252C1%26scaling%3Dscale-down%26starting-point-node-id%3D109%253A12961"
+          />
+        )}
       </Box>
 
       <Box component="section" id="landing-page" mt={20}>
@@ -120,7 +138,12 @@ const GnosisGuild = () => {
           </Grid>
         </Grid>
         <Box sx={{ mt: 4 }}>
-          <Image lazyBoundary="500px" placeholder="blur" src={Landing1} alt="SISU Landing page" />
+          <Image
+            lazyBoundary="500px"
+            placeholder="blur"
+            src={Landing1}
+            alt="SISU Landing page"
+          />
         </Box>
       </Box>
 
@@ -134,7 +157,11 @@ const GnosisGuild = () => {
             item
             xs={12}
             md={5}
-            sx={{ display: "flex", justifyContent: "flex-end" }}
+            sx={{
+              display: "flex",
+              mt: [2, 2, null],
+              justifyContent: [null, null, "flex-end"],
+            }}
           >
             <ViewLink
               target="_blank"

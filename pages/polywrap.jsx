@@ -5,7 +5,7 @@ import { ViewLink } from "../common/Projects/ViewLink";
 import { FigmaEmbed } from "../components/FigmaEmbed";
 import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
-import { Box, Grid, Link, useTheme } from "@mui/material";
+import { Box, Grid, Link, useMediaQuery, useTheme } from "@mui/material";
 import Landing1 from "../public/assets/imgs/polywrap/landing-page-1.png";
 import Landing2 from "../public/assets/imgs/polywrap/landing-page-2.png";
 import Landing3 from "../public/assets/imgs/polywrap/landing-page-3.png";
@@ -36,6 +36,19 @@ const Body = () => {
 project.body = <Body />;
 const GnosisGuild = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+
+  const defaultStyles = {
+    position: "absolute",
+    borderRadius: 56,
+    top: "10%",
+    boxShadow: theme.shadows[2],
+    display: "flex",
+    right: 0,
+    width: 350,
+    transform: "rotateZ(2deg) rotateY(-10deg)",
+    zIndex: 1,
+  };
   return (
     <ProjectLayout project={project}>
       <Box component="section" id="landing-page" mt={20}>
@@ -110,19 +123,7 @@ const GnosisGuild = () => {
               alt="Polyfolio App"
             />
           </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              borderRadius: 56,
-              top: "10%",
-              boxShadow: theme.shadows[2],
-              display: "flex",
-              right: 0,
-              width: 350,
-              transform: "rotateZ(2deg) rotateY(-10deg)",
-              zIndex: 1,
-            }}
-          >
+          <Box sx={isMobile ? { mt: 4, width: "100%" } : defaultStyles}>
             <Image
               lazyBoundary="500px"
               placeholder="blur"
@@ -131,10 +132,12 @@ const GnosisGuild = () => {
             />
           </Box>
         </Box>
-        <FigmaEmbed
-          id="polyfolio-prototype"
-          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FbAmE0FZ9jjYA9m4bLHadCb%2FPolyfolio%3Fpage-id%3D141%253A2856%26node-id%3D203%253A45689%26viewport%3D-1726%252C-5126%252C0.5%26scaling%3Dscale-down%26starting-point-node-id%3D203%253A45689"
-        />
+        {!isMobile && (
+          <FigmaEmbed
+            id="polyfolio-prototype"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FbAmE0FZ9jjYA9m4bLHadCb%2FPolyfolio%3Fpage-id%3D141%253A2856%26node-id%3D203%253A45689%26viewport%3D-1726%252C-5126%252C0.5%26scaling%3Dscale-down%26starting-point-node-id%3D203%253A45689"
+          />
+        )}
         <Grid container mt={0} spacing={4}>
           <Grid item xs={12} md={6}>
             <Image

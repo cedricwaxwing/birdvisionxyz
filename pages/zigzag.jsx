@@ -5,7 +5,7 @@ import { ViewLink } from "../common/Projects/ViewLink";
 import { FigmaEmbed } from "../components/FigmaEmbed";
 import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
-import { Box, Grid, Link, useTheme } from "@mui/material";
+import { Box, Grid, Link, useMediaQuery, useTheme } from "@mui/material";
 import Landing1 from "../public/assets/imgs/zigzag/landing-1.png";
 import Discovery1 from "../public/assets/imgs/zigzag/discovery-1.png";
 import Discovery2 from "../public/assets/imgs/zigzag/discovery-2.png";
@@ -20,6 +20,8 @@ import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 const project = projects["zigzag"];
 
 const Body = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <>
       <ProjectBody>
@@ -58,6 +60,7 @@ const Body = () => {
 project.body = <Body />;
 const GnosisGuild = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <ProjectLayout project={project}>
       <Box component="section" id="app" mt={20}>
@@ -93,10 +96,12 @@ const GnosisGuild = () => {
             <LightBoxImage src={App3} alt="Zigzag App DEX Swap" />
           </Grid>
         </Grid>
-        <FigmaEmbed
-          id="app-prototype"
-          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FvuRJAUYM4woFrnkJvONmhA%2FZigZag%3Fpage-id%3D34%253A13451%26node-id%3D34%253A16901%26viewport%3D509%252C472%252C0.07%26scaling%3Dcontain%26starting-point-node-id%3D34%253A18041%26show-proto-sidebar%3D1"
-        />
+        {!isMobile && (
+          <FigmaEmbed
+            id="app-prototype"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FvuRJAUYM4woFrnkJvONmhA%2FZigZag%3Fpage-id%3D34%253A13451%26node-id%3D34%253A16901%26viewport%3D509%252C472%252C0.07%26scaling%3Dcontain%26starting-point-node-id%3D34%253A18041%26show-proto-sidebar%3D1"
+          />
+        )}
       </Box>
 
       <Box component="section" id="landing-page" mt={20}>
@@ -126,7 +131,11 @@ const GnosisGuild = () => {
             item
             xs={12}
             md={5}
-            sx={{ display: "flex", justifyContent: "flex-end" }}
+            sx={{
+              display: "flex",
+              mt: [2, 2, null],
+              justifyContent: [null, null, "flex-end"],
+            }}
           >
             <ViewLink
               target="_blank"
