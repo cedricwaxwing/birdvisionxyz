@@ -108,7 +108,7 @@ export const Header = () => {
                     fontFamily={typography.fontFamilies.extended}
                     fontWeight={600}
                     textTransform="uppercase"
-                    letterSpacing={3}
+                    letterSpacing={[1, 2, 3]}
                   >
                     Projects
                   </Typography>
@@ -119,7 +119,7 @@ export const Header = () => {
                     fontFamily={typography.fontFamilies.extended}
                     fontWeight={600}
                     textTransform="uppercase"
-                    letterSpacing={3}
+                    letterSpacing={[1, 2, 3]}
                   >
                     Contact
                   </Typography>

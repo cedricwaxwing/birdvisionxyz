@@ -144,7 +144,7 @@ const Home = () => {
                           variant="body2"
                           sx={{
                             fontFamily: typography.fontFamilies.serif,
-                            fontSize: "1.25rem",
+                            fontSize: ["1rem", "1.25rem"],
                             fontStyle: "italic",
                             fontWeight: 400,
                             lineHeight: "1.25",
@@ -213,7 +213,7 @@ const Home = () => {
                 variant="h2"
                 sx={{
                   color: colors.white,
-                  fontSize: ["2.75rem", "3.5rem", "6rem"],
+                  fontSize: ["2.5rem", "3.5rem", "6rem"],
                   WebkitTextStroke: `2px ${colors.black}33`,
                 }}
               >
@@ -223,7 +223,7 @@ const Home = () => {
                 variant="h2"
                 sx={{
                   color: `${colors.black}cc`,
-                  fontSize: ["2.75rem", "3.5rem", "6rem"],
+                  fontSize: ["2.5rem", "3.5rem", "6rem"],
                   WebkitTextStroke: `2px ${colors.black}33`,
                 }}
               >
