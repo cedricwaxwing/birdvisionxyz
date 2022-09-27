@@ -207,9 +207,10 @@ const Home = () => {
                       }}
                     >
                       Currently flying solo at Bird Vision, Waxwing has a wealth
-                      of experience in both web3 product design, and branding.
-                      He&apos;s proud and excited to use his skills to create a
-                      more equitable and decentralized future.
+                      of experience in both web3 product design, branding, and
+                      frontend development. He&apos;s proud and excited to use
+                      his skills to create a more equitable and decentralized
+                      future.
                     </Typography>
                   </Stack>
                 </Stack>
