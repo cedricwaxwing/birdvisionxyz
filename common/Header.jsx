@@ -78,6 +78,7 @@ export const Header = () => {
             <Logo
               sx={{
                 transform: `rotate(${scrollY * 0.1}deg)`,
+                transition: `width 0.25s ${easings.cubic}`,
                 width: scrollY > 300 ? { xs: 40, md: 60 } : { xs: 50, md: 80 },
               }}
             />
