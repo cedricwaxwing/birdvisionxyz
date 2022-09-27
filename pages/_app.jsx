@@ -28,6 +28,9 @@ export default function MyApp(props) {
       jssStyles.parentElement?.removeChild(jssStyles);
     }
 
+    let vh = window.innerHeight * 0.01;
+    document.body.style.setProperty("--vh", `${vh}px`);
+
     const handleRouteChange = () => {
       window.scrollTo(0, 0);
     };
@@ -79,7 +82,9 @@ export default function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Stack sx={{ minHeight: "100vh", overflow: "hidden" }}>
+        <Stack
+          sx={{ minHeight: "calc(var(--vh, 1vh) * 100)", overflow: "hidden" }}
+        >
           <Header />
           <Component {...pageProps} />
           <Footer />

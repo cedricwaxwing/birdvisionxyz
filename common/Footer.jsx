@@ -41,7 +41,7 @@ export const Footer = () => {
       sx={{
         bgcolor: colors.black,
         color: colors.white,
-        minHeight: "50vh",
+        minHeight: "calc(var(--vh, 1vh) * 50)",
         py: 16,
       }}
     >
@@ -56,7 +56,11 @@ export const Footer = () => {
               flexDirection: "column",
               flexGrow: 1,
               justifyContent: "center",
-              mt: ["3vh", "8vh", "16vh"],
+              mt: [
+                "calc(var(--vh, 1vh) * 3)",
+                "calc(var(--vh, 1vh) * 8)",
+                "calc(var(--vh, 1vh) * 16)",
+              ],
             }}
           >
             <Typography

@@ -8,7 +8,7 @@ export const HeroSection = () => {
       sx={{
         // bgcolor: colors.yellow,
         background: `radial-gradient(farthest-corner at top left, #edca37 5%, ${colors.yellow})`,
-        height: "100vh",
+        height: "calc(var(--vh, 1vh) * 100)",
       }}
     >
       <Container sx={{ position: "relative", zIndex: 1, height: "100%" }}>
