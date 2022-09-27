@@ -1,6 +1,14 @@
 import Head from "next/head";
 import ProjectTemplate from "./ProjectTemplate";
-import { Box, Container, Grid, Link, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Link,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import Image from "next/image";
 import { colors, easings } from "../../src/styles/theme";
 import { projects, getActiveProjects } from "../../constants/projects";
@@ -54,6 +62,8 @@ const ProjectLayout = ({ project, children }) => {
     );
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentProjectIndex, previousProject, nextProject]);
+
+  const theme = useTheme();
 
   return (
     <>
@@ -139,12 +149,13 @@ const ProjectLayout = ({ project, children }) => {
                 spacing={4}
                 sx={{
                   justifyContent: "space-between",
+                  flexDirection: ["column", "row"],
                   mt: 12,
                   py: 4,
                   mb: -4,
                 }}
               >
-                <Stack spacing={0.5}>
+                <Stack spacing={0.5} width="100%">
                   <Typography lineHeight={1}>Next Project:</Typography>
                   <Typography
                     lineHeight={1}
@@ -155,8 +166,15 @@ const ProjectLayout = ({ project, children }) => {
                     {nextProject?.name}
                   </Typography>
                 </Stack>
-                <Box display="flex">
-                  <ArrowLongRight className="hover arrow" />
+                <Box
+                  display="flex"
+                  width="100%"
+                  sx={{
+                    ml: ["0 !important", "initial"],
+                    mt: [`${theme.spacing(2)} !important`, 0],
+                  }}
+                >
+                  <ArrowLongRight className="hover arrow" width="100%" />
                 </Box>
               </Stack>
             </Link>

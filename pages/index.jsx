@@ -36,6 +36,7 @@ const Home = () => {
         <Box
           sx={{
             bgcolor: `${colors.white}99`,
+            overflowX: "clip",
             position: "relative",
             py: 16,
             zIndex: 1,
