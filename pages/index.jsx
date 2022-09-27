@@ -19,7 +19,7 @@ const Home = () => {
           key="viewport"
         />
         <meta name="description" content={"fdaf"} key="description" />
-        <title>BIRD VISION - Building the decentralized web</title>
+        <title>BIRD VISION - Bringing the decentralized web to life.</title>
       </Head>
       <Box
         component="main"
