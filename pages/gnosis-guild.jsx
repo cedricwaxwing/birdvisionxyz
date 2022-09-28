@@ -182,7 +182,7 @@ const GnosisGuild = () => {
                 >
                   Auryn
                 </Link>{" "}
-                and
+                and{" "}
                 <Link
                   target="_blank"
                   rel="noredirect"
