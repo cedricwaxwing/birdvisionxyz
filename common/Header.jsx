@@ -15,26 +15,34 @@ import { colors, easings, typography } from "../src/styles/theme";
 
 export const Header = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [screenX, setScreenX] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(0);
+  const [footerTop, setFooterTop] = useState(0);
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    setScreenX(window.clientWidth);
+    setScreenWidth(window.innerWidth);
+    setFooterTop(document.querySelector("footer").offsetTop);
     const handleResize = () => {
-      setScreenX(window.clientWidth);
+      setScreenWidth(window.innerWidth);
     };
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setActive(false);
+      setFooterTop(document.querySelector("footer").offsetTop);
       setScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleResize, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
     };
-  }, [scrollY]);
+  }, [screenWidth]);
 
   const handleHamburgerClick = () => {
     setActive(!active);
@@ -59,7 +67,7 @@ export const Header = () => {
         sx={{
           transition: "max-width 0.5s ease-in-out",
           maxWidth:
-            screenX < theme.breakpoints.values.lg + 200
+            screenWidth.width < theme.breakpoints.values.lg + 200
               ? "100% !important"
               : scrollY > 300
               ? "100% !important"
@@ -131,6 +139,9 @@ export const Header = () => {
               width={32}
               height={32}
               onClick={handleHamburgerClick}
+              style={{
+                color: scrollY > footerTop - 40 ? colors.white : colors.black,
+              }}
               active={active}
             />
           </Stack>

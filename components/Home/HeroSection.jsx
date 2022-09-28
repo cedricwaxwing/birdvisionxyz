@@ -57,7 +57,7 @@ export const HeroSection = () => {
                 <Typography
                   variant="subtitle1"
                   fontFamily={typography.fontFamilies.serif}
-                  fontSize={[26, 32]}
+                  fontSize={[24, 26, 28, 32]}
                 >
                   Bringing the <strong>decentralized&nbsp;web</strong> to life.
                 </Typography>

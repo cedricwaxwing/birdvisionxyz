@@ -2,10 +2,10 @@ import React from "react";
 import { Box, styled } from "@mui/material";
 import { colors, easings } from "../src/styles/theme";
 
-const Hamburger = ({ active, height, width, ...props }) => {
+const Hamburger = ({ active, height, width, style, ...props }) => {
   const Rect1 = styled("rect")(({ active }) => {
     return {
-      fill: colors.black,
+      fill: "currentColor",
       animation: active ? `animate1 0.5s ${easings.cubic} forwards` : null,
       "@keyframes animate1": {
         from: {
@@ -20,7 +20,7 @@ const Hamburger = ({ active, height, width, ...props }) => {
 
   const Rect2 = styled("rect")(({ active }) => {
     return {
-      fill: colors.black,
+      fill: "currentColor",
       animation: active ? `animate2 0.5s ${easings.cubic} forwards` : null,
       "@keyframes animate2": {
         from: {
@@ -43,6 +43,7 @@ const Hamburger = ({ active, height, width, ...props }) => {
       {...props}
       style={{
         zIndex: 100,
+        ...style,
       }}
     >
       <Rect1 x={18} y={24} width="64" height="8" active={active} />

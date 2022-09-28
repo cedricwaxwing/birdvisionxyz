@@ -127,6 +127,8 @@ export const theme = createTheme(defaultTheme, {
     h1: {
       [defaultTheme.breakpoints.down('lg')]: {
         fontSize: "4rem",
+      },
+        fontSize: "16vw",
       }
     }
   },
