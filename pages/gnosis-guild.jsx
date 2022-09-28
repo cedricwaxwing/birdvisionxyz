@@ -207,7 +207,11 @@ const GnosisGuild = () => {
               item
               xs={12}
               md={5}
-              sx={{ display: "flex", mt: [2, 2, null] justifyContent: [null, null, "flex-end"] }}
+              sx={{
+                display: "flex",
+                mt: [2, 2, null],
+                justifyContent: [null, null, "flex-end"],
+              }}
             >
               <ViewLink
                 target="_blank"
