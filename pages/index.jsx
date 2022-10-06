@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Box, Container, Grid, Link, Stack, Typography } from "@mui/material";
 import { HeroSection } from "../components/Home/HeroSection";
 import { projects, getActiveProjects } from "../constants/projects";
-import { socials } from "../constants/socials";
+import { waxwing_socials } from "../constants/socials";
 import { ProjectPreview } from "../components/ProjectPreview";
 import { colors, easings, typography } from "../src/styles/theme";
 import Image from "next/image";
@@ -161,7 +161,7 @@ const Home = () => {
                           Bombycillidae cedricum
                         </Typography>
                         <Stack direction="row" spacing={2} mt={2}>
-                          {socials.map((social) => (
+                          {waxwing_socials.map((social) => (
                             <Link
                               key={social.name}
                               href={social.link}
