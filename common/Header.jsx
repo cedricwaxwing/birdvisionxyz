@@ -14,10 +14,13 @@ import Hamburger from "../components/Hamburger";
 import { colors, easings, typography } from "../src/styles/theme";
 
 export const Header = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const [scrollY, setScrollY] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
   const [footerTop, setFooterTop] = useState(0);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(!isMobile);
 
   useEffect(() => {
     setScreenWidth(window.innerWidth);
@@ -33,7 +36,7 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setActive(false);
+      setActive(!isMobile);
       setFooterTop(document.querySelector("footer").offsetTop);
       setScrollY(window.scrollY);
     };
@@ -47,9 +50,6 @@ export const Header = () => {
   const handleHamburgerClick = () => {
     setActive(!active);
   };
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box
@@ -76,7 +76,7 @@ export const Header = () => {
       >
         <Stack
           direction="row"
-          spacing={2}
+          spacing={[3, 4]}
           sx={{
             alignItems: "center",
             justifyContent: "space-between",
@@ -91,11 +91,29 @@ export const Header = () => {
               }}
             />
           </Link>
-          <Stack direction="row" spacing={[2, 4]}>
+          <Stack
+            direction={isMobile ? "column-reverse" : "row"}
+            spacing={[0, 2, 4]}
+            sx={{
+              backgroundColor: active
+                ? [
+                    "rgba(255,255,255,0.95)",
+                    "rgba(255,255,255,0.95)",
+                    "transparent",
+                  ]
+                : null,
+              px: active && isMobile ? 2 : null,
+              py: active && isMobile ? 4 : null,
+              position: active && isMobile ? "absolute" : null,
+              top: 0,
+              right: 0,
+              alignItems: ["flex-end", "flex-end", "center"],
+            }}
+          >
             {active && (
               <Stack
-                direction="row"
-                spacing={[2, 4]}
+                direction={isMobile ? "column" : "row"}
+                spacing={[2, 2, 4]}
                 sx={{
                   "@keyframes slideIn": {
                     from: {
@@ -108,7 +126,8 @@ export const Header = () => {
                     },
                   },
                   animation: `slideIn 0.5s forwards ${easings.cubic}`,
-                  alignItems: "center",
+                  alignItems: ["flex-end", "flex-end", "center"],
+                  mt: active && isMobile ? 2 : null,
                 }}
               >
                 <Link href="/#projects" color="currentColor" underline="none">
@@ -120,6 +139,18 @@ export const Header = () => {
                     letterSpacing={[1, 2, 3]}
                   >
                     Projects
+                  </Typography>
+                </Link>
+                {/* <Link href="/releases" color="currentColor" underline="none"> */}
+                <Link href="/tetrachroma" color="currentColor" underline="none">
+                  <Typography
+                    fontSize={12}
+                    fontFamily={typography.fontFamilies.extended}
+                    fontWeight={600}
+                    textTransform="uppercase"
+                    letterSpacing={[1, 2, 3]}
+                  >
+                    Releases
                   </Typography>
                 </Link>
                 <Link href="/#contact" color="currentColor" underline="none">
@@ -135,15 +166,17 @@ export const Header = () => {
                 </Link>
               </Stack>
             )}
-            <Hamburger
-              width={32}
-              height={32}
-              onClick={handleHamburgerClick}
-              style={{
-                color: scrollY > footerTop - 40 ? colors.white : colors.black,
-              }}
-              active={active}
-            />
+            {isMobile && (
+              <Hamburger
+                width={32}
+                height={32}
+                onClick={handleHamburgerClick}
+                style={{
+                  color: scrollY > footerTop - 40 ? colors.white : colors.black,
+                }}
+                active={active}
+              />
+            )}
           </Stack>
         </Stack>
       </Container>
