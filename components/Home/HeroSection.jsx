@@ -8,7 +8,7 @@ export const HeroSection = () => {
       sx={{
         // bgcolor: colors.yellow,
         background: `radial-gradient(farthest-corner at top left, #edca37 5%, ${colors.yellow})`,
-        height: "100vh",
+        height: "calc(var(--vh, 1vh) * 100)",
       }}
     >
       <Container sx={{ position: "relative", zIndex: 1, height: "100%" }}>
@@ -25,7 +25,7 @@ export const HeroSection = () => {
               mt: 32,
             }}
           >
-            <Stack spacing={8}>
+            <Stack spacing={6}>
               <Stack>
                 <Typography
                   variant="h1"
@@ -55,16 +55,11 @@ export const HeroSection = () => {
                 }}
               >
                 <Typography
-                  variant="subtitle2"
-                  sx={{
-                    fontFamily: typography.fontFamilies.displaySans,
-                    // fontStyle: "italic",
-                    fontWeight: 400,
-                    lineHeight: 1.75,
-                  }}
+                  variant="subtitle1"
+                  fontFamily={typography.fontFamilies.serif}
+                  fontSize={[24, 26, 28, 32]}
                 >
-                  Building and designing incredible products for the
-                  decentralized web.
+                  Bringing the <strong>decentralized&nbsp;web</strong> to life.
                 </Typography>
               </Box>
             </Stack>
