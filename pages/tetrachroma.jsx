@@ -32,7 +32,7 @@ const Tetrachroma = () => {
         <Grid container spacing={4} sx={{ mt: 0 }}>
           {images.map((Release, i) => {
             return (
-              <Grid item xs={12} md={3}>
+              <Grid item xs={12} md={3} key={i}>
                 <Image
                   lazyBoundary="500px"
                   placeholder="blur"
