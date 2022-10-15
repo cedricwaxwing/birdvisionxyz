@@ -11,9 +11,9 @@ import Zodiac2 from "../public/assets/imgs/gnosis-guild/reality-1.png";
 import TabulaHome from "../public/assets/imgs/gnosis-guild/TabulaHome.jpg";
 import Tabula2 from "../public/assets/imgs/gnosis-guild/tabula-2.png";
 import { typography } from "../src/styles/theme";
-import { Context } from "../common/Projects/Context";
+import { Context } from "../common/Context";
 import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
-import { ViewLink } from "../common/Projects/ViewLink";
+import { ViewLink } from "../common/ViewLink";
 
 const project = projects["gnosis-guild"];
 const wandIsLive = false;
@@ -135,7 +135,9 @@ const GnosisGuild = () => {
               <Context>Product Design and Frontend Development</Context>
               <ProjectBody>
                 Zodiac is a composable philosophy and collection of tools built
-                according to an open standard.
+                according to an open standard. We helped Gnosis Guild create the
+                Roles Modifier app as well as various usability improvements to
+                the Reality Module.
               </ProjectBody>
             </Grid>
           </Grid>
