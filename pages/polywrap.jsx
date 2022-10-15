@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ProjectLayout from "../common/Projects/ProjectLayout";
 import { ProjectBody } from "../common/Projects/ProjectBody";
-import { ViewLink } from "../common/Projects/ViewLink";
+import { ViewLink } from "../common/ViewLink";
 import { FigmaEmbed } from "../components/FigmaEmbed";
 import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
@@ -16,7 +16,7 @@ import PolyfolioDiscovery1 from "../public/assets/imgs/polywrap/polyfolio-discov
 import PolyfolioDiscovery2 from "../public/assets/imgs/polywrap/polyfolio-discovery-2.png";
 import Polyfolio1 from "../public/assets/imgs/polywrap/polyfolio-1.png";
 import PolyfolioMobile from "../public/assets/imgs/polywrap/polyfolio-3.png";
-import { Context } from "../common/Projects/Context";
+import { Context } from "../common/Context";
 import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 
 const project = projects["polywrap"];

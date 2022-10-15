@@ -20,7 +20,7 @@ export const Header = () => {
   const [scrollY, setScrollY] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
   const [footerTop, setFooterTop] = useState(0);
-  const [active, setActive] = useState(!isMobile);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     setScreenWidth(window.innerWidth);
@@ -35,6 +35,7 @@ export const Header = () => {
   }, []);
 
   useEffect(() => {
+    setActive(!isMobile);
     const handleScroll = () => {
       setActive(!isMobile);
       setFooterTop(document.querySelector("footer").offsetTop);
@@ -45,7 +46,7 @@ export const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [screenWidth]);
+  }, [isMobile, screenWidth]);
 
   const handleHamburgerClick = () => {
     setActive(!active);

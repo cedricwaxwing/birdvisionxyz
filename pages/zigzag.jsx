@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ProjectLayout from "../common/Projects/ProjectLayout";
 import { ProjectBody } from "../common/Projects/ProjectBody";
-import { ViewLink } from "../common/Projects/ViewLink";
+import { ViewLink } from "../common/ViewLink";
 import { FigmaEmbed } from "../components/FigmaEmbed";
 import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
@@ -14,7 +14,7 @@ import App2 from "../public/assets/imgs/zigzag/app-2.png";
 import App3 from "../public/assets/imgs/zigzag/app-3.png";
 import App4 from "../public/assets/imgs/zigzag/app-4.png";
 import App5 from "../public/assets/imgs/zigzag/app-5.png";
-import { Context } from "../common/Projects/Context";
+import { Context } from "../common/Context";
 import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 
 const project = projects["zigzag"];

@@ -6,10 +6,8 @@ import { ViewLink } from "../ViewLink";
 const ProjectTemplate = ({
   slug,
   name,
-  type,
-  date,
-  myRole,
-  propsTo,
+  link,
+  marketplace,
   caption,
   description,
   body,
@@ -45,12 +43,8 @@ const ProjectTemplate = ({
         {description}
       </Typography>
       <Box sx={{ mt: 4 }}>
-        <ViewLink
-          href="https://fxhash.xyz/u/birdvision.xyz/"
-          target="_blank"
-          rel="noredirect"
-        >
-          Mint on fxhash.xyz
+        <ViewLink href={link} target="_blank" rel="noredirect">
+          Mint on {marketplace}
         </ViewLink>
       </Box>
       {body}

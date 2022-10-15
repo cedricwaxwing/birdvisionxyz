@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ProjectLayout from "../common/Projects/ProjectLayout";
 import { ProjectBody } from "../common/Projects/ProjectBody";
-import { ViewLink } from "../common/Projects/ViewLink";
+import { ViewLink } from "../common/ViewLink";
 import { FigmaEmbed } from "../components/FigmaEmbed";
 import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
@@ -10,7 +10,7 @@ import UI2 from "../public/assets/imgs/dao-drops/ui-2.png";
 import UI3 from "../public/assets/imgs/dao-drops/ui-3.png";
 import UI5 from "../public/assets/imgs/dao-drops/ui-5.png";
 import UI6 from "../public/assets/imgs/dao-drops/ui-6.png";
-import { Context } from "../common/Projects/Context";
+import { Context } from "../common/Context";
 import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 
 const project = projects["dao-drops"];
