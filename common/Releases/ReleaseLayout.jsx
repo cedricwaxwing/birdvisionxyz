@@ -1,29 +1,16 @@
 import Head from "next/head";
 import ProjectTemplate from "./ReleaseTemplate";
-import {
-  Box,
-  Container,
-  Grid,
-  Link,
-  Stack,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Container, Grid, useTheme } from "@mui/material";
 import Image from "next/image";
-import { colors, easings } from "../../src/styles/theme";
-import { releases } from "../../constants/projects";
-import { ArrowLongRight } from "../../common/ArrowLongRight";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { Release } from "./Release";
+import { colors } from "../../src/styles/theme";
 
 const ProjectLayout = ({ release, children }) => {
-  const theme = useTheme();
-
   return (
     <>
       <Head>
-        <title>{`${release.name.toUpperCase()} -  - ${release.type}`}</title>
+        <title>{`${release.slug.toUpperCase()} - ${
+          release.type
+        } by BIRD VISION`}</title>
         <meta name="description" content={release.description} />
       </Head>
       <Box
@@ -56,7 +43,7 @@ const ProjectLayout = ({ release, children }) => {
         {/* Layout 1 */}
         <Box sx={{ mt: [24, 32], position: "relative" }}>
           <Container>
-            <Grid container spacing={12}>
+            <Grid container spacing={[6, 6, 12]}>
               <Grid item xs={12} sm={5}>
                 <ProjectTemplate {...release} />
               </Grid>

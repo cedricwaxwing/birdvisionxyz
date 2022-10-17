@@ -5,7 +5,7 @@ export const releases = {
   "tetrachroma": {
     active: true,
     slug: "tetrachroma",
-    name: "TETRACHROMA",
+    name: <>TETRA<wbr />CHROMA</>,
     type: "Generative Art",
     date: "Oct 21, 2022",
     link: "https://www.fxhash.xyz/generative/20388",

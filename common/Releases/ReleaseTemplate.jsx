@@ -16,7 +16,14 @@ const ProjectTemplate = ({
 }) => {
   return (
     <>
-      <Typography variant="h4" sx={{ color: colors[slug], lineHeight: 1 }}>
+      <Typography
+        variant="h4"
+        sx={{
+          color: colors[slug],
+          fontSize: ["1.5rem", "1.75rem", "2rem"],
+          lineHeight: 1,
+        }}
+      >
         {name}
       </Typography>
       <Typography
