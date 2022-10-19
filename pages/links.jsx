@@ -164,8 +164,8 @@ const Links = () => {
                 We're a web3 art, design and development collective.
               </Typography>
               <Stack spacing={[2, 3]} sx={{ width: "100%" }}>
-                {links.map((link) => (
-                  <LinkTree {...link} />
+                {links.map((link, i) => (
+                  <LinkTree key={i} {...link} />
                 ))}
               </Stack>
             </Stack>
