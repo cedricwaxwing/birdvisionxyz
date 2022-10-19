@@ -104,7 +104,7 @@ export default function MyApp(props) {
         <Stack
           sx={{ minHeight: "calc(var(--vh, 1vh) * 100)", overflow: "hidden" }}
         >
-          <Header />
+          {router.route !== "/links" && <Header />}
           <Component {...pageProps} />
           <Footer />
           {!isMobile && <CursorEffect />}
