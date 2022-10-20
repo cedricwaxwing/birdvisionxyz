@@ -1,5 +1,5 @@
 import Head from "next/head";
-import ProjectTemplate from "./ReleaseTemplate";
+import ReleaseTemplate from "./ReleaseTemplate";
 import { Box, Container, Grid, useTheme } from "@mui/material";
 import Image from "next/image";
 import { colors } from "../../src/styles/theme";
@@ -40,12 +40,11 @@ const ProjectLayout = ({ release, children }) => {
           },
         }}
       >
-        {/* Layout 1 */}
         <Box sx={{ mt: [24, 32], position: "relative" }}>
           <Container>
             <Grid container spacing={[6, 6, 12]}>
               <Grid item xs={12} sm={5}>
-                <ProjectTemplate {...release} />
+                <ReleaseTemplate {...release} />
               </Grid>
               <Grid item xs={12} sm={7}>
                 <Image
@@ -59,67 +58,6 @@ const ProjectLayout = ({ release, children }) => {
               </Grid>
             </Grid>
             {children}
-            {/* <Link
-              href={`/${nextProject?.slug}`}
-              underline="none"
-              className="nextrelease-link"
-              sx={{
-                "@keyframes point": {
-                  "0%, 100%": {
-                    transform: "translateX(0)",
-                  },
-                  "50%, 95%": {
-                    transform: "translateX(-10%)",
-                  },
-                },
-                cursor: `url(${nextProject?.cursor}), pointer !important`,
-                "&:hover": {
-                  color: colors.black,
-                  transition: `all 0.5s ${easings.cubic}`,
-                },
-                "&:hover .hover": {
-                  color: colors[nextProject?.slug],
-                },
-                "&:hover .arrow": {
-                  animation: `point 1s 0.5s ${easings.cubic} infinite`,
-                },
-              }}
-            >
-              <Stack
-                direction="row"
-                alignItems="center"
-                spacing={4}
-                sx={{
-                  justifyContent: "space-between",
-                  flexDirection: ["column", "row"],
-                  mt: 12,
-                  py: 4,
-                  mb: -4,
-                }}
-              >
-                <Stack spacing={0.5} width="100%">
-                  <Typography lineHeight={1}>Next Project:</Typography>
-                  <Typography
-                    lineHeight={1}
-                    variant="h5"
-                    component="span"
-                    className="hover"
-                  >
-                    {nextProject?.name}
-                  </Typography>
-                </Stack>
-                <Box
-                  display="flex"
-                  width="100%"
-                  sx={{
-                    ml: ["0 !important", "initial"],
-                    mt: [`${theme.spacing(2)} !important`, 0],
-                  }}
-                >
-                  <ArrowLongRight className="hover arrow" width="100%" />
-                </Box>
-              </Stack>
-            </Link> */}
           </Container>
         </Box>
       </Box>

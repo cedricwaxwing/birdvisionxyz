@@ -34,14 +34,19 @@ const links = [
     icon: TwitterLogo,
     link: "https://twitter.com/cedricwaxwing",
   },
+  {
+    name: "website",
+    link: "/",
+    internal: true,
+  },
 ];
 
-const LinkTree = ({ link, name, description, icon }) => {
+const LinkTree = ({ link, internal, name, description, icon }) => {
   return (
     <Link
       href={link}
-      target="_blank"
-      rel="noredirect"
+      target={internal ? null : "_blank"}
+      rel={internal ? null : "noredirect"}
       underline="none"
       sx={{ width: "100%" }}
     >

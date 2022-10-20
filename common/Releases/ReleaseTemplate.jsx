@@ -7,12 +7,13 @@ const ProjectTemplate = ({
   slug,
   name,
   link,
+  date,
+  iterations,
   marketplace,
   caption,
+  tags,
   description,
   body,
-  tags,
-  thumb,
 }) => {
   return (
     <>
@@ -49,6 +50,58 @@ const ProjectTemplate = ({
       >
         {description}
       </Typography>
+      <Stack spacing={1} sx={{ mt: 4 }}>
+        <Typography
+          variant="body1"
+          sx={{
+            fontFamily: typography.fontFamilies.monospace,
+            fontWeight: 700,
+          }}
+        >
+          date:{` `}
+          <Typography variant="span" sx={{ fontWeight: 300 }}>
+            {date}
+          </Typography>
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            fontFamily: typography.fontFamilies.monospace,
+            fontWeight: 700,
+          }}
+        >
+          released:{` `}
+          <Typography variant="span" sx={{ fontWeight: 300 }}>
+            {marketplace}
+          </Typography>
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            fontFamily: typography.fontFamilies.monospace,
+            fontWeight: 700,
+          }}
+        >
+          iterations:{` `}
+          <Typography variant="span" sx={{ fontWeight: 300 }}>
+            {iterations}
+          </Typography>
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            fontFamily: typography.fontFamilies.monospace,
+            fontWeight: 700,
+          }}
+        >
+          tags:{` `}
+          {tags.map((tag) => (
+            <Typography variant="span" sx={{ fontWeight: 300 }}>
+              {tag},
+            </Typography>
+          ))}
+        </Typography>
+      </Stack>
       <Box sx={{ mt: 4 }}>
         <ViewLink href={link} target="_blank" rel="noredirect">
           Mint on {marketplace}

@@ -10,6 +10,7 @@ export const releases = {
     date: "Oct 21, 2022",
     link: "https://www.fxhash.xyz/generative/20388",
     marketplace: "fxhash.xyz",
+    iterations: 92,
     tags: ["p5js", "generative", "gan", "creative coding", "gradient mapping", "dithering"],
     description: `This generative NFT collection combines GAN imagery with custom dithering algorithms to explore what life with 4 cones might be like.`,
     thumb: TetrachromaThumb,
