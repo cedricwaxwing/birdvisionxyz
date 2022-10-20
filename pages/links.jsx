@@ -17,7 +17,7 @@ const links = [
   {
     name: "fx(hash)",
     icon: FxHashLogo,
-    link: "https://fxhash.xyz/birdvision",
+    link: "https://fxhash.xyz/u/birdvision",
   },
   {
     name: "instagram",
