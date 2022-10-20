@@ -22,7 +22,7 @@ const links = [
   {
     name: "instagram",
     icon: InstagramLogo,
-    link: "https://instagram.com/birdvisionxyz",
+    link: "https://instagram.com/birdvision.xyz",
   },
   {
     name: "twitter",
