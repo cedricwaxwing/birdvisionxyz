@@ -20,11 +20,6 @@ const links = [
     link: "https://www.fxhash.xyz/generative/20388",
   },
   {
-    name: "fx(hash)",
-    icon: FxHashLogo,
-    link: "https://fxhash.xyz/u/birdvision",
-  },
-  {
     name: "instagram",
     icon: InstagramLogo,
     link: "https://instagram.com/birdvision.xyz",
