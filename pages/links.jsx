@@ -10,19 +10,9 @@ import Image from "next/image";
 
 const links = [
   {
-    name: "Gem Cities",
-    description: "{generative nft collection}",
-    link: "https://www.fxhash.xyz/generative/20967",
-  },
-  {
-    name: "TETRACHROMA",
-    description: "{generative nft collection}",
-    link: "https://www.fxhash.xyz/generative/20388",
-  },
-  {
     name: "instagram",
     icon: InstagramLogo,
-    link: "https://instagram.com/birdvision.xyz",
+    link: "https://instagram.com/cedricwaxwing_",
   },
   {
     name: "twitter",
@@ -33,6 +23,11 @@ const links = [
     name: "twitter(cedric)",
     icon: TwitterLogo,
     link: "https://twitter.com/cedricwaxwing",
+  },
+  {
+    name: "TETRACHROMA",
+    description: "{generative nft collection}",
+    link: "https://www.fxhash.xyz/generative/20388",
   },
   {
     name: "website",
