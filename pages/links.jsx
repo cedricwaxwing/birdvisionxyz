@@ -2,22 +2,17 @@ import React from "react";
 import Head from "next/head";
 import Logo from "../common/Logo";
 import TwitterLogo from "../public/assets/imgs/socials/Twitter.svg";
+import GithubIcon from "../public/assets/imgs/socials/Github.svg";
 import InstagramLogo from "../public/assets/imgs/socials/Instagram.svg";
-import FxHashLogo from "../public/assets/imgs/socials/fxhash.png";
-import { Box, Container, Grid, Link, Stack, Typography } from "@mui/material";
+import { Box, Container, Link, Stack, Typography } from "@mui/material";
 import { colors, easings, typography } from "../src/styles/theme";
 import Image from "next/image";
 
 const links = [
   {
-    name: "instagram",
-    icon: InstagramLogo,
-    link: "https://instagram.com/cedricwaxwing_",
-  },
-  {
-    name: "twitter",
-    icon: TwitterLogo,
-    link: "https://twitter.com/birdvisionxyz",
+    name: "metamorph.",
+    description: "{generative nft collection}",
+    link: "https://twitter.com/cedricwaxwing/status/1612939310466203648?s=20&t=qYqZb68CZQnySAl5b4oKcg",
   },
   {
     name: "twitter(cedric)",
@@ -33,6 +28,24 @@ const links = [
     name: "website",
     link: "/",
     internal: true,
+  },
+];
+
+const socials = [
+  {
+    name: "instagram.",
+    icon: InstagramLogo,
+    link: "https://instagram.com/cedricwaxwing_",
+  },
+  {
+    name: "twitter",
+    icon: TwitterLogo,
+    link: "https://twitter.com/birdvisionxyz",
+  },
+  {
+    name: "github",
+    icon: GithubIcon,
+    link: "https://www.github.com/cedricwaxwing",
   },
 ];
 
@@ -168,6 +181,37 @@ const Links = () => {
                   <LinkTree key={i} {...link} />
                 ))}
               </Stack>
+            </Stack>
+            <Stack
+              direction="row"
+              spacing={3}
+              sx={{ mt: 4, display: "flex", justifyContent: "center" }}
+            >
+              {socials.map((social, i) => (
+                <Link
+                  href={social.link}
+                  target="_blank"
+                  rel="noredirect"
+                  sx={{
+                    height: 40,
+                    width: 40,
+                    backgroundColor: colors.black,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    "&:hover, &:active": {
+                      bgcolor: colors.violet,
+                    },
+                  }}
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.name}
+                    width={24}
+                    height={24}
+                  />
+                </Link>
+              ))}
             </Stack>
           </Container>
         </Box>
