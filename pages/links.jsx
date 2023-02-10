@@ -12,7 +12,7 @@ const links = [
   {
     name: "metamorph.",
     description: "{generative nft collection}",
-    link: "https://twitter.com/cedricwaxwing/status/1612939310466203648?s=20&t=qYqZb68CZQnySAl5b4oKcg",
+    link: "https://www.fxhash.xyz/generative/24105",
   },
   {
     name: "twitter(cedric)",
@@ -20,9 +20,8 @@ const links = [
     link: "https://twitter.com/cedricwaxwing",
   },
   {
-    name: "TETRACHROMA",
-    description: "{generative nft collection}",
-    link: "https://www.fxhash.xyz/generative/20388",
+    name: "fx(hash)",
+    link: "https://www.fxhash.xyz/u/cedricwaxwing",
   },
   {
     name: "website",
@@ -192,6 +191,7 @@ const Links = () => {
                   href={social.link}
                   target="_blank"
                   rel="noredirect"
+                  key={i}
                   sx={{
                     height: 40,
                     width: 40,
