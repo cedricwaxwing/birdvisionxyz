@@ -12,7 +12,7 @@ const links = [
   {
     name: "Elemental",
     description: "{generative nft collection}",
-    link: "https://www.fxhash.xyz/generative/25415",
+    link: "https://www.fxhash.xyz/generative/25421",
   },
   {
     name: "twitter(cedric)",
