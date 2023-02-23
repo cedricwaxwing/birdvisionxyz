@@ -10,9 +10,9 @@ import Image from "next/image";
 
 const links = [
   {
-    name: "metamorph.",
+    name: "Elemental",
     description: "{generative nft collection}",
-    link: "https://www.fxhash.xyz/generative/24105",
+    link: "https://www.fxhash.xyz/generative/25415",
   },
   {
     name: "twitter(cedric)",
