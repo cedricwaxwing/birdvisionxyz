@@ -13,6 +13,8 @@ import Logo from "./Logo";
 import Hamburger from "../components/Hamburger";
 import { colors, easings, typography } from "../src/styles/theme";
 
+const site = process.env.REACT_APP_SITE;
+
 export const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -142,18 +144,23 @@ export const Header = () => {
                     Projects
                   </Typography>
                 </Link>
-                {/* <Link href="/releases" color="currentColor" underline="none"> */}
-                <Link href="/tetrachroma" color="currentColor" underline="none">
-                  <Typography
-                    fontSize={12}
-                    fontFamily={typography.fontFamilies.extended}
-                    fontWeight={600}
-                    textTransform="uppercase"
-                    letterSpacing={[1, 2, 3]}
+                {site === "cedricwaxwing" && (
+                  <Link
+                    href="/tetrachroma"
+                    color="currentColor"
+                    underline="none"
                   >
-                    Releases
-                  </Typography>
-                </Link>
+                    <Typography
+                      fontSize={12}
+                      fontFamily={typography.fontFamilies.extended}
+                      fontWeight={600}
+                      textTransform="uppercase"
+                      letterSpacing={[1, 2, 3]}
+                    >
+                      Releases
+                    </Typography>
+                  </Link>
+                )}
                 <Link href="/#contact" color="currentColor" underline="none">
                   <Typography
                     fontSize={12}

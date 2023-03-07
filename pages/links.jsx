@@ -7,12 +7,15 @@ import InstagramLogo from "../public/assets/imgs/socials/Instagram.svg";
 import { Box, Container, Link, Stack, Typography } from "@mui/material";
 import { colors, easings, typography } from "../src/styles/theme";
 import Image from "next/image";
+// import { loadEnvConfig } from "@next/env";
+
+const site = process.env.REACT_APP_SITE;
 
 const links = [
   {
     name: "Elemental",
     description: "{generative nft collection}",
-    link: "https://www.fxhash.xyz/generative/25421",
+    link: "https://www.fxhash.xyz/generative/25734",
   },
   {
     name: "twitter(cedric)",
@@ -46,7 +49,20 @@ const socials = [
     icon: GithubIcon,
     link: "https://www.github.com/cedricwaxwing",
   },
+  {
+    name: "twitter",
+    icon: TwitterLogo,
+    link: "https://twitter.com/cedricwaxwing",
+  },
 ];
+
+export const site_links = {
+  cedricwaxwing: {
+    links: [links[0], links[2], links[3]],
+    socials: [socials[0], socials[3], socials[2]],
+  },
+  birdvision: { links: links, socials: [socials[0], socials[1], socials[2]] },
+};
 
 const LinkTree = ({ link, internal, name, description, icon }) => {
   return (
@@ -100,13 +116,17 @@ const Links = () => {
           key="viewport"
         />
         <title>
-          Links - BIRD VISION - Bringing the decentralized web to life.
+          {`Links - ${
+            site === "birdvision" ? "BIRD VISION" : "CEDRIC WAXWING"
+          } - Bringing the decentralized web to life.`}
         </title>
         <meta
           name="description"
-          content={
-            "A web3 design and development collective that crafts beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology."
-          }
+          content={`${
+            site === "birdvision"
+              ? "A web3 design and development collective that crafts"
+              : "Crafting"
+          } beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology.`}
           key="description"
         />
       </Head>
@@ -151,16 +171,17 @@ const Links = () => {
                   sx={{
                     fontFamily: typography.fontFamilies.extended,
                     fontWeight: 900,
-                    fontSize: [32, 48],
+                    fontSize: [32, site === "cedricwaxwing" ? 36 : 48],
                     textTransform: "uppercase",
                     lineHeight: 1,
+                    textAlign: "center",
                     WebkitTextStrokeWidth: [1, 2],
                     WebkitTextStrokeColor: `${colors.black}99`,
                   }}
                 >
-                  BIRD{" "}
+                  {site === "cedricwaxwing" ? "CEDRIC" : "BIRD"}{" "}
                   <Typography variant="span" sx={{ color: colors.white }}>
-                    VISION
+                    {site === "cedricwaxwing" ? "WAXWING" : "VISION"}
                   </Typography>
                 </Typography>
               </Link>
@@ -173,10 +194,10 @@ const Links = () => {
                   textAlign: "center",
                 }}
               >
-                We're a web3 art, design and development collective.
+                web3 art, design and development
               </Typography>
               <Stack spacing={[2, 3]} sx={{ width: "100%" }}>
-                {links.map((link, i) => (
+                {site_links[site].links.map((link, i) => (
                   <LinkTree key={i} {...link} />
                 ))}
               </Stack>
@@ -186,7 +207,7 @@ const Links = () => {
               spacing={3}
               sx={{ mt: 4, display: "flex", justifyContent: "center" }}
             >
-              {socials.map((social, i) => (
+              {site_links[site].socials.map((social, i) => (
                 <Link
                   href={social.link}
                   target="_blank"
