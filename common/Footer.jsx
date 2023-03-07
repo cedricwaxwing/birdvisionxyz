@@ -9,10 +9,16 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { socials } from "../constants/socials";
+import { site_links } from "../pages/links";
+import TwitterLogo from "../public/assets/imgs/socials/Twitter.svg";
+import GithubIcon from "../public/assets/imgs/socials/Github.svg";
+import InstagramLogo from "../public/assets/imgs/socials/Instagram.svg";
 import { colors, easings, typography } from "../src/styles/theme";
 import Image from "next/image";
 import ArrowShortUp from "../public/assets/imgs/arrow-short-up.svg";
+// import { loadEnvConfig } from "@next/env";
+
+const site = process.env.REACT_APP_SITE;
 
 export const Footer = () => {
   const footerRef = useRef();
@@ -22,6 +28,7 @@ export const Footer = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+  let date = new Date();
   useEffect(() => {
     const handleScroll = () => {
       setShowArrow(
@@ -87,7 +94,8 @@ export const Footer = () => {
                       fontWeight: 300,
                     }}
                   >
-                    © 2022 Bird Vision
+                    © {date.getFullYear()}{" "}
+                    {site === "birdvision" ? "Bird Vision" : "Cedric Waxwing"}
                   </Typography>
                 </Stack>
               </Grid>
@@ -98,7 +106,9 @@ export const Footer = () => {
                   </Typography>
                   <Box sx={{ display: "inline" }}>
                     <Link
-                      href="mailto:hello@birdvision.xyz"
+                      href={`mailto:${
+                        site === "birdvision" ? "hello" : "cedric"
+                      }@birdvision.xyz`}
                       underline="none"
                       sx={{
                         color: "rgba(255,255,255,0.7)",
@@ -112,7 +122,9 @@ export const Footer = () => {
                           fontWeight: 300,
                         }}
                       >
-                        hello@birdvision.xyz
+                        {`${
+                          site === "birdvision" ? "hello" : "cedric"
+                        }@birdvision.xyz`}
                       </Typography>
                     </Link>
                   </Box>
@@ -124,36 +136,33 @@ export const Footer = () => {
                     Follow
                   </Typography>
                   <Stack direction="row" spacing={2}>
-                    {socials.map((social) => (
+                    {site_links[site].socials.map((social, i) => (
                       <Link
-                        key={social.name}
                         href={social.link}
                         target="_blank"
                         rel="noredirect"
+                        key={i}
+                        sx={{
+                          bgcolor: colors.black,
+                          borderRadius: 999,
+                          display: "flex",
+                          opacity: 0.85,
+                          p: "5px",
+                          transition: `opacity 0.25s ${easings.cubic}, transform 0.25s ${easings.cubic}`,
+                          "&:hover": {
+                            bgcolor: colors.violet,
+                            opacity: 1,
+                            transform: "scale(1.05)",
+                          },
+                        }}
                       >
-                        <Box
-                          sx={{
-                            bgcolor: colors.black,
-                            borderRadius: 999,
-                            display: "flex",
-                            opacity: 0.85,
-                            p: "5px",
-                            transition: `opacity 0.25s ${easings.cubic}, transform 0.25s ${easings.cubic}`,
-                            "&:hover": {
-                              bgcolor: colors.violet,
-                              opacity: 1,
-                              transform: "scale(1.05)",
-                            },
-                          }}
-                        >
-                          <Image
-                            lazyBoundary="500px"
-                            src={social.image}
-                            alt={social.name}
-                            width={19}
-                            height={19}
-                          />
-                        </Box>
+                        <Image
+                          lazyBoundary="500px"
+                          src={social.icon}
+                          alt={social.name}
+                          width={19}
+                          height={19}
+                        />
                       </Link>
                     ))}
                   </Stack>

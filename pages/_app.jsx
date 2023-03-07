@@ -18,6 +18,8 @@ import { Noise } from "../components/Noise";
 import { colors, theme } from "../src/styles/theme";
 import OgImage from "../public/assets/imgs/og_image.png";
 
+const site = process.env.REACT_APP_SITE;
+
 export default function MyApp(props) {
   const router = useRouter();
   const [page, setPage] = React.useState();
@@ -57,19 +59,19 @@ export default function MyApp(props) {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png"
+          href={`/${site}/apple-touch-icon.png`}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png"
+          href={`/${site}/favicon-32x32.png`}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon-16x16.png"
+          href={`/${site}/favicon-16x16.png`}
         />
         <link rel="manifest" href="/site.webmanifest" />
         <meta
@@ -77,22 +79,32 @@ export default function MyApp(props) {
           content="width=device-width, initial-scale=1"
           key="viewport"
         />
-        <title>BIRD VISION - Bringing the decentralized web to life.</title>
+        <title>{`${
+          site === "birdvision" ? "BIRD VISION" : "CEDRIC WAXWING"
+        } - Bringing the decentralized web to life.`}</title>
         <meta
           name="description"
-          content={
-            "A web3 design and development collective that crafts beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology."
-          }
+          content={`${
+            site === "birdvision"
+              ? "A web3 design and development collective that crafts"
+              : "Crafting"
+          } beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology.`}
           key="description"
         />
         <meta property="og:url" content="https://www.birdvision.xyz" />
         <meta
           property="og:title"
-          content="BIRD VISION - Bringing the decentralized web to life."
+          content={`${
+            site === "birdvision" ? "BIRD VISION" : "CEDRIC WAXWING"
+          } - Bringing the decentralized web to life.`}
         />
         <meta
           property="og:description"
-          content="A web3 design and development collective that crafts beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology."
+          content={`${
+            site === "birdvision"
+              ? "A web3 design and development collective that crafts"
+              : "Crafting"
+          } beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology.`}
         />
         <meta property="og:image" content={OgImage.src} />
         <meta name="msapplication-config" content="/browserconfig.xml" />
