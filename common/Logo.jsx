@@ -25,13 +25,19 @@ const Logo = ({ strokeWidth = 24, sx }) => (
         <Box
           sx={{
             border: `3px solid #000`,
+            backgroundColor: "#fff",
             borderRadius: 999,
             display: "flex",
             transition: `all 0.25s ${easings.cubic}`,
             "&:hover": { transform: "scale(1.2)" },
           }}
         >
-          <Image lazyBoundary="500px" src={LogoImg} alt="Cedric Waxwing Logo" />
+          <Image
+            lazyBoundary="500px"
+            loading="eager"
+            src={LogoImg}
+            alt="Cedric Waxwing Logo"
+          />
         </Box>
       ) : (
         <svg
