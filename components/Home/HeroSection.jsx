@@ -31,6 +31,10 @@ export const HeroSection = () => {
                   variant="h1"
                   sx={{
                     color: `${colors.black}ed`,
+                    fontSize:
+                      site === "cedricwaxwing"
+                        ? [`40px`, `48px`, "4rem"]
+                        : null,
                     WebkitTextStroke: `2px ${colors.black}`,
                     lineHeight: 0.8,
                   }}
@@ -41,6 +45,10 @@ export const HeroSection = () => {
                   variant="h1"
                   sx={{
                     color: `${colors.white}cc`,
+                    fontSize:
+                      site === "cedricwaxwing"
+                        ? [`40px`, `48px`, "4rem"]
+                        : null,
                     WebkitTextStroke: `2px ${colors.black}`,
                     lineHeight: 0.8,
                   }}
