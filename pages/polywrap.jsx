@@ -6,9 +6,9 @@ import { FigmaEmbed } from "../components/FigmaEmbed";
 import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
 import { Box, Grid, Link, useMediaQuery, useTheme } from "@mui/material";
-import Landing1 from "../public/assets/imgs/polywrap/landing-page-1.png";
+import Landing1 from "../public/assets/imgs/polywrap/landing-page-1.webp";
 import Landing2 from "../public/assets/imgs/polywrap/landing-page-2.png";
-import Landing3 from "../public/assets/imgs/polywrap/landing-page-3.png";
+import Landing3 from "../public/assets/imgs/polywrap/landing-page-3.webp";
 import Docs1 from "../public/assets/imgs/polywrap/docs-1.png";
 import Docs2 from "../public/assets/imgs/polywrap/docs-2.png";
 import Docs3 from "../public/assets/imgs/polywrap/docs-3.png";
@@ -72,14 +72,14 @@ const GnosisGuild = () => {
             alt="Polywrap Landing Page"
           />
         </Box>
-        <Box sx={{ mt: 4 }}>
+        {/* <Box sx={{ mt: 4 }}>
           <Image
             lazyBoundary="500px"
             placeholder="blur"
             src={Landing2}
             alt="Polywrap wrapper showcase"
           />
-        </Box>
+        </Box> */}
       </Box>
 
       <Box component="section" id="polyfolio" mt={20}>

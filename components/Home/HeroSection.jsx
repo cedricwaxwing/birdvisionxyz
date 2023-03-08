@@ -2,6 +2,10 @@ import React from "react";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { colors, typography } from "../../src/styles/theme";
 
+import { config } from "../../constants/config";
+
+const site = process.env.REACT_APP_SITE;
+
 export const HeroSection = () => {
   return (
     <Box
@@ -39,7 +43,7 @@ export const HeroSection = () => {
                     lineHeight: 0.8,
                   }}
                 >
-                  BIRD
+                  {site === "cedricwaxwing" ? "CEDRIC" : "BIRD"}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -53,7 +57,7 @@ export const HeroSection = () => {
                     lineHeight: 0.8,
                   }}
                 >
-                  VISION
+                  {site === "cedricwaxwing" ? "WAXWING" : "VISION"}
                 </Typography>
               </Stack>
               <Box
