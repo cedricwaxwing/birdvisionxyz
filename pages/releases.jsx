@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import { Release } from "../common/Releases/Release";
 import { colors } from "../src/styles/theme";
+import { releases } from "../constants/releases";
 
 const Releases = () => {
   return (
@@ -49,7 +50,7 @@ const Releases = () => {
               <Typography
                 variant="h2"
                 sx={{
-                  color: `${colors.black}cc`,
+                  color: `${colors.white}99`,
                   fontSize: ["2.5rem", "3.5rem", "6rem"],
                   WebkitTextStroke: `2px ${colors.black}33`,
                 }}
@@ -60,7 +61,11 @@ const Releases = () => {
                 NFT Collections, and other 
               </Typography> */}
             </Box>
-            <Release release="tetrachroma" index={1} />
+            <Stack spacing={16}>
+              {Object.keys(releases).map((release, i) => (
+                <Release release={release} key={i} index={i + 1} />
+              ))}
+            </Stack>
           </Container>
         </Box>
       </Box>

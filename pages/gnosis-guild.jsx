@@ -5,6 +5,9 @@ import { projects } from "../constants/projects";
 import { Box, Grid, Link, Typography } from "@mui/material";
 import WandNFTApp from "../public/assets/imgs/gnosis-guild/WandNFTApp.jpg";
 import WandNFT1 from "../public/assets/imgs/gnosis-guild/wand-nft-1.png";
+import WandNFT2 from "../public/assets/imgs/gnosis-guild/wand-nft-2.jpeg";
+import WandNFT3 from "../public/assets/imgs/gnosis-guild/wand-nft-3.jpeg";
+import WandNFT4 from "../public/assets/imgs/gnosis-guild/wand-nft-4.jpeg";
 import ZodiacHome from "../public/assets/imgs/gnosis-guild/ZodiacHome.jpg";
 import Zodiac1 from "../public/assets/imgs/gnosis-guild/roles-1.png";
 import Zodiac2 from "../public/assets/imgs/gnosis-guild/reality-1.png";
@@ -16,7 +19,7 @@ import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 import { ViewLink } from "../common/ViewLink";
 
 const project = projects["gnosis-guild"];
-const wandIsLive = false;
+const wandIsLive = true;
 
 const Body = () => {
   return (
@@ -45,128 +48,6 @@ const GnosisGuild = () => {
           flexDirection: wandIsLive ? "column" : "column-reverse",
         }}
       >
-        {wandIsLive && (
-          <Box component="section" id="wand-nft" mt={20}>
-            <Grid container alignItems="flex-end">
-              <Grid item xs={12} md={7}>
-                <SubProjectTitle>Wand NFT</SubProjectTitle>
-                <Context>
-                  Minting App Visual Design, UX, and Frontend Development
-                </Context>
-                <ProjectBody>
-                  The Wand NFT project was a massive undertaking by many folks
-                  at Gnosis Guild and it broke new ground on many fronts. These
-                  reputation-based NFTs are only available via in-person
-                  receivables or by contributing to the Zodiac Wiki. The NFT
-                  levels up as you gain more experience from your peers. The
-                  minting app allows the user to completely customize their
-                  wand, and in true Gnosis Guild fashion, we included a
-                  generative soundtrack based on the parameters. Read more about
-                  it{` `}
-                  <Link sx={{ fontWeight: 900 }} href="#">
-                    here
-                  </Link>
-                  .
-                </ProjectBody>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={5}
-                sx={{ display: "flex", justifyContent: "flex-end" }}
-              >
-                <ViewLink
-                  target="_blank"
-                  rel="noredirect"
-                  href="https://wand.gnosisguild.org"
-                >
-                  View Site
-                </ViewLink>
-              </Grid>
-            </Grid>
-            <Box sx={{ mt: 4 }}>
-              <Image
-                lazyBoundary="500px"
-                placeholder="blur"
-                src={WandNFTApp}
-                alt="Wand NFT Minting App"
-              />
-            </Box>
-            <Grid container spacing={4} sx={{ mt: 0 }}>
-              <Grid item xs={12} md={3}>
-                <Image
-                  lazyBoundary="500px"
-                  placeholder="blur"
-                  src={WandNFT1}
-                  alt="Wand NFT preview"
-                />
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Image
-                  lazyBoundary="500px"
-                  placeholder="blur"
-                  src={WandNFT1}
-                  alt="Wand NFT preview"
-                />
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Image
-                  lazyBoundary="500px"
-                  placeholder="blur"
-                  src={WandNFT1}
-                  alt="Wand NFT preview"
-                />
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Image
-                  lazyBoundary="500px"
-                  placeholder="blur"
-                  src={WandNFT1}
-                  alt="Wand NFT preview"
-                />
-              </Grid>
-            </Grid>
-          </Box>
-        )}
-        <Box component="section" id="zodiac-protocol" mt={20}>
-          <Grid container alignItems="flex-end">
-            <Grid item xs={12} md={7}>
-              <SubProjectTitle>Zodiac Protocol</SubProjectTitle>
-              <Context>Product Design and Frontend Development</Context>
-              <ProjectBody>
-                Zodiac is a composable philosophy and collection of tools built
-                according to an open standard. We helped Gnosis Guild create the
-                Roles Modifier app as well as various usability improvements to
-                the Reality Module.
-              </ProjectBody>
-            </Grid>
-          </Grid>
-          <Box sx={{ mt: 4 }}>
-            <Image
-              lazyBoundary="500px"
-              placeholder="blur"
-              src={ZodiacHome}
-              alt="Zodiac Protocol App"
-            />
-          </Box>
-          <Box sx={{ mt: 4 }}>
-            <Image
-              lazyBoundary="500px"
-              placeholder="blur"
-              src={Zodiac1}
-              alt="Roles Modifier App"
-            />
-          </Box>
-          <Box sx={{ mt: 4 }}>
-            <Image
-              lazyBoundary="500px"
-              placeholder="blur"
-              src={Zodiac2}
-              alt="Zodiac Safe App - Reality Module UI"
-            />
-          </Box>
-        </Box>
-
         <Box component="section" id="tabula" mt={20}>
           <Grid container alignItems="flex-end">
             <Grid item xs={12} md={7}>
@@ -238,6 +119,135 @@ const GnosisGuild = () => {
               placeholder="blur"
               src={Tabula2}
               alt="Tabula post creation page"
+            />
+          </Box>
+        </Box>
+
+        {wandIsLive && (
+          <Box component="section" id="wand-nft" mt={20}>
+            <Grid container alignItems="flex-end">
+              <Grid item xs={12} md={7}>
+                <SubProjectTitle>Wand NFT</SubProjectTitle>
+                <Context>
+                  Minting App Visual Design, UX, and Frontend Development
+                </Context>
+                <ProjectBody>
+                  The Wand NFT project was a massive undertaking by many folks
+                  at Gnosis Guild and it broke new ground on many fronts. These
+                  reputation-based NFTs are only available via in-person
+                  receivables or by contributing to the Zodiac Wiki. The NFT
+                  levels up as you gain more experience from your peers. The
+                  minting app allows the user to completely customize their
+                  wand, and in true Gnosis Guild fashion, we included a
+                  generative soundtrack based on the parameters. Ultimately the
+                  project was ditched in place of the new{" "}
+                  <Link
+                    sx={{ fontWeight: 900 }}
+                    href="https://mech-omega.vercel.app/"
+                    target="_blank"
+                    rel="noredirect"
+                  >
+                    Mech
+                  </Link>{" "}
+                  initiative, but luckily, much of the effort that was spent
+                  here was able to apply to the new initiative.
+                </ProjectBody>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={5}
+                sx={{ display: "flex", justifyContent: "flex-end" }}
+              >
+                <ViewLink
+                  target="_blank"
+                  rel="noredirect"
+                  href="https://wand-bk6ng1zhh-gnosis-guild.vercel.app/"
+                >
+                  View Site
+                </ViewLink>
+              </Grid>
+            </Grid>
+            <Box sx={{ mt: 4 }}>
+              <Image
+                lazyBoundary="500px"
+                placeholder="blur"
+                src={WandNFTApp}
+                alt="Wand NFT Minting App"
+              />
+            </Box>
+            <Grid container spacing={4} sx={{ mt: 0 }}>
+              <Grid item xs={12} md={3}>
+                <Image
+                  lazyBoundary="500px"
+                  placeholder="blur"
+                  src={WandNFT1}
+                  alt="Wand NFT preview"
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Image
+                  lazyBoundary="500px"
+                  placeholder="blur"
+                  src={WandNFT2}
+                  alt="Wand NFT preview"
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Image
+                  lazyBoundary="500px"
+                  placeholder="blur"
+                  src={WandNFT3}
+                  alt="Wand NFT preview"
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Image
+                  lazyBoundary="500px"
+                  placeholder="blur"
+                  src={WandNFT4}
+                  alt="Wand NFT preview"
+                />
+              </Grid>
+            </Grid>
+          </Box>
+        )}
+
+        <Box component="section" id="zodiac-protocol" mt={20}>
+          <Grid container alignItems="flex-end">
+            <Grid item xs={12} md={7}>
+              <SubProjectTitle>Zodiac Protocol</SubProjectTitle>
+              <Context>Product Design and Frontend Development</Context>
+              <ProjectBody>
+                Zodiac is a composable philosophy and collection of tools built
+                according to an open standard. We helped Gnosis Guild create the
+                Roles Modifier app as well as various usability improvements to
+                the Reality Module.
+              </ProjectBody>
+            </Grid>
+          </Grid>
+          <Box sx={{ mt: 4 }}>
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={ZodiacHome}
+              alt="Zodiac Protocol App"
+            />
+          </Box>
+          <Box sx={{ mt: 4 }}>
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={Zodiac1}
+              alt="Roles Modifier App"
+            />
+          </Box>
+          <Box sx={{ mt: 4 }}>
+            <Image
+              lazyBoundary="500px"
+              placeholder="blur"
+              src={Zodiac2}
+              alt="Zodiac Safe App - Reality Module UI"
             />
           </Box>
         </Box>

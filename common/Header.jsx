@@ -145,11 +145,7 @@ export const Header = () => {
                   </Typography>
                 </Link>
                 {site === "cedricwaxwing" && (
-                  <Link
-                    href="/tetrachroma"
-                    color="currentColor"
-                    underline="none"
-                  >
+                  <Link href="/releases" color="currentColor" underline="none">
                     <Typography
                       fontSize={12}
                       fontFamily={typography.fontFamilies.extended}

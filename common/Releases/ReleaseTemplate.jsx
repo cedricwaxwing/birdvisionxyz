@@ -95,11 +95,13 @@ const ProjectTemplate = ({
           }}
         >
           tags:{` `}
-          {tags.map((tag) => (
-            <Typography variant="span" sx={{ fontWeight: 300 }}>
-              {tag},
-            </Typography>
-          ))}
+          <Stack direction="row" flexWrap="wrap">
+            {tags.map((tag) => (
+              <Typography variant="span" sx={{ fontWeight: 300 }}>
+                {tag},
+              </Typography>
+            ))}
+          </Stack>
         </Typography>
       </Stack>
       <Box sx={{ mt: 4 }}>

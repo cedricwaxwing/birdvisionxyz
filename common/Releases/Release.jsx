@@ -186,41 +186,6 @@ export const Release = ({ release, index }) => {
               >
                 Mint on fxhash.xyz
               </Box>
-              {/* <Stack spacing={1}>
-                {tags.map((tag) => (
-                  <Box
-                    key={tag}
-                    sx={{ display: "inline-flex", alignItems: "center" }}
-                  >
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: `${colors.black}66`,
-                        fontFamily: typography.fontFamilies.sans,
-                        fontSize: ["0.5rem", "1rem"],
-                        fontWeight: 500,
-                        marginRight: 1,
-                        lineHeight: 1,
-                      }}
-                    >
-                      ✼
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        fontFamily: typography.fontFamilies.extended,
-                        fontSize: ["0.65rem", "0.75rem"],
-                        fontWeight: 500,
-                        letterSpacing: 1,
-                        lineHeight: 1,
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {tag}
-                    </Typography>
-                  </Box>
-                ))}
-              </Stack> */}
             </Stack>
             <Box
               ref={letters}
@@ -243,56 +208,59 @@ export const Release = ({ release, index }) => {
                   {name}
                 </Typography>
               ) : (
-                name.split(" ").map((word, i) => {
-                  return (
-                    <Box key={i} sx={{ display: "flex" }}>
-                      {[...word].map((letter, j) => {
-                        letterNum++;
-                        const x =
-                          Math.random() * elementContext.el.width -
-                          (elementContext.title.x +
-                            elementContext.letters[letterNum]?.x) -
-                          elementContext.letterSize?.width / 2;
-                        const y =
-                          Math.random() * elementContext.el.height -
-                          (elementContext.title.y +
-                            elementContext.letters[letterNum]?.y) -
-                          elementContext.letterSize?.height / 2;
+                name
+                  .toString()
+                  .split(" ")
+                  .map((word, i) => {
+                    return (
+                      <Box key={i} sx={{ display: "flex" }}>
+                        {[...word].map((letter, j) => {
+                          letterNum++;
+                          const x =
+                            Math.random() * elementContext.el.width -
+                            (elementContext.title.x +
+                              elementContext.letters[letterNum]?.x) -
+                            elementContext.letterSize?.width / 2;
+                          const y =
+                            Math.random() * elementContext.el.height -
+                            (elementContext.title.y +
+                              elementContext.letters[letterNum]?.y) -
+                            elementContext.letterSize?.height / 2;
 
-                        const offset = `translate(${x}px, ${y}px)`;
-                        const scale = isMobile
-                          ? `scale(${Math.random() + 0.6})`
-                          : `scale(${Math.random() * 0.6 + 0.4})`;
-                        return (
-                          <Box
-                            key={letterNum}
-                            sx={{
-                              color: isHovering
-                                ? `${colors[slug]}cc`
-                                : `${colors[slug]}22`,
-                              display: "inline-block",
-                              fontFamily: typography.fontFamilies.extended,
-                              fontSize: isMobile ? "1.5rem" : "2rem",
-                              lineHeight: 0.8,
-                              textTransform: "uppercase",
-                              transform: !isHovering ? offset : null,
-                              transition: `opacity 0.5s ease-in-out, transform 0.5s ${easings.cubic}`,
-                              willChange: "transform",
-                            }}
-                          >
+                          const offset = `translate(${x}px, ${y}px)`;
+                          const scale = isMobile
+                            ? `scale(${Math.random() + 0.6})`
+                            : `scale(${Math.random() * 0.6 + 0.4})`;
+                          return (
                             <Box
+                              key={letterNum}
                               sx={{
-                                transform: !isHovering ? scale : null,
+                                color: isHovering
+                                  ? `${colors[slug]}cc`
+                                  : `${colors[slug]}22`,
+                                display: "inline-block",
+                                fontFamily: typography.fontFamilies.extended,
+                                fontSize: isMobile ? "1.5rem" : "2rem",
+                                lineHeight: 0.8,
+                                textTransform: "uppercase",
+                                transform: !isHovering ? offset : null,
+                                transition: `opacity 0.5s ease-in-out, transform 0.5s ${easings.cubic}`,
+                                willChange: "transform",
                               }}
                             >
-                              {letter}
+                              <Box
+                                sx={{
+                                  transform: !isHovering ? scale : null,
+                                }}
+                              >
+                                {letter}
+                              </Box>
                             </Box>
-                          </Box>
-                        );
-                      })}
-                    </Box>
-                  );
-                })
+                          );
+                        })}
+                      </Box>
+                    );
+                  })
               )}
             </Box>
           </Grid>
