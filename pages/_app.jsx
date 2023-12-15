@@ -17,6 +17,7 @@ import { CursorEffect } from "../components/CursorEffect";
 import { Noise } from "../components/Noise";
 import { colors, theme } from "../src/styles/theme";
 import OgImage from "../public/assets/imgs/og_image.png";
+import OgImageCedricWaxwing from "../public/assets/imgs/og_image_cedricwaxwing.png";
 
 const site = process.env.REACT_APP_SITE;
 
@@ -91,7 +92,14 @@ export default function MyApp(props) {
           } beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology.`}
           key="description"
         />
-        <meta property="og:url" content="https://www.birdvision.xyz" />
+        <meta
+          property="og:url"
+          content={
+            site === "birdivsion"
+              ? "https://www.birdvision.xyz"
+              : "https://www.cedricwaxwing.xyz"
+          }
+        />
         <meta
           property="og:title"
           content={`${
@@ -106,7 +114,12 @@ export default function MyApp(props) {
               : "Crafting"
           } beautiful, intuitive experiences which make it easy for people to interact with cutting-edge technology.`}
         />
-        <meta property="og:image" content={OgImage.src} />
+        <meta
+          property="og:image"
+          content={
+            site === "birdivsion" ? OgImage.src : OgImageCedricWaxwing.src
+          }
+        />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="msapplication-TileColor" content={colors.black} />
         <meta name="theme-color" content={colors.black} />

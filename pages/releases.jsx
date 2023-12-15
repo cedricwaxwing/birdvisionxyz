@@ -57,9 +57,6 @@ const Releases = () => {
               >
                 RELEASES
               </Typography>
-              {/* <Typography>
-                NFT Collections, and other 
-              </Typography> */}
             </Box>
             <Stack spacing={16}>
               {Object.keys(releases).map((release, i) => (
