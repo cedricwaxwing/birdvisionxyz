@@ -14,6 +14,7 @@ export const colors = {
   // Projects
   "gnosis-guild": "#903B18",
   "dao-drops": "#3C1DFE",
+  "agentcoin": "#FF0004",
   "sisu": "#11C589",
   "polywrap": "#395176",
   "zigzag": "#29A2E3",
