@@ -91,7 +91,7 @@ export const ProjectPreview = ({ project, index }) => {
 
   return (
     <Box
-      component="section"
+      component='section'
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       ref={el}
@@ -109,27 +109,24 @@ export const ProjectPreview = ({ project, index }) => {
             transform: "scale(1.05)",
           },
         },
-      }}
-    >
+      }}>
       <Link href={`/${slug}`}>
         <Grid
           container
           spacing={isMobile ? 1 : 6}
           direction={
             !isMobile ? (index % 2 ? "row-reverse" : "row") : "column-reverse"
-          }
-        >
+          }>
           <Grid item xs={12} sm={6}>
             <Box
-              className="project-image"
-              sx={{ display: "flex", width: "100%" }}
-            >
+              className='project-image'
+              sx={{ display: "flex", width: "100%" }}>
               <Image
-                lazyBoundary="500px"
+                lazyBoundary='500px'
                 src={thumb}
                 alt={name}
-                loading="eager"
-                placeholder="blur"
+                loading='eager'
+                placeholder='blur'
                 style={{
                   aspectRatio: "1/1",
                   borderRadius: 4,
@@ -143,8 +140,7 @@ export const ProjectPreview = ({ project, index }) => {
               ref={info}
               spacing={isMobile ? 2 : 4}
               mt={isMobile ? 3 : 6}
-              mb={isMobile ? 3 : 2}
-            >
+              mb={isMobile ? 3 : 2}>
               <Box sx={{ display: "inline" }}>
                 <Numeral
                   number={index}
@@ -152,19 +148,17 @@ export const ProjectPreview = ({ project, index }) => {
                 />
               </Box>
               <Typography
-                variant="subtitle2"
-                fontFamily={typography.fontFamilies.serif}
-              >
+                variant='subtitle2'
+                fontFamily={typography.fontFamilies.serif}>
                 {description}
               </Typography>
               <Stack spacing={1}>
                 {tags.map((tag) => (
                   <Box
                     key={tag}
-                    sx={{ display: "inline-flex", alignItems: "center" }}
-                  >
+                    sx={{ display: "inline-flex", alignItems: "center" }}>
                     <Typography
-                      variant="body2"
+                      variant='body2'
                       sx={{
                         color: `${colors.black}66`,
                         fontFamily: typography.fontFamilies.sans,
@@ -172,12 +166,11 @@ export const ProjectPreview = ({ project, index }) => {
                         fontWeight: 500,
                         marginRight: 1,
                         lineHeight: 1,
-                      }}
-                    >
+                      }}>
                       ✼
                     </Typography>
                     <Typography
-                      variant="body2"
+                      variant='body2'
                       sx={{
                         fontFamily: typography.fontFamilies.extended,
                         fontSize: ["0.65rem", "0.75rem"],
@@ -185,8 +178,7 @@ export const ProjectPreview = ({ project, index }) => {
                         letterSpacing: 1,
                         lineHeight: 1,
                         textTransform: "uppercase",
-                      }}
-                    >
+                      }}>
                       {tag}
                     </Typography>
                   </Box>
@@ -201,16 +193,14 @@ export const ProjectPreview = ({ project, index }) => {
                 mb: [2, 1, null],
                 mt: [1, 2, null],
                 zIndex: 1,
-              }}
-            >
+              }}>
               {isMobile ? (
                 <Typography
-                  variant="h1"
+                  variant='h1'
                   sx={{
                     fontSize: ["2.25rem", "3rem", "5rem"],
                     textTransform: "uppercase",
-                  }}
-                >
+                  }}>
                   {name}
                 </Typography>
               ) : (
@@ -243,19 +233,17 @@ export const ProjectPreview = ({ project, index }) => {
                                 : `${colors[slug]}22`,
                               display: "inline-block",
                               fontFamily: typography.fontFamilies.extended,
-                              fontSize: isMobile ? "2rem" : "3rem",
+                              fontSize: isMobile ? "1.75rem" : "2.5rem",
                               lineHeight: 0.8,
                               textTransform: "uppercase",
                               transform: !isHovering ? offset : null,
                               transition: `opacity 0.5s ease-in-out, transform 0.5s ${easings.cubic}`,
                               willChange: "transform",
-                            }}
-                          >
+                            }}>
                             <Box
                               sx={{
                                 transform: !isHovering ? scale : null,
-                              }}
-                            >
+                              }}>
                               {letter}
                             </Box>
                           </Box>

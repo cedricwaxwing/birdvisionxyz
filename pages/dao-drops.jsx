@@ -1,15 +1,12 @@
 import Image from "next/image";
 import ProjectLayout from "../common/Projects/ProjectLayout";
 import { ProjectBody } from "../common/Projects/ProjectBody";
-import { ViewLink } from "../common/ViewLink";
-import { FigmaEmbed } from "../components/FigmaEmbed";
-import { LightBoxImage } from "../components/LightBoxImage";
 import { projects } from "../constants/projects";
-import { Box, Grid, Link, useMediaQuery, useTheme } from "@mui/material";
-import UI2 from "../public/assets/imgs/dao-drops/ui-2.png";
-import UI3 from "../public/assets/imgs/dao-drops/ui-3.png";
-import UI5 from "../public/assets/imgs/dao-drops/ui-5.png";
-import UI6 from "../public/assets/imgs/dao-drops/ui-6.png";
+import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
+import UI2 from "../public/assets/imgs/dao-drops/ui-2.webp";
+import UI3 from "../public/assets/imgs/dao-drops/ui-3.webp";
+import UI5 from "../public/assets/imgs/dao-drops/ui-5.webp";
+import UI6 from "../public/assets/imgs/dao-drops/ui-6.webp";
 import { Context } from "../common/Context";
 import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 
@@ -39,8 +36,8 @@ const DaoDrops = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <ProjectLayout project={project}>
-      <Box component="section" id="app" mt={20}>
-        <Grid container alignItems="flex-end">
+      <Box component='section' id='app' mt={20}>
+        <Grid container alignItems='flex-end'>
           <Grid item xs={12} md={7}>
             <SubProjectTitle>DAO Drops Website</SubProjectTitle>
             <Context>Branding, Visual Identity, Product Design</Context>
@@ -48,19 +45,19 @@ const DaoDrops = () => {
         </Grid>
         <Box mt={4} mb={1}>
           <Image
-            lazyBoundary="500px"
-            placeholder="blur"
+            lazyBoundary='500px'
+            placeholder='blur'
             src={UI5}
-            alt="Dao Drops landing page mockup"
+            alt='Dao Drops landing page mockup'
           />
         </Box>
         <Box sx={{ mt: 4, position: "relative" }}>
           <Box maxWidth={theme.breakpoints.values.md}>
             <Image
-              lazyBoundary="500px"
-              placeholder="blur"
+              lazyBoundary='500px'
+              placeholder='blur'
               src={UI6}
-              alt="Dao Drops Website"
+              alt='Dao Drops Website'
             />
           </Box>
           {!isMobile && (
@@ -73,13 +70,12 @@ const DaoDrops = () => {
                   right: 0,
                   width: 450,
                   zIndex: 1,
-                }}
-              >
+                }}>
                 <Image
-                  lazyBoundary="500px"
-                  placeholder="blur"
+                  lazyBoundary='500px'
+                  placeholder='blur'
                   src={UI2}
-                  alt="Dao Drops Nomination Submission modal"
+                  alt='Dao Drops Nomination Submission modal'
                 />
               </Box>
               <Box
@@ -90,13 +86,12 @@ const DaoDrops = () => {
                   right: 0,
                   width: 450,
                   zIndex: 1,
-                }}
-              >
+                }}>
                 <Image
-                  lazyBoundary="500px"
-                  placeholder="blur"
+                  lazyBoundary='500px'
+                  placeholder='blur'
                   src={UI3}
-                  alt="Dao Drops Nomination Submitted modal"
+                  alt='Dao Drops Nomination Submitted modal'
                 />
               </Box>
             </>

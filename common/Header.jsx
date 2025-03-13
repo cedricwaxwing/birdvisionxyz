@@ -56,16 +56,31 @@ export const Header = () => {
 
   return (
     <Box
-      component="header"
+      component='header'
       sx={{
         pt: scrollY > 300 ? [2, 3] : [3, 4],
+        pb: [1, 2],
+        backgroundImage:
+          scrollY > 300
+            ? `linear-gradient(rgba(0,0,0,0.1), transparent)`
+            : null,
         position: "fixed",
         top: 0,
-        transition: "padding 0.5s ease-in-out",
+        transition: "all 0.5s ease-in-out",
         width: "100%",
         zIndex: 100,
-      }}
-    >
+      }}>
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          background: `linear-gradient(to top, transparent, rgba(0,0,0,0.5))`,
+          mask: "linear-gradient(to top, transparent, black)",
+          backdropFilter: "blur(24px)",
+          opacity: scrollY > 300 ? 1 : 0,
+          transition: "0.5s ease-in-out",
+        }}
+      />
       <Container
         sx={{
           transition: "max-width 0.5s ease-in-out",
@@ -75,17 +90,15 @@ export const Header = () => {
               : scrollY > 300
               ? "100% !important"
               : theme.breakpoints.values.lg,
-        }}
-      >
+        }}>
         <Stack
-          direction="row"
+          direction='row'
           spacing={[3, 4]}
           sx={{
             alignItems: "center",
             justifyContent: "space-between",
-          }}
-        >
-          <Link underline="none" href="/#" display="block">
+          }}>
+          <Link underline='none' href='/#' display='block'>
             <Logo
               sx={{
                 transform: `rotate(${scrollY * 0.1}deg)`,
@@ -111,8 +124,7 @@ export const Header = () => {
               top: 0,
               right: 0,
               alignItems: ["flex-end", "flex-end", "center"],
-            }}
-          >
+            }}>
             {active && (
               <Stack
                 direction={isMobile ? "column" : "row"}
@@ -130,41 +142,40 @@ export const Header = () => {
                   },
                   animation: `slideIn 0.5s forwards ${easings.cubic}`,
                   alignItems: ["flex-end", "flex-end", "center"],
+                  color: scrollY > 300 ? "#fff" : null,
                   mt: active && isMobile ? 2 : null,
-                }}
-              >
-                <Link href="/#projects" color="currentColor" underline="none">
+                  textShadow:
+                    scrollY > 300 ? `0 4px 16px rgba(0,0,0,0.2)` : null,
+                }}>
+                <Link href='/#projects' color='currentColor' underline='none'>
                   <Typography
                     fontSize={12}
                     fontFamily={typography.fontFamilies.extended}
                     fontWeight={600}
-                    textTransform="uppercase"
-                    letterSpacing={[1, 2, 3]}
-                  >
+                    textTransform='uppercase'
+                    letterSpacing={[1, 2, 3]}>
                     Projects
                   </Typography>
                 </Link>
                 {site === "cedricwaxwing" && (
-                  <Link href="/releases" color="currentColor" underline="none">
+                  <Link href='/releases' color='currentColor' underline='none'>
                     <Typography
                       fontSize={12}
                       fontFamily={typography.fontFamilies.extended}
                       fontWeight={600}
-                      textTransform="uppercase"
-                      letterSpacing={[1, 2, 3]}
-                    >
+                      textTransform='uppercase'
+                      letterSpacing={[1, 2, 3]}>
                       Releases
                     </Typography>
                   </Link>
                 )}
-                <Link href="/#contact" color="currentColor" underline="none">
+                <Link href='/#contact' color='currentColor' underline='none'>
                   <Typography
                     fontSize={12}
                     fontFamily={typography.fontFamilies.extended}
                     fontWeight={600}
-                    textTransform="uppercase"
-                    letterSpacing={[1, 2, 3]}
-                  >
+                    textTransform='uppercase'
+                    letterSpacing={[1, 2, 3]}>
                     Contact
                   </Typography>
                 </Link>

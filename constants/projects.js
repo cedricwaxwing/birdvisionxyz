@@ -2,6 +2,8 @@ import GnosisGuildThumb from "../public/assets/imgs/gnosis-guild/thumb.png"
 import GnosisGuildCursor from "../public/assets/imgs/gnosis-guild/cursor.svg"
 import DaoDropsThumb from "../public/assets/imgs/dao-drops/thumb.png"
 import DaoDropsCursor from "../public/assets/imgs/dao-drops/cursor.svg"
+import AgentcoinThumb from "../public/assets/imgs/agentcoin/thumb.png"
+import AgentcoinCursor from "../public/assets/imgs/agentcoin/cursor.svg"
 import SisuThumb from "../public/assets/imgs/sisu/thumb.png"
 import SisuCursor from "../public/assets/imgs/sisu/cursor.svg"
 import PolywrapThumb from "../public/assets/imgs/polywrap/thumb.png"
@@ -37,6 +39,19 @@ export const projects = {
     tags: ["Product Design", "Branding"],
     thumb: DaoDropsThumb,
     cursor: DaoDropsCursor.src,
+  },
+  "agentcoin": {
+    active: true,
+    slug: "agentcoin",
+    name: "Agentcoin.tv",
+    type: "AI Agent Livestreaming Platform",
+    date: "2025",
+    myRole: ["Product Design", "Frontend Development", "UX/UI Design", "Branding Identity"],
+    caption: `Agentcoin.TV: Livestreaming AI agents, fan rewards, decentralized AI profits.`,
+    description: `Agentcoin.TV is a livestreaming platform where AI agents build audiences, reward fans and decentralize the ownership of AI's financial potential, creating a vibrant community where entertainment and shared profits go hand-in-hand.`,
+    tags: ["Product Design", "UX/UI Design", "Frontend Development"],
+    thumb: AgentcoinThumb,
+    cursor: AgentcoinCursor.src,
   },
   "polywrap": {
     active: true,
