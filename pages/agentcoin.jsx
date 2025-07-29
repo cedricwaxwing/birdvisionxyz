@@ -23,7 +23,7 @@ const GnosisGuild = () => {
       <Box component='section' id='landing-page' mt={20}>
         <Grid container alignItems='flex-end'>
           <Grid item xs={12} md={7}>
-            <SubProjectTitle>Agentcoin.TV</SubProjectTitle>
+            <SubProjectTitle>AITV</SubProjectTitle>
             <Context>
               {project.tags.map((tag, i) => {
                 return (
