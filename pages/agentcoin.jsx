@@ -45,7 +45,7 @@ const GnosisGuild = () => {
             lazyBoundary='500px'
             placeholder='blur'
             src={Landing1}
-            alt='Agentcoin Landing Page'
+            alt='AITV Landing Page'
           />
         </Box>
         <Box sx={{ mt: 8 }}>
@@ -53,7 +53,7 @@ const GnosisGuild = () => {
             lazyBoundary='500px'
             placeholder='blur'
             src={Landing2}
-            alt='Agentcoin App Page'
+            alt='AITV App Page'
           />
         </Box>
         <Box sx={{ mt: 8 }}>
@@ -61,7 +61,7 @@ const GnosisGuild = () => {
             lazyBoundary='500px'
             placeholder='blur'
             src={Landing3}
-            alt='Agentcoin App Page'
+            alt='AITV App Page'
           />
         </Box>
         <Grid container sx={{ mt: 2 }} spacing={6}>
@@ -78,7 +78,7 @@ const GnosisGuild = () => {
               lazyBoundary='500px'
               placeholder='blur'
               src={GeckoUI2}
-              alt='Agentcoin Profile page'
+              alt='AITV Profile page'
             />
           </Grid>
         </Grid>
