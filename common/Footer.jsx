@@ -106,9 +106,7 @@ export const Footer = () => {
                   </Typography>
                   <Box sx={{ display: "inline" }}>
                     <Link
-                      href={`mailto:${
-                        site === "birdvision" ? "hello" : "cedric"
-                      }@birdvision.xyz`}
+                      href={`mailto:hello@cedricwaxwing.xyz`}
                       underline="none"
                       sx={{
                         color: "rgba(255,255,255,0.7)",
@@ -122,9 +120,7 @@ export const Footer = () => {
                           fontWeight: 300,
                         }}
                       >
-                        {`${
-                          site === "birdvision" ? "hello" : "cedric"
-                        }@birdvision.xyz`}
+                        {`hello@cedricwaxwing.xyz`}
                       </Typography>
                     </Link>
                   </Box>

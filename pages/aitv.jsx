@@ -11,7 +11,7 @@ import GeckoUI2 from "../public/assets/imgs/agentcoin/agentcoin-referral-post.we
 import { Context } from "../common/Context";
 import { SubProjectTitle } from "../common/Projects/SubProjectTitle";
 
-const project = projects["agentcoin"];
+const project = projects["aitv"];
 
 project.body = <ProjectBody />;
 const GnosisGuild = () => {
@@ -20,8 +20,8 @@ const GnosisGuild = () => {
 
   return (
     <ProjectLayout project={project}>
-      <Box component='section' id='landing-page' mt={20}>
-        <Grid container alignItems='flex-end'>
+      <Box component="section" id="landing-page" mt={20}>
+        <Grid container alignItems="flex-end">
           <Grid item xs={12} md={7}>
             <SubProjectTitle>AITV</SubProjectTitle>
             <Context>
@@ -42,43 +42,43 @@ const GnosisGuild = () => {
         </Grid>
         <Box sx={{ mt: 8 }}>
           <Image
-            lazyBoundary='500px'
-            placeholder='blur'
+            lazyBoundary="500px"
+            placeholder="blur"
             src={Landing1}
-            alt='AITV Landing Page'
+            alt="AITV Landing Page"
           />
         </Box>
         <Box sx={{ mt: 8 }}>
           <Image
-            lazyBoundary='500px'
-            placeholder='blur'
+            lazyBoundary="500px"
+            placeholder="blur"
             src={Landing2}
-            alt='AITV App Page'
+            alt="AITV App Page"
           />
         </Box>
         <Box sx={{ mt: 8 }}>
           <Image
-            lazyBoundary='500px'
-            placeholder='blur'
+            lazyBoundary="500px"
+            placeholder="blur"
             src={Landing3}
-            alt='AITV App Page'
+            alt="AITV App Page"
           />
         </Box>
         <Grid container sx={{ mt: 2 }} spacing={6}>
           <Grid item xs={12} sm={6}>
             <Image
-              lazyBoundary='500px'
-              placeholder='blur'
+              lazyBoundary="500px"
+              placeholder="blur"
               src={GeckoUI1}
-              alt='Buy Gecko UI'
+              alt="Buy Gecko UI"
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <Image
-              lazyBoundary='500px'
-              placeholder='blur'
+              lazyBoundary="500px"
+              placeholder="blur"
               src={GeckoUI2}
-              alt='AITV Profile page'
+              alt="AITV Profile page"
             />
           </Grid>
         </Grid>
