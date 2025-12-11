@@ -132,15 +132,24 @@ const GnosisGuild = () => {
                   Minting App Visual Design, UX, and Frontend Development
                 </Context>
                 <ProjectBody>
-                  The Wand NFT project was a massive undertaking by many folks
-                  at Gnosis Guild and it broke new ground on many fronts. These
-                  reputation-based NFTs are only available via in-person
-                  receivables or by contributing to the Zodiac Wiki. The NFT
-                  levels up as you gain more experience from your peers. The
-                  minting app allows the user to completely customize their
-                  wand, and in true Gnosis Guild fashion, we included a
-                  generative soundtrack based on the parameters. Ultimately the
-                  project was ditched in place of the new{" "}
+                  The{" "}
+                  <Link
+                    sx={{ fontWeight: 900 }}
+                    href="https://mech-omega.vercel.app/"
+                    target="_blank"
+                    rel="noredirect"
+                  >
+                    Wand NFT project
+                  </Link>{" "}
+                  was a massive undertaking by many folks at Gnosis Guild and it
+                  broke new ground on many fronts. These reputation-based NFTs
+                  are only available via in-person receivables or by
+                  contributing to the Zodiac Wiki. The NFT levels up as you gain
+                  more experience from your peers. The minting app allows the
+                  user to completely customize their wand, and in true Gnosis
+                  Guild fashion, we included a generative soundtrack based on
+                  the parameters. Ultimately the project was ditched in place of
+                  the new{" "}
                   <Link
                     sx={{ fontWeight: 900 }}
                     href="https://mech-omega.vercel.app/"
