@@ -135,7 +135,7 @@ const GnosisGuild = () => {
                   The{" "}
                   <Link
                     sx={{ fontWeight: 900 }}
-                    href="https://mech-omega.vercel.app/"
+                    href="https://wand-nft-one.vercel.app"
                     target="_blank"
                     rel="noredirect"
                   >
